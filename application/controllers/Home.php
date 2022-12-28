@@ -6,18 +6,18 @@ class Home extends CI_Controller {
         $data['module'] = 'frontpage';
         $data['submodule'] = '';        
 
-        $this->load->view('header');
-        $this->load->view('frontpage', $data);
+        $this->load->view('header', $data);
+        $this->load->view('frontpage');
         $this->load->view('footer');
     }
-
+    
     function diarynew (){
         $data['pagetitle'] = 'New Diary';
         $data['module'] = 'diarynew';
-        $data['submodule'] = '';        
+        $data['submodule'] = 'newdiary';        
 
-        $this->load->view('header');
-        $this->load->view('diarynew', $data);
+        $this->load->view('header', $data);
+        $this->load->view('diarynew');
         $this->load->view('footer');
     }
 }

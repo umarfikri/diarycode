@@ -15,43 +15,43 @@
                                 <textarea class="form-control" id="postpage" rows="3"></textarea>                                
                             </div>
                             <label>Mood</label>
-                                <div class="row">
-                                    <div class="form-check-radio ml-2">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                                <div class="row justify-content-center">
+                                    <div class="form-check-radio ml-4">
+                                        <label class="form-check-label text-warning">
+                                            <input class="form-check-input " type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
                                             Happy
                                             <span class="form-check-sign"></span>
                                         </label>
                                     </div>
-                                    <div class="form-check-radio ml-2">
-                                        <label class="form-check-label">
+                                    <div class="form-check-radio ml-4">
+                                        <label class="form-check-label text-primary">
                                             <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
                                             Sad
                                             <span class="form-check-sign"></span>
                                         </label>
                                     </div>
-                                    <div class="form-check-radio ml-2">
-                                        <label class="form-check-label">
+                                    <div class="form-check-radio ml-4">
+                                        <label class="form-check-label text-danger">
                                             <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
                                             Angry
                                             <span class="form-check-sign"></span>
                                         </label>
                                     </div>
-                                    <div class="form-check-radio ml-2">
-                                        <label class="form-check-label">
+                                    <div class="form-check-radio ml-4">
+                                        <label class="form-check-label" style="color: #ce72ce;">
                                             <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
                                             Nervous
                                             <span class="form-check-sign"></span>
                                         </label>
                                     </div>
-                                    <div class="form-check-radio ml-2">
-                                        <label class="form-check-label">
+                                    <div class="form-check-radio ml-4">
+                                        <label class="form-check-label text-success">
                                             <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
                                             Sick
                                             <span class="form-check-sign"></span>
                                         </label>
                                     </div>
-                                    <div class="form-check-radio ml-2">
+                                    <div class="form-check-radio ml-4">
                                         <label class="form-check-label">
                                             <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
                                             Tired
