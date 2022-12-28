@@ -18,6 +18,8 @@
   <!-- CSS Files -->
   <link href="assets/css/bootstrap.min.css?v=2.4.0" rel="stylesheet" />
   <link href="assets/css/paper-kit.css?v=2.4.0" rel="stylesheet" />
+  <!--Custom-->
+  <script src="assets/ckeditor/ckeditor.js"></script>
 </head>
 
 <body class="landing-page sidebar-collapse">
