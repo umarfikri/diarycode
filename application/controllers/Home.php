@@ -30,4 +30,14 @@ class Home extends CI_Controller {
         $this->load->view('diaryentry');
         $this->load->view('footer');
     }
+
+    function calendar (){
+        $data['pagetitle'] = 'Mood Calendar';
+        $data['module'] = 'calendar';
+        $data['submodule'] = '';        
+
+        $this->load->view('header', $data);
+        $this->load->view('calendar');
+        $this->load->view('footer');
+    }
 }

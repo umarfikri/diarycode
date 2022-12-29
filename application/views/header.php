@@ -47,6 +47,9 @@
           <li class="nav-item">
             <a class="<?= ($module == 'diaryentry') ? 'nav-link active' : 'nav-link';?>" href="home/diaryentry">Diary Entry</a>
           </li>       
+          <li class="nav-item">
+            <a class="<?= ($module == 'calendar') ? 'nav-link active' : 'nav-link';?>" href="home/calendar">Calendar</a>
+          </li> 
         </ul>
       </div>
     </div>
