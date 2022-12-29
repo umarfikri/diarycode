@@ -20,4 +20,14 @@ class Home extends CI_Controller {
         $this->load->view('diarynew');
         $this->load->view('footer');
     }
+
+    function diaryentry (){
+        $data['pagetitle'] = 'Diary Entry';
+        $data['module'] = 'diaryentry';
+        $data['submodule'] = 'entrydiary';        
+
+        $this->load->view('header', $data);
+        $this->load->view('diaryentry');
+        $this->load->view('footer');
+    }
 }

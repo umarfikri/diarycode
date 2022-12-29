@@ -43,7 +43,10 @@
           </li>                   
           <li class="nav-item">
             <a class="<?= ($module == 'diarynew') ? 'nav-link active' : 'nav-link';?>" href="home/diarynew">New Story</a>
-          </li>          
+          </li>   
+          <li class="nav-item">
+            <a class="<?= ($module == 'diaryentry') ? 'nav-link active' : 'nav-link';?>" href="home/diaryentry">Diary Entry</a>
+          </li>       
         </ul>
       </div>
     </div>
