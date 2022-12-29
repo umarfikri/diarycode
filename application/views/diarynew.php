@@ -71,11 +71,14 @@
                                             </label>
                                         </div>
                                     </div>
-
                                     <div class="form-group">
                                         <label>Image</label>
                                         <input class="form-control" type="file" id="formFile" name="image">                                
-                                    </div>                                                                                             
+                                    </div>       
+                                    <div class="form-group">
+                                        <label>Image Title</label>
+                                        <input type="text" class="form-control" id="imagetitle">
+                                    </div>                                                                                      
 
                                     <button type="submit" class="btn btn-primary mt-4">Submit</button>
                                 </form>
