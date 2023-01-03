@@ -77,10 +77,10 @@
                                     </div>       
                                     <div class="form-group">
                                         <label>Image Title</label>
-                                        <input type="text" class="form-control" id="imagetitle">
+                                        <input type="text" class="form-control" name="imagetitle" id="imagetitle">
                                     </div>                                                                                      
 
-                                    <button type="submit" class="btn btn-primary mt-4">Submit</button>
+                                    <button name="submit" value="submit" class="btn btn-primary mt-4">Submit</button>
                                 </form>
                             </div>
                         </div>

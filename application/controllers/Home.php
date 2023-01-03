@@ -16,16 +16,19 @@ class Home extends CI_Controller {
         $data['module'] = 'diarynew';
         $data['submodule'] = 'newdiary';        
 
+        // $a = $this->input->post();
+        // print_r($a);
+        // die();
         if($this->input->post('submit')){
 
-            $insertid = $this->qry_insert->newcomplaint();
+            $insertid = $this->qry_insert->entry();
             if ($insertid) {
-                $this->session->set_flashdata('success', $this->input->post('tajuk'));
-				redirect('home/complaintlist');
+                $this->session->set_flashdata('success', $this->input->post('title'));
+				redirect('home/diaryentry');
 			}
 			else {
-                $this->session->set_flashdata('fail', $this->input->post('tajuk'));
-				redirect('home/complaintlist');
+                $this->session->set_flashdata('fail', $this->input->post('title'));
+				redirect('home/diaryentry');
 			}
                         
         }
