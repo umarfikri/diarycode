@@ -29,7 +29,7 @@
                                 }
                                 else if ($key->mood==4){
                                     $textmood="Mood Nervous";
-                                    $textcolour="color: #ce72ce;";
+                                    $textcolour="background-color: #ce72ce;";
                                 }
                                 else if ($key->mood==5){
                                     $textmood="Mood Sick";
@@ -43,10 +43,12 @@
                                     $textmood="Unavailable";                                    
                                 }
                             ?>
-                            <?php if ($textmood != "Unavailable") : ?>
-                                <div class="text-center"><span class="badge <?= $textcolour?> mt-auto" style="font-size: 1.75em !important;"><?= $textmood?></span></div>       
-                            <?php elseif ($textmood == "Nervous") : ?>
+                            <?php if ($textmood == "Mood Nervous") : ?>
                                 <div class="text-center"><span class="badge mt-auto" style="font-size: 1.75em !important;<?= $textcolour?>"><?= $textmood?></span></div>
+                            <?php elseif ($textmood != "Unavailable") : ?>
+                                <div class="text-center"><span class="badge <?= $textcolour?> mt-auto" style="font-size: 1.75em !important;"><?= $textmood?></span></div>  
+                            <?php elseif ($textmood == "Unavailable") : ?>
+                                                 
                             <?php  endif; ?>
 
                             <br>                            
@@ -55,20 +57,7 @@
                 </div>
             </div>
             <?php endforeach; ?>
-            <div class="col-12 mt-4">
-                <div class="card">
-                    <div class="card-body">  
-                        <h2 class="title text-center">Title</h2>
-                        <h4 class="text-center mb-2">29/12/2022</h4>
-                        <div class="col-md-8 ml-auto mr-auto">                        
-                            <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn't scroll to get here. Add a button if you want the user to see more.</h5>
-                            <img src="assets/img/login-image.jpg" class="rounded mx-auto d-block" alt="Gambar Test">
-                            <h1><span class="badge bg-warning position-absolute bottom-0 start-0">Mood Happy</span></h1>
-                            <br>                            
-                        </div>
-                    </div>  
-                </div>
-            </div>
+            
             <div class="col-12 mt-4">
                 <div class="card">
                     <div class="card-body">
