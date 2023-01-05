@@ -2,21 +2,24 @@
 <div class="section landing-section"  data-parallax="true" style="background-image: url('assets/img/login-image.jpg');">    
       <div class="container" style="margin-top: 6rem!important;">    
         <div class="row">  
+            <?php foreach ($entrylist as $key) : ?>
             <div class="col-12 mt-4">
                 <div class="card">
                     <div class="card-body d-flex flex-column">  
-                        <h2 class="title text-center">Title</h2>
+                        <h2 class="title text-center"><?= $key->title;?></h2>
                         <h4 class="text-center mb-2">29/12/2022</h4>
                         <div class="col-md-8 ml-auto mr-auto">                        
-                            <h5 class="description" style="text-align: justify; text-justify: inter-word;">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn't scroll to get here. Add a button if you want the user to see more.</h5>
+                            <h5 class="description" style="text-align: justify; text-justify: inter-word;"><?= $key->content;?></h5>
                             <br>
                             <img src="assets/img/login-image.jpg" class="rounded mx-auto d-block" alt="Gambar Test">
+                            <h3 class="text-center"><?= $key->img_title;?></h3>
                             <h1><span class="badge bg-warning mt-auto">Mood Happy</span></h1>
                             <br>                            
                         </div>
                     </div>  
                 </div>
             </div>
+            <?php endforeach; ?>
             <div class="col-12 mt-4">
                 <div class="card">
                     <div class="card-body">  
@@ -31,7 +34,7 @@
                     </div>  
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 mt-4">
                 <div class="card">
                     <div class="card-body">
                         <nav aria-label="Page navigation example">

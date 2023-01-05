@@ -41,7 +41,8 @@ class Home extends CI_Controller {
     function diaryentry (){
         $data['pagetitle'] = 'Diary Entry';
         $data['module'] = 'diaryentry';
-        $data['submodule'] = 'entrydiary';        
+        $data['submodule'] = 'entrydiary';     
+        $data['entrylist'] = $this->qry_retrieve->qry_listentry();    
 
         $this->load->view('header', $data);
         $this->load->view('diaryentry');
