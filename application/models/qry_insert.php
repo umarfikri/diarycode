@@ -12,6 +12,9 @@ class Qry_insert extends CI_Model {
 
         // print_r($a);
         // die();
+        if($mood==null){
+            $mood = 0;
+        }
         $datainfo = array(
             
             'title' => $title,
@@ -21,6 +24,7 @@ class Qry_insert extends CI_Model {
             'img_title' => 'test attendance',                  
 
         );
+
         $this->db->insert('entry', $datainfo);
         $insertid = $this->db->insert_id(); 
         return $insertid;

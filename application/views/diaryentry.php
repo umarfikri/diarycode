@@ -12,8 +12,43 @@
                             <h5 class="description" style="text-align: justify; text-justify: inter-word;"><?= $key->content;?></h5>
                             <br>
                             <img src="assets/img/login-image.jpg" class="rounded mx-auto d-block" alt="Gambar Test">
-                            <h3 class="text-center"><?= $key->img_title;?></h3>
-                            <h1><span class="badge bg-warning mt-auto">Mood Happy</span></h1>
+                            <h3 class="text-center mb-2"><?= $key->img_title;?></h3>
+
+                            <?php
+                                if ($key->mood==1){
+                                    $textmood="Mood Happy";
+                                    $textcolour="bg-warning";
+                                }
+                                else if ($key->mood==2){
+                                    $textmood="Mood Sad";
+                                    $textcolour="bg-primary";
+                                }
+                                else if ($key->mood==3){
+                                    $textmood="Mood Angry";
+                                    $textcolour="bg-danger";
+                                }
+                                else if ($key->mood==4){
+                                    $textmood="Mood Nervous";
+                                    $textcolour="color: #ce72ce;";
+                                }
+                                else if ($key->mood==5){
+                                    $textmood="Mood Sick";
+                                    $textcolour="bg-success";
+                                }
+                                else if ($key->mood==6){
+                                    $textmood="Mood Tired";
+                                    $textcolour="bg-secondary";
+                                }
+                                else{
+                                    $textmood="Unavailable";                                    
+                                }
+                            ?>
+                            <?php if ($textmood != "Unavailable") : ?>
+                                <div class="text-center"><span class="badge <?= $textcolour?> mt-auto" style="font-size: 1.75em !important;"><?= $textmood?></span></div>       
+                            <?php elseif ($textmood == "Nervous") : ?>
+                                <div class="text-center"><span class="badge mt-auto" style="font-size: 1.75em !important;<?= $textcolour?>"><?= $textmood?></span></div>
+                            <?php  endif; ?>
+
                             <br>                            
                         </div>
                     </div>  
