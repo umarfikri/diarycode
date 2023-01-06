@@ -53,8 +53,7 @@
                                 <div class="text-center"><span class="badge mt-auto" style="font-size: 1.75em !important;<?= $textcolour?>"><?= $textmood?></span></div>
                             <?php elseif ($textmood != "Unavailable") : ?>
                                 <div class="text-center"><span class="badge <?= $textcolour?> mt-auto" style="font-size: 1.75em !important;"><?= $textmood?></span></div>  
-                            <?php elseif ($textmood == "Unavailable") : ?>
-                                                 
+                            <?php elseif ($textmood == "Unavailable") : ?>                                                 
                             <?php  endif; ?>
 
                             <br>                            
