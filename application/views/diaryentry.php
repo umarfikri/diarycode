@@ -6,8 +6,14 @@
             <div class="col-12 mt-4">
                 <div class="card">
                     <div class="card-body d-flex flex-column">  
-                        <h2 class="title text-center"><?= $key->title;?></h2>
-                        <h4 class="text-center mb-2">29/12/2022</h4>
+                        <h2 class="text-center"><?= $key->title;?></h2>
+
+                        <?php  
+                            $orgDate = $key->date_created;  
+                            $newDate = date("d-m-Y h:i a", strtotime($orgDate));  
+                        ?>  
+                        <h4 class="text-center mb-4"><?= $newDate;?></h4>
+                        
                         <div class="col-md-8 ml-auto mr-auto">                        
                             <h5 class="description" style="text-align: justify; text-justify: inter-word;"><?= $key->content;?></h5>
                             <br>
