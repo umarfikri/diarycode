@@ -40,13 +40,13 @@
         <ul class="navbar-nav">
           <li class="nav-item">
             <a href="index.html" class="nav-link"><i class="nc-icon nc-layout-11"></i> Components</a>
-          </li>                   
-          <li class="nav-item">
-            <a class="<?= ($module == 'diarynew') ? 'nav-link active' : 'nav-link';?>" href="home/diarynew">New Story</a>
-          </li>   
+          </li>                             
           <li class="nav-item">
             <a class="<?= ($module == 'diaryentry') ? 'nav-link active' : 'nav-link';?>" href="home/diaryentry">Diary Entry</a>
           </li>       
+          <li class="nav-item">
+            <a class="<?= ($module == 'diarynew') ? 'nav-link active' : 'nav-link';?>" href="home/diarynew">New Story</a>
+          </li>  
           <li class="nav-item">
             <a class="<?= ($module == 'calendar') ? 'nav-link active' : 'nav-link';?>" href="home/calendar">Calendar</a>
           </li> 
