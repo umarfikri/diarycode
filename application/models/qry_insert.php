@@ -43,11 +43,15 @@ class Qry_insert extends CI_Model {
         }else{
             $data = $this->upload->data();   
             $filename = $data['file_name'];
-            $file_path = $data['file_path'];
-
+            $file_path = $data['file_path'];            
             //print_r("<pre>");
             //print_r($data);
             //die();
+
+            //$imgname = md5($filename.date('Y-m-d H:i:s:u'));
+            //print_r($imgname);
+            //die();
+            
             $datainfo = array(            
                 'title' => $title,
                 'content' => $content,

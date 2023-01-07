@@ -15,7 +15,7 @@
                         <div class="col-md-8 ml-auto mr-auto">                        
                             <h5 class="description" style="text-align: justify; text-justify: inter-word;"><?= $key->content;?></h5>
                             <br>
-                            <img src="<?= $key->img_url.$key->image;?>" class="rounded mx-auto d-block" alt="<?= $key->alt_img;?>" width="500px" height="600px">
+                            <img src="<?= $key->img_url.$key->image;?>" class="rounded mx-auto d-block" alt="<?= $key->image;?>" width="500px" height="600px">
                             <h3 class="text-center mb-2"><?= $key->alt_img;?></h3>
 
                             <?php
