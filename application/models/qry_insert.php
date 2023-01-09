@@ -30,40 +30,53 @@ class Qry_insert extends CI_Model {
             $mood = 0;
         }        
 
-        if ( !$this->upload->do_upload('imagefile')){
-            $removefront = str_replace("<p>","",$this->upload->display_errors());
-            $final = str_replace("</p>","",$removefront);
-            $returnval['rtnerror'] = $final;
-
-            //print_r("<pre>");
-            //print_r($this->upload->display_errors());
-            //die();
-            return $returnval;  
-        }else{
-            $data = $this->upload->data();   
-            $filename = $data['file_name'];
-            $file_path = $data['file_path'];            
-            //print_r("<pre>");
-            //print_r($data);
-            //die();
-
-            //$imgname = md5($filename.date('Y-m-d H:i:s:u'));
-            //print_r($imgname);
-            //die();
-            
+        if(empty($_FILES['imagefile']['name'])){
             $datainfo = array(            
                 'title' => $title,
                 'content' => $content,
-                'mood' => $mood,
-                'alt_img' => $img_title,
-                'img_url' => $path.'/',
-                'image' => $filename,
-                                
+                'mood' => $mood
+                                          
             );
 
             $this->db->insert('entry', $datainfo);
             $insertid = $this->db->insert_id(); 
             return $insertid;
+        }
+        else{
+            if ( !$this->upload->do_upload('imagefile')){
+                $removefront = str_replace("<p>","",$this->upload->display_errors());
+                $final = str_replace("</p>","",$removefront);
+                $returnval['rtnerror'] = $final;
+
+                //print_r("<pre>");
+                //print_r($this->upload->display_errors());
+                //die();
+                return $returnval;         
+            }else{
+                $data = $this->upload->data();   
+                $filename = $data['file_name'];
+                $file_path = $data['file_path'];            
+                //print_r("<pre>");
+                //print_r($data);
+                //die();
+
+                //$imgname = md5($filename.date('Y-m-d H:i:s:u'));
+                //print_r($imgname);
+                //die();
+                
+                $datainfo = array(            
+                    'title' => $title,
+                    'content' => $content,
+                    'mood' => $mood,
+                    'alt_img' => $img_title,
+                    'img_url' => $path.'/',
+                    'image' => $filename,                                
+                );
+
+                $this->db->insert('entry', $datainfo);
+                $insertid = $this->db->insert_id(); 
+                return $insertid;
+            }
         }
     }
 }

@@ -15,8 +15,10 @@
                         <div class="col-md-8 ml-auto mr-auto">                        
                             <h5 class="description" style="text-align: justify; text-justify: inter-word;"><?= $key->content;?></h5>
                             <br>
+                            <?php if ($key->img_url != null) : ?>
                             <img src="<?= $key->img_url.$key->image;?>" class="rounded mx-auto d-block" alt="<?= $key->image;?>" width="500px" height="600px">
                             <h3 class="text-center mb-2"><?= $key->alt_img;?></h3>
+                            <?php  endif; ?>
 
                             <?php
                                 if ($key->mood==1){
@@ -60,6 +62,8 @@
             </div>
             <?php endforeach; ?>
             
+            <?php $query = $this->db->query('SELECT * FROM entry');?>
+            <?php if ($query->num_rows() > 0) : ?>
             <div class="col-12 mt-4">
                 <div class="card">
                     <div class="card-body">
@@ -75,6 +79,7 @@
                     </div>  
                 </div>
             </div>
+            <?php  endif; ?>
         </div>  
       </div>   
     
