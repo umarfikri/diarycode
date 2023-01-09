@@ -12,13 +12,12 @@ class Qry_insert extends CI_Model {
 
         // print_r($a);
         // die();
-
-        $directory =  base_url().'uploads/img';
         $config['upload_path'] = './uploads/img';
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size']     = '500000';
         $config['max_width'] = '0';
         $config['max_height'] = '0';
+        // $config['file_name'] = $newname; *changename
         $this->upload->initialize($config); 
 
         $path = 'uploads/img';
@@ -31,7 +30,7 @@ class Qry_insert extends CI_Model {
             $mood = 0;
         }        
 
-        if ( ! $this->upload->do_upload('imagefile')){
+        if ( !$this->upload->do_upload('imagefile')){
             $removefront = str_replace("<p>","",$this->upload->display_errors());
             $final = str_replace("</p>","",$removefront);
             $returnval['rtnerror'] = $final;
