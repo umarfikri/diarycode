@@ -74,9 +74,11 @@
                                 <?php
                                     $totalpage = ceil($query/10);
                                 ?>
-                                <?php for ($i=1; $i <= $totalpage; $i++) :?>
-                                    <li class="page-item"><a class="page-link" href="<?= base_url().'home/diaryentry/'.$i*10 ?>"><?= $i ?></a></li>
+                                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                <?php for ($i=1; $i <= $totalpage; $i++) :?>                                    
+                                    <li class="page-item"><a class="page-link" href="<?= base_url().'home/diaryentry/'.$i*10 ?>"><?= $i ?></a></li>                               
                                 <?php endfor; ?>
+                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
                             </ul>
                         </nav>  
                         <p><?php echo $links; ?></p>
