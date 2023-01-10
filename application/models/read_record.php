@@ -14,11 +14,11 @@ class read_record extends CI_Model {
 
     public function get_authors($limit, $start) {
         if ($limit==10) {
-            $this->db->limit($start);
-            $query = $this->db->get($this->table);
+            $query = $this->db->query("SELECT * FROM entry ORDER BY entry.date_created desc LIMIT $limit");
+            return $query->result();
         } else {
-            $this->db->limit($limit, $start);
-            $query = $this->db->get($this->table);
+            $query = $this->db->query("SELECT * FROM entry ORDER BY entry.date_created desc LIMIT $start, $limit");
+            return $query->result();
         }
         
         // $this->db->limit($limit, $start);

@@ -24,11 +24,11 @@ class Home extends CI_Controller {
             $insertid = $this->qry_insert->entry();
             if ($insertid) {
                 $this->session->set_flashdata('success', $this->input->post('title'));
-				redirect('home/diaryentry');
+				redirect('home/diaryentry/10');
 			}
 			else {
                 $this->session->set_flashdata('fail', $this->input->post('title'));
-				redirect('home/diaryentry');
+				redirect('home/diaryentry/10');
 			}
                         
         }
@@ -49,24 +49,7 @@ class Home extends CI_Controller {
         $config                    = array();
         $config["base_url"]        = base_url() . "home/diaryentry";
         $config['total_rows']      = $this->read_record->get_count('entry');
-        $config['per_page']        = 10;
-        $config["uri_segment"]     = 2;
-        $config["full_tag_open"]   = '<ul class="pagination justify-content-center">';
-        $config["full_tag_close"]  = '</ul>';
-        $config["first_tag_open"]  = '<li class="page-item page-link">';
-        $config["first_tag_close"] = '</li>';
-        $config["last_tag_open"]   = '<li class="page-item page-link">';
-        $config["last_tag_close"]  = '</li>';
-        $config["next_tag_open"]   = '<li class="page-item"><span aria-hidden="true">';
-        $config["next_tag_close"]  = '</span></li>';
-        $config["prev_tag_open"]   = '<li class="page-item"> <span aria-hidden="true">';
-        $config["prev_tag_close"]  = '</span></li>';
-        $config["num_tag_open"]    = '<li class="page-item ">';
-        $config["num_tag_close"]   = '</li>';
-        $config["cur_tag_open"]    = '<li class="page-item active"> <a>';
-        $config["cur_tag_close"]   = '</a></li>';
-        $config['first_link']      = "Previous";
-        $config['last_link']       = "Next";
+        $config['per_page']        = 10;        
         $this->pagination->initialize($config);
 
         $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
