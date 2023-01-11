@@ -76,12 +76,16 @@
                                     $totalpage = ceil($query/10);
                                 ?>
                                 <!-- Previous page -->
-                                <?php if ($this->uri->segment(3) > 0) :?>
+                                <?php if ($this->uri->segment(3) >= 2) :?>
                                     <li class="page-item"><a class="page-link" href="<?= base_url().'home/diaryentry/'.$this->uri->segment(3)-1 ?>">Previous</a></li>
                                 <?php  endif; ?>
                                 <!-- Num Page -->
-                                <?php for ($i=1; $i <= $totalpage; $i++) :?>                                    
-                                    <li class="page-item"><a class="page-link" href="<?= base_url().'home/diaryentry/'.$i ?>"><?= $i ?></a></li>                               
+                                <?php for ($i=1; $i <= $totalpage; $i++) :?>          
+                                    <?php if ($i == $this->uri->segment(3)) :?>
+                                        <li class="page-item active"><a class="page-link" href="<?= base_url().'home/diaryentry/'.$i ?>"><?= $i ?></a></li>                               
+                                    <?php else :?>
+                                        <li class="page-item"><a class="page-link" href="<?= base_url().'home/diaryentry/'.$i ?>"><?= $i ?></a></li>
+                                    <?php  endif; ?>
                                 <?php endfor; ?>
                                 <!-- Next page -->
                                 <?php if ($this->uri->segment(3) < $totalpage) :?>

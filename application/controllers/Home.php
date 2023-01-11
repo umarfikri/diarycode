@@ -24,11 +24,11 @@ class Home extends CI_Controller {
             $insertid = $this->qry_insert->entry();
             if ($insertid) {
                 $this->session->set_flashdata('success', $this->input->post('title'));
-				redirect('home/diaryentry/10');
+				redirect('home/diaryentry/1');
 			}
 			else {
                 $this->session->set_flashdata('fail', $this->input->post('title'));
-				redirect('home/diaryentry/10');
+				redirect('home/diaryentry/1');
 			}
                         
         }
