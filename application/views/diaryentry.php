@@ -7,7 +7,7 @@
                 <div class="col-12 mt-4">
                     <div class="card">
                         <div class="card-body d-flex flex-column">  
-                            <h2 class="text-center"><?= ++$seq." "; ?><?= $key->title;?></h2>
+                            <h2 class="text-center"><?= $key->title;?></h2>
                             <?php  
                                 $orgDate = $key->date_created;  
                                 $newDate = date("d-m-Y h:i a", strtotime($orgDate));  
@@ -71,17 +71,24 @@
                         <div class="card-body">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination justify-content-center">
+                                <!-- Check total page -->
                                 <?php
                                     $totalpage = ceil($query/10);
                                 ?>
-                                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                <!-- Previous page -->
+                                <?php if ($this->uri->segment(3) > 0) :?>
+                                    <li class="page-item"><a class="page-link" href="<?= base_url().'home/diaryentry/'.$this->uri->segment(3)-1 ?>">Previous</a></li>
+                                <?php  endif; ?>
+                                <!-- Num Page -->
                                 <?php for ($i=1; $i <= $totalpage; $i++) :?>                                    
-                                    <li class="page-item"><a class="page-link" href="<?= base_url().'home/diaryentry/'.$i*10 ?>"><?= $i ?></a></li>                               
+                                    <li class="page-item"><a class="page-link" href="<?= base_url().'home/diaryentry/'.$i ?>"><?= $i ?></a></li>                               
                                 <?php endfor; ?>
-                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                <!-- Next page -->
+                                <?php if ($this->uri->segment(3) < $totalpage) :?>
+                                    <li class="page-item"><a class="page-link" href="<?= base_url().'home/diaryentry/'.$this->uri->segment(3)+1 ?>">Next</a></li>
+                                <?php  endif; ?>
                             </ul>
-                        </nav>  
-                        <p><?php echo $links; ?></p>
+                        </nav>                       
                         </div>  
                     </div>
                 </div>

@@ -9,23 +9,21 @@ class read_record extends CI_Model {
     }
 
     public function get_count() {
-        return $this->db->count_all($this->table);
+        $count =  $this->db->count_all($this->table);
+        return $count;
+        // print_r($count);
+        // die();
     }
 
-    public function get_authors($limit, $start) {
-        if ($limit==10) {
-            $query = $this->db->query("SELECT * FROM entry ORDER BY entry.date_created desc LIMIT $limit");
-            return $query->result();
-        } else {
-            $query = $this->db->query("SELECT * FROM entry ORDER BY entry.date_created desc LIMIT $start, $limit");
-            return $query->result();
-        }
-        
-        // $this->db->limit($limit, $start);
-        // $query = $this->db->get($this->table);
-        // print_r($start);
+    public function get_record($offset, $limit) {
+        $query = $this->db->query("SELECT * FROM entry ORDER BY entryid DESC LIMIT $offset, $limit");
+        // print_r($offset);
+        // print_r("<br>");
+        // print_r($limit);
+        // print_r("<br>");
+        // print_r("<pre>");
+        // print_r($query->result());
         // die();
-
-        return $query->result();
+        return $query->result();  
     }
 }
