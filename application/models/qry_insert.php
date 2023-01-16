@@ -28,14 +28,13 @@ class Qry_insert extends CI_Model {
 
         if($mood==null){
             $mood = 0;
-        }        
+        }                
 
         if(empty($_FILES['imagefile']['name'])){
             $datainfo = array(            
                 'title' => $title,
                 'content' => $content,
-                'mood' => $mood
-                                          
+                'mood' => $mood                                          
             );
 
             $this->db->insert('entry', $datainfo);

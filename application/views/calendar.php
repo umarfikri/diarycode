@@ -30,9 +30,9 @@
                 <th class="col">September</th>
                 <th class="col">December</th>
               </tr>
-            </thead>
-            <?php foreach ($entrylist as $key) : ?>
+            </thead>            
               <tbody>
+            <?php foreach ($entrylist as $key) : ?>
                 <?php  
                     $datetime = $key->date_created;  
                     $month = date("n", strtotime($datetime));  
