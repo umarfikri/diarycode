@@ -71,6 +71,7 @@ class Home extends CI_Controller {
         $data['pagetitle'] = 'Mood Calendar';
         $data['module'] = 'calendar';
         $data['submodule'] = '';        
+        $data['entrylist'] = $this->qry_retrieve->qry_listentry();
 
         $this->load->view('header', $data);
         $this->load->view('calendar');
