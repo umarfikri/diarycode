@@ -43,10 +43,10 @@ class Home extends CI_Controller {
         $data['module'] = 'diaryentry';
         $data['submodule'] = 'entrydiary';     
         // $data['entrylist'] = $this->qry_retrieve->qry_listentry();    
-        $this->load->model('read_record');
+        $this->load->model('qry_retrieve');
 
         $per_page        = 10;  
-        $total_rows      = $this->read_record->get_count('entry');      
+        $total_rows      = $this->qry_retrieve->get_count('entry');      
         $number_of_page  = ceil ($total_rows / $per_page);          
         $page            = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
@@ -56,7 +56,7 @@ class Home extends CI_Controller {
             $page_first_result = ($page - 1) * $per_page;
         }
 
-        $data['entrylist'] = $this->read_record->get_record($page_first_result, $per_page);
+        $data['entrylist'] = $this->qry_retrieve->get_record($page_first_result, $per_page);
         // print_r("<pre>");
         // print_r($page_first_result);
         // print_r($data['entrylist']);
