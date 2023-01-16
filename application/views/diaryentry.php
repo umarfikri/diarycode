@@ -87,7 +87,11 @@
                                 <?php endfor; ?>
                                 <!-- Next page -->
                                 <?php if ($this->uri->segment(3) < $totalpage) :?>
-                                    <li class="page-item"><a class="page-link" href="<?= base_url().'home/diaryentry/'.$this->uri->segment(3)+1 ?>">Next</a></li>
+                                    <?php if ($this->uri->segment(3) == 0) :?>
+                                        <li class="page-item"><a class="page-link" href="<?= base_url().'home/diaryentry/2' ?>">Next</a></li>                                
+                                    <?php else :?>
+                                        <li class="page-item"><a class="page-link" href="<?= base_url().'home/diaryentry/'.$this->uri->segment(3)+1 ?>">Next</a></li>
+                                    <?php  endif; ?>
                                 <?php  endif; ?>
                             </ul>
                         </nav>                       
