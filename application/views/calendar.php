@@ -1,134 +1,48 @@
 <div class="section section-dark text-center">
-      <div class="container">
-        <h2 class="title">Mood Calendar</h2>
-        <div class="row">
-          <div class="table-responsive">
-            <table class="table table-striped table-dark">
-                <thead class="thead-light">
-                    <tr>
-                    <th>Day / Month</th>
-                    <th>January</th>
-                    <th>February</th>
-                    <th>March</th>
-                    <th>April</th>        
-                    <th>May</th>
-                    <th>June</th>
-                    <th>August</th>
-                    <th>September</th>
-                    <th>October</th>
-                    <th>September</th>
-                    <th>December</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td class="bg-primary">Mood Sad</td>
-                      <td class="bg-warning">Mood Happy</td>
-                      <td class="bg-light">Unavailable</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td class="bg-secondary">Mood Tired</td>
-                      <td>Thornton</td>
-                      <td>@fat</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Larry</td>
-                      <td>the Bird</td>
-                      <td>@twitter</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">4</th>
-                      <td>Larry</td>
-                      <td>the Bird</td>
-                      <td>@twitter</td>
-                    </tr>
-                    <tr> 
-                      <th scope="row">3</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">3</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">3</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">3</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">3</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">10</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">3</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">3</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">3</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">3</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">15</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">3</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">3</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">3</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">3</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">20</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">3</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">3</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">3</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">3</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">25</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">3</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">3</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">3</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">3</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">30</th>               
-                    </tr>
-                    <tr> 
-                      <th scope="row">31</th>               
-                    </tr>
-                </tbody>
-            </table>
-          </div>
+  <div class="container">
+    <h2 class="title">Mood Calendar</h2>
+    <div class="row">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Years
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </div>
+      <div class="table-responsive">
+        <table class="table table-striped table-dark">
+          <thead class="thead-dark">
+            <tr>
+              <th class="col">Day / Month</th>
+              <th class="col">January</th>
+              <th class="col">February</th>
+              <th class="col">March</th>
+              <th class="col">April</th>        
+              <th class="col">May</th>
+              <th class="col">June</th>
+              <th class="col">July</th>
+              <th class="col">August</th>
+              <th class="col">September</th>
+              <th class="col">October</th>
+              <th class="col">September</th>
+              <th class="col">December</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php for ($i=1; $i <= 31; $i++): ?>
+              <tr>
+                <th scope="row"><?=$i?></th>              
+                  <?php for ($j=1; $j <= 12; $j++): ?>
+                    <td class="bg-primary">Mood Sad</td>                                
+                  <?php endfor; ?>                               
+              </tr>
+            <?php endfor; ?>                 
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>    
+</div>
