@@ -36,10 +36,6 @@ class Qry_insert extends CI_Model {
                 'content' => $content,
                 'mood' => $mood                                          
             );
-
-            $this->db->insert('entry', $datainfo);
-            $insertid = $this->db->insert_id(); 
-            return $insertid;
         }
         else{
             if ( !$this->upload->do_upload('imagefile')){
@@ -70,12 +66,11 @@ class Qry_insert extends CI_Model {
                     'alt_img' => $img_title,
                     'img_url' => $path.'/',
                     'image' => $filename,                                
-                );
-
-                $this->db->insert('entry', $datainfo);
-                $insertid = $this->db->insert_id(); 
-                return $insertid;
+                );                
             }
         }
+        $this->db->insert('entry', $datainfo);
+        $insertid = $this->db->insert_id(); 
+        return $insertid;
     }
 }
