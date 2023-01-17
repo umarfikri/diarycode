@@ -7,10 +7,12 @@
                         <div class="card-body d-flex flex-column">  
                             <h2 class="text-center"><?= $key->title;?></h2>
                             <?php  
-                                $orgDate = $key->date_created;  
-                                $newDate = date("d-m-Y h:i a", strtotime($orgDate));  
+                                $orgDate = $key->date;  
+                                $orgTime = $key->time;
+                                $newDate = date("d-m-Y ", strtotime($orgDate));  
+                                $newTime = date("h:i a", strtotime($orgTime));
                             ?>  
-                            <h4 class="text-center mb-4"><?= $newDate;?></h4>                
+                            <h4 class="text-center mb-4"><?= $newDate;?><?= $newTime;?></h4>                
                             <div class="col-md-8 ml-auto mr-auto">                        
                                 <h5 class="description" style="text-align: justify; text-justify: inter-word;"><?= $key->content;?></h5>
                                 <br>

@@ -16,7 +16,7 @@ class Qry_retrieve extends CI_Model {
     }
 
     public function get_record($offset, $limit) {
-        $query = $this->db->query("SELECT * FROM entry ORDER BY date_created DESC LIMIT $offset, $limit");
+        $query = $this->db->query("SELECT * FROM entry ORDER BY date DESC LIMIT $offset, $limit");
         // print_r($offset);
         // print_r("<br>");
         // print_r($limit);
@@ -30,5 +30,12 @@ class Qry_retrieve extends CI_Model {
     function qry_listentry(){
         $query = $this->db->query("SELECT * FROM entry ORDER BY entry.date_created desc");
         return $query->result();
-    }    
+    }   
+    
+    function get_mood(){
+        $query = $this->db->query("SELECT * FROM entry ORDER BY entry.date_created desc");
+        // SELECT mood, date_test, MAX(time_created) FROM `entry` GROUP BY date_test ORDER BY date_test DESC
+        // SELECT mood, date_created FROM `entry` WHERE date_created = (SELECT MAX(date_created)) ORDER BY date_created DESC
+        return $query->result();
+    }
 }
