@@ -31,28 +31,32 @@
                 <th class="col">December</th>
               </tr>
             </thead>            
-              <tbody>
-            <?php foreach ($entrylist as $key) : ?>
-                <?php  
-                    $date = $key->date;  
-                    $month = date("n", strtotime($date));  
-                    $day   = date("j", strtotime($date));
-                    // print_r("<pre>");
-                    // print_r($day);   
-                    // print_r("<br>");     
-                ?>
-                <?php for ($i=1; $i <= 31; $i++): ?>
-                  <tr>
-                    <th scope="row"><?=$i?></th>              
-                      <?php for ($j=1; $j <= 12; $j++): ?>
-                        <?php if(($month==$j) && ($day==$i)): ?>
-                          <td class="bg-primary">Mood Sad <?=$i.$j?> <?=$key->date;?></td>                                
-                        <?php endif; ?>
-                      <?php endfor; ?>                               
-                  </tr>
+              <tbody>            
+                <?php for ($i=1; $i <= 31; $i++): ?>                                      
+                      <tr>
+                        <th><?=$i?></th>  
+                          <?php foreach ($entrylist as $key) : ?>
+                            <?php  
+                                $date = $key->date;  
+                                $month = date("n", strtotime($date));   //Tell num month
+                                $day   = date("j", strtotime($date));   //Tell num day
+                                // print_r("<pre>");
+                                // print_r($day);   
+                                // print_r("<br>");     
+                                // die;
+                            ?>                
+                            <?php for ($j=1; $j <= 12; $j++): ?>                 
+                              <?php if(($month==$j) && ($day==$i)): ?>               
+                                <td class="bg-primary">Day <?=$i?>Month <?=$j?><?=$key->date;?></td>
+                              <?php else: ?>
+                                <td class="bg-secondary">Day <?=$i?>Month <?=$j?><?=$key->date;?></td>
+                              <?php endif; ?>
+                            <?php endfor; ?>
+                          <?php endforeach; ?>
+                      </tr>                                                                                                                
                 <?php endfor; ?>                 
               </tbody>
-            <?php endforeach; ?>
+            
           </table>
         </div>
       </div>    
