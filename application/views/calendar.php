@@ -34,9 +34,9 @@
               <tbody>
             <?php foreach ($entrylist as $key) : ?>
                 <?php  
-                    $datetime = $key->date_created;  
-                    $month = date("n", strtotime($datetime));  
-                    $day   = date("j", strtotime($datetime));
+                    $date = $key->date;  
+                    $month = date("n", strtotime($date));  
+                    $day   = date("j", strtotime($date));
                     // print_r("<pre>");
                     // print_r($day);   
                     // print_r("<br>");     
@@ -46,7 +46,7 @@
                     <th scope="row"><?=$i?></th>              
                       <?php for ($j=1; $j <= 12; $j++): ?>
                         <?php if(($month==$j) && ($day==$i)): ?>
-                          <td class="bg-primary">Mood Sad <?=$i.$j?> <?=$key->date_created;?></td>                                
+                          <td class="bg-primary">Mood Sad <?=$i.$j?> <?=$key->date;?></td>                                
                         <?php endif; ?>
                       <?php endfor; ?>                               
                   </tr>
