@@ -38,4 +38,9 @@ class Qry_retrieve extends CI_Model {
         // SELECT mood, date_created FROM `entry` WHERE date_created = (SELECT MAX(date_created)) ORDER BY date_created DESC
         return $query->result();
     }
+
+    function qry_profile(){
+        $query = $this->db->query("SELECT * FROM profile");
+        return $query->result();
+    }   
 }

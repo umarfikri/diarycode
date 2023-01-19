@@ -19,7 +19,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Birthday</label>
-                                        <input type="date" class="form-control" name="nickname">                                
+                                        <input type="date" class="form-control" name="birthday">                                
                                     </div>
 
                                     <div class="form-group">
@@ -27,7 +27,11 @@
                                         <div class="col-sm-12">                                
                                             <textarea class="form-control" name="description" style="height: 100px"></textarea>                                                                      
                                         </div>                                                               
-                                    </div>                            
+                                    </div>           
+                                    <div class="form-group">
+                                        <label>Motto</label>
+                                        <input type="text" class="form-control" name="motto">                                
+                                    </div>                 
 
                                     <div class="form-group">
                                         <label>Profile Image</label>
