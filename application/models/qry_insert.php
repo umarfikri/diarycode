@@ -73,4 +73,8 @@ class Qry_insert extends CI_Model {
         $insertid = $this->db->insert_id(); 
         return $insertid;
     }
+
+    function profile(){
+        //Something about profile
+    }
 }

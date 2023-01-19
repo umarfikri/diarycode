@@ -77,4 +77,31 @@ class Home extends CI_Controller {
         $this->load->view('calendar');
         $this->load->view('footer');
     }
+
+    function Profile (){
+        $data['pagetitle'] = 'Profile Page';
+        $data['module'] = 'Profile';
+        $data['submodule'] = 'profile';        
+
+        // $a = $this->input->post();
+        // print_r($a);
+        // die();
+        if($this->input->post('submit')){
+
+            $insertid = $this->qry_insert->profile();
+            if ($insertid) {
+                $this->session->set_flashdata('success', $this->input->post('title'));
+				redirect('home');
+			}
+			else {
+                $this->session->set_flashdata('fail', $this->input->post('title'));
+				redirect('home');
+			}
+                        
+        }
+
+        $this->load->view('header', $data);
+        $this->load->view('profilepage');
+        $this->load->view('footer');
+    }
 }

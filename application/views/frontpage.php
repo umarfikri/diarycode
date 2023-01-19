@@ -1,23 +1,24 @@
 <div class="page-header" data-parallax="true" style="background-image: url('assets/img/daniel-olahh.jpg');">
     <div class="container">
       <div class="motto text-center">
-        <h1>Example Auri page</h1>
+        <h1>Welcome Auri</h1>
         <h3>Start designing your landing page here.</h3>
-        <br />
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-outline-neutral btn-round"><i class="fa fa-play"></i>Watch video</a>
-        <button type="button" class="btn btn-outline-neutral btn-round">Download</button>
+        <br />        
       </div>
     </div>
   </div>
   <div class="main">
     <div class="section text-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 ml-auto mr-auto">
-            <h2 class="title">Let's talk product</h2>
-            <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn't scroll to get here. Add a button if you want the user to see more.</h5>
+      <div class="container px-4">
+        <h2 class="title" style="text-decoration: underline overline;">Profile</h2>
+        <div class="row gx-5">
+          <div class="col-md-4 ml-auto mr-auto">
+            <img src="assets/img/faces/clem-onojeghuo-3.jpg" alt="..." width="300" height="300">
+          </div>
+          <div class="col-md-8 ml-auto mr-auto">            
+            <h5 class="description" style="text-align: left; text-justify: inter-word;">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn't scroll to get here. Add a button if you want the user to see more.</h5> 
             <br>
-            <a href="#paper-kit" class="btn btn-danger btn-round">See Details</a>
+            <a href="#paper-kit" class="btn btn-danger btn-round">Edit Profile</a>
           </div>
         </div>
         <br/>
