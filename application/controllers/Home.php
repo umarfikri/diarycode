@@ -78,7 +78,7 @@ class Home extends CI_Controller {
         $this->load->view('footer');
     }
 
-    function Profile (){
+    function profile (){
         $data['pagetitle'] = 'Profile Page';
         $data['module'] = 'Profile';
         $data['submodule'] = 'profile';        
