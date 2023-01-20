@@ -23,8 +23,10 @@
         </div>
         <br/>
         <br/>
+        <h2 class="title" style="text-decoration: underline overline;">Social Media</h2>
+        <br>
         <div class="row justify-content-md-center">
-          <div class="col-md-3">
+          <div class="col-md-3">            
             <div class="info">
               <div class="icon icon-danger">
                 <i class="fa-brands fa-facebook"></i>
