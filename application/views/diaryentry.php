@@ -1,11 +1,27 @@
 <div class="section landing-section"  data-parallax="true" style="background-image: url('assets/img/login-image.jpg');">    
-      <div class="container" style="margin-top: 6rem!important;">    
+    <div class="container" style="margin-top: 6rem!important;">    
+
+        <?php if($this->session->flashdata('success')):?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <i class="bi bi-check-circle me-1"></i>
+                Success added <?= $this->session->flashdata('success'); ?>
+                <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>                
+            </div>
+        <?php elseif($this->session->flashdata('fail')):?>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="bi bi-exclamation-octagon me-1"></i>
+            Failed added <?= $this->session->flashdata('fail'); ?>
+            <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <?php endif;?>
+
         <div class="row">  
             <?php foreach ($entrylist as $key) : ?>
                 <div class="col-12 mt-4">
                     <div class="card">
-                        <div class="card-body d-flex flex-column">  
-                            <h2 class="text-center"><?= $key->title;?></h2>
+                        <div class="card-body d-flex flex-column">                           
+                                <!-- <button><i class="text-right fa-solid fa-bars"></i></button>                                            -->
+                            <h2 class="text-center"><?= $key->title;?></h2>                                                                
                             <?php  
                                 $orgDate = $key->date;  
                                 $orgTime = $key->time;
@@ -102,6 +118,6 @@
                 </div>
             <?php  endif; ?>
         </div>  
-      </div>   
+    </div>   
     
 </div>

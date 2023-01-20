@@ -20,6 +20,7 @@
   <link href="assets/css/paper-kit.css?v=2.4.0" rel="stylesheet" />
   <!--Custom-->
   <script src="assets/ckeditor/ckeditor.js"></script>
+  <script src="https://kit.fontawesome.com/f0dc1777fc.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="landing-page sidebar-collapse">
