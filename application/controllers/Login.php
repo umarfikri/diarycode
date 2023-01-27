@@ -8,4 +8,12 @@ class Login extends CI_Controller {
 
         $this->load->view('login', $data);
     }
+
+    function register (){
+        $data['pagetitle'] = 'Register';
+        $data['module'] = 'register';
+        $data['submodule'] = '';        
+
+        $this->load->view('register', $data);
+    }
 }

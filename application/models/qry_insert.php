@@ -86,6 +86,10 @@ class Qry_insert extends CI_Model {
         $otherimg     = $this->input->post('otherimage');
         $username     = $this->input->post('username');
         $password     = $this->input->post('password');
+        $all          = $this->input->post();
+        print_r("<pre>");
+        print_r($all);
+        // die();
 
         $config['upload_path'] = './uploads/profile';
         $config['allowed_types'] = 'gif|jpg|png';
@@ -100,11 +104,37 @@ class Qry_insert extends CI_Model {
         if(!is_dir($path)) //create the folder if it's not exists
         {
             mkdir($path,0755,TRUE);
-        }        
+        } 
+        
+        if (! $this->upload->do_upload('profileimage')) {
 
-        $data = $this->upload->data();   
-        $filename = $data['file_name'];
-        $file_path = $data['file_path'];            
+        } else {
+            $data = $this->upload->data();   
+            $profileimg = $data['file_name'];
+            $file_pathprofileimg = $data['file_path'];  
+            print_r($data);
+        }
+
+        if (! $this->upload->do_upload('homeimage')) {
+         
+        } else {
+            $data = $this->upload->data();   
+            $homeimg = $data['file_name'];
+            $file_pathhomeimg = $data['file_path'];  
+            print_r($data);
+        }
+
+        if (! $this->upload->do_upload('otherimage')) {
+      
+        } else {
+            $data = $this->upload->data();   
+            $otherimg = $data['file_name'];
+            $file_pathotherimg = $data['file_path'];  
+            print_r($data);
+        }
+        
+
+                  
         // print_r("<pre>");
         // print_r($data);
         // die();
