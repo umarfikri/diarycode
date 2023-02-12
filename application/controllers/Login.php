@@ -13,7 +13,7 @@ class Login extends CI_Controller {
         $data['pagetitle'] = 'Register';
         $data['module'] = 'register';
         $data['submodule'] = '';        
-
+   
         $this->load->view('register', $data);
     }
 }

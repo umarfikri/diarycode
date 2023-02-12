@@ -55,52 +55,6 @@ The above copyright notice and this permission notice shall be included in all c
   </nav>
   <!-- End Navbar -->
 
-  <!-- <div class="page-header" style="background-image: url('../assets/img/login-image.jpg');">
-
-    <div class="container">
-        <div class="row">
-
-        <div class="page-header" style="background-image: url('../assets/img/login-image.jpg');">
-            <div class="filter"></div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 ml-auto mr-auto">
-                            <div class="card card-register">
-                                <h3 class="title mx-auto">Welcome</h3>
-								<div class="social-line text-center">
-                                    <a href="#pablo" class="btn btn-neutral btn-facebook btn-just-icon">
-                                        <i class="fa fa-facebook-square"></i>
-                                    </a>
-                                    <a href="#pablo" class="btn btn-neutral btn-google btn-just-icon">
-                                        <i class="fa fa-google-plus"></i>
-                                    </a>
-									<a href="#pablo" class="btn btn-neutral btn-twitter btn-just-icon">
-										<i class="fa fa-twitter"></i>
-									</a>
-                                </div>
-                                <form class="register-form">
-                                    <label>Email</label>
-                                    <input type="text" class="form-control" placeholder="Email">
-
-                                    <label>Password</label>
-                                    <input type="password" class="form-control" placeholder="Password">
-                                    <button class="btn btn-danger btn-block btn-round">Register</button>
-                                </form>
-                                <div class="forgot">
-                                    <a href="#" class="btn btn-link btn-danger">Forgot password?</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer register-footer text-center">
-						<h6>© <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Creative Tim</h6>
-					</div>
-        </div>
-
-        </div>
-    </div>
-</div> -->
   <div class="page-header" style="background-image: url('assets/img/login-image.jpg');">
     <div class="filter"></div>
     <div class="container">
@@ -114,6 +68,7 @@ The above copyright notice and this permission notice shall be included in all c
               <label>Password</label>
               <input type="password" class="form-control" placeholder="Password">
               <button class="btn btn-danger btn-block btn-round">Login</button>
+              <button class="btn btn-danger btn-block btn-round">Register</button>
               <a href="login/register" class="btn btn-danger btn-round">Register</a>  
             </form>
             <div class="forgot">
@@ -123,6 +78,7 @@ The above copyright notice and this permission notice shall be included in all c
         </div>
       </div>
     </div>
+  </div>
         
   <!--   Core JS Files   -->
   <script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
