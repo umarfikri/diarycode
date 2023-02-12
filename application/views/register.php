@@ -110,7 +110,7 @@
     
 </div>
 
-<footer class="footer   footer-white ">
+  <footer class="footer   footer-white ">
     <div class="container">
       <div class="row">
         <nav class="footer-nav">
