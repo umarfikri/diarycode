@@ -42,14 +42,10 @@
                                         <input class="form-control" type="file" name="homeimage">                                
                                     </div>
                                     <div class="form-group">
-                                        <label>Other Backround Image</label>
+                                        <label>Other Background Image</label>
                                         <input class="form-control" type="file" name="otherimage">                                
                                     </div>                                             
-                                    
-                                    <div class="form-group">
-                                        <label>Username</label>
-                                        <input type="text" class="form-control" name="username">                                
-                                    </div>
+                                                                       
                                     <div class="form-group">
                                         <label>Password</label>
                                         <input type="text" class="form-control" name="password">                                

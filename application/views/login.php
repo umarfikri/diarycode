@@ -1,4 +1,3 @@
-
 <!--
 =========================================================
  Paper Kit 2 - v2.2.0
@@ -67,7 +66,7 @@ The above copyright notice and this permission notice shall be included in all c
               <input type="text" class="form-control" placeholder="Username">
               <label>Password</label>
               <input type="password" class="form-control" placeholder="Password">
-              <button class="btn btn-danger btn-block btn-round">Login</button>
+              <button name="submit" value="submit" class="btn btn-danger btn-block btn-round">Login</button>
               <button class="btn btn-danger btn-block btn-round">Register</button>               
             </form>
             <div class="forgot">
