@@ -74,7 +74,7 @@ class Qry_insert extends CI_Model {
         return $insertid;
     }
 
-    function profile(){
+    function addprofile(){
         $a = $this->input->post();
         $fullname     = $this->input->post('fullname');
         $nickname     = $this->input->post('nickname');
@@ -121,7 +121,7 @@ class Qry_insert extends CI_Model {
             $data = $this->upload->data();   
             $homeimg = $data['file_name'];
             $file_pathhomeimg = $data['file_path'];  
-            print_r($data);
+            print_r($data);            
         }
 
         if (! $this->upload->do_upload('otherimage')) {

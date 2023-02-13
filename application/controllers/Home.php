@@ -88,13 +88,13 @@ class Home extends CI_Controller {
         // die();
         if($this->input->post('submit')){
 
-            $insertid = $this->qry_insert->profile();
+            $insertid = $this->qry_insert->addprofile();
             if ($insertid) {
-                $this->session->set_flashdata('success', $this->input->post('title'));
+                $this->session->set_flashdata('success', $this->input->post('nickname'));
 				redirect('home');
 			}
 			else {
-                $this->session->set_flashdata('fail', $this->input->post('title'));
+                $this->session->set_flashdata('fail', $this->input->post('nickname'));
 				redirect('home');
 			}
                         
