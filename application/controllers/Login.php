@@ -7,7 +7,7 @@ class Login extends CI_Controller {
         $data['submodule'] = '';  
         
         if($this->input->post('submit')){
-            // print_r($this->input->post());
+            print_r($this->input->post());
             $userid = $this->input->post('username');
             $password = $this->input->post('password');
             $userinfo = $this->db->query("SELECT * FROM profile WHERE username = '$userid'")->row();

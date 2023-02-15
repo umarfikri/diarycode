@@ -1,7 +1,7 @@
 <div class="page-header" data-parallax="true" style="background-image: url('assets/img/daniel-olahh.jpg');">
     <div class="container">
       <div class="motto text-center">
-        <h1>Welcome Auri</h1>
+        <h1>Welcome <?= $uName ?></h1>
         <h3>Start designing your landing page here.</h3>
         <br />        
       </div>

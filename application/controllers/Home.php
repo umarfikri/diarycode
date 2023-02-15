@@ -4,7 +4,8 @@ class Home extends CI_Controller {
     function index (){
         $data['pagetitle'] = 'Home page';
         $data['module'] = 'frontpage';
-        $data['submodule'] = '';        
+        $data['submodule'] = ''; 
+        $data['uName'] = $this->session->userdata('uName');
 
         $this->load->view('header', $data);
         $this->load->view('frontpage');

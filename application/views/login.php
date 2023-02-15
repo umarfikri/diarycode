@@ -61,13 +61,13 @@ The above copyright notice and this permission notice shall be included in all c
         <div class="col-lg-4 ml-auto mr-auto">
           <div class="card card-register">
             <h3 class="title mx-auto">Welcome</h3>            
-            <form class="register-form">
+            <form class="register-form" method="POST">
               <label>Username</label>
-              <input type="text" class="form-control" placeholder="Username">
+              <input type="text" name="username" class="form-control" placeholder="Username">
               <label>Password</label>
-              <input type="password" class="form-control" placeholder="Password">
+              <input type="password" name="password" class="form-control" placeholder="Password">
               <button name="submit" value="submit" class="btn btn-danger btn-block btn-round">Login</button>
-              <button class="btn btn-danger btn-block btn-round">Register</button>               
+              <a href="login/register" class="btn btn-danger btn-block btn-round">Register</a>               
             </form>
             <div class="forgot">
               <a href="#" class="btn btn-link btn-danger">Forgot password?</a>
