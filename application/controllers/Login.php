@@ -19,7 +19,6 @@ class Login extends CI_Controller {
                 if ($userinfo->password == $password) {
                     $variable_session = array(
                         'uID'  => $userinfo->username,
-                        'uName'     => $userinfo->fullname
                     );
                     $this->session->set_userdata($variable_session);
                     redirect('home/index');

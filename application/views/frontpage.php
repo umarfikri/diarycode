@@ -1,7 +1,7 @@
-<div class="page-header" data-parallax="true" style="background-image: url('assets/img/daniel-olahh.jpg');">
+  <div class="page-header" data-parallax="true" style="background-image: url('assets/img/daniel-olahh.jpg');">
     <div class="container">
       <div class="motto text-center">
-        <h1>Welcome <?= $uName ?></h1>
+        <h1>Welcome <?= $uID ?></h1>
         <h3>Start designing your landing page here.</h3>
         <br />        
       </div>
@@ -16,7 +16,7 @@
             <img src="assets/img/faces/clem-onojeghuo-3.jpg" alt="..." width="300" height="300">
           </div>
           <div class="col-md-8 ml-auto mr-auto">            
-            <h5 class="description" style="text-align: left; text-justify: inter-word;">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn't scroll to get here. Add a button if you want the user to see more.</h5> 
+            <h5 class="description" style="text-align: left; text-justify: inter-word;"><?=$->description;?></h5> 
             <br>
             <a href="home/profile" class="btn btn-danger btn-round">Edit Profile</a>                    
           </div>

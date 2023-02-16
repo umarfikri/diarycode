@@ -40,7 +40,7 @@ class Qry_retrieve extends CI_Model {
     }
 
     function qry_profile(){
-        $query = $this->db->query("SELECT * FROM profile");
+        $query = $this->db->query("SELECT * FROM profile WHERE username = 'uID'");
         return $query->result();
     }   
 }
