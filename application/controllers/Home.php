@@ -5,8 +5,8 @@ class Home extends CI_Controller {
         $data['pagetitle'] = 'Home page';
         $data['module'] = 'frontpage';
         $data['submodule'] = ''; 
-        $data['uID'] = $this->session->userdata('uID');
-        $data['profile'] = $this->qry_retrieve->qry_profile();
+        $data['uID'] = $this->session->userdata('uID');        
+        $data['profile'] = $this->qry_retrieve->qry_profile($data['uID']);
 
         $this->load->view('header', $data);
         $this->load->view('frontpage');

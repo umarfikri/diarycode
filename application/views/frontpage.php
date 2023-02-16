@@ -7,6 +7,7 @@
       </div>
     </div>
   </div>
+
   <div class="main">
     <div class="section text-center">
       <div class="container px-4">
@@ -16,7 +17,7 @@
             <img src="assets/img/faces/clem-onojeghuo-3.jpg" alt="..." width="300" height="300">
           </div>
           <div class="col-md-8 ml-auto mr-auto">            
-            <h5 class="description" style="text-align: left; text-justify: inter-word;"><?=$->description;?></h5> 
+            <h5 class="description" style="text-align: left; text-justify: inter-word;"><?=$profile->description;?></h5> 
             <br>
             <a href="home/profile" class="btn btn-danger btn-round">Edit Profile</a>                    
           </div>
