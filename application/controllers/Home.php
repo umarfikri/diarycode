@@ -106,4 +106,9 @@ class Home extends CI_Controller {
         $this->load->view('profilepage');
         $this->load->view('footer');
     }
+
+    function logout (){
+        $this->session->sess_destroy();
+		redirect('login');
+    }
 }
