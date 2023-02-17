@@ -59,9 +59,4 @@ class Login extends CI_Controller {
 
         $this->load->view('register', $data);
     }
-
-    function logout (){
-        $this->session->sess_destroy();
-		redirect('login/index');
-    }
 }
