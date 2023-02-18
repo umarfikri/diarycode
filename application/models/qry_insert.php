@@ -81,17 +81,41 @@ class Qry_insert extends CI_Model {
         $birthday     = $this->input->post('birthday'); 
         $description  = $this->input->post('description');
         $motto        = $this->input->post('motto');
+        $facebook     = $this->input->post('facebook');
+        $twitter      = $this->input->post('twitter');
+        $insta        = $this->input->post('insta');
+        $username     = $this->input->post('username');
+        $password     = $this->input->post('password');
+        $all          = $this->input->post();
+        // print_r("<pre>");
+        // print_r($all);
+        // die();
+       
+        $datainfo = array(            
+            'username'      => $username,
+            'password'      => $password,
+            'fullname'      => $fullname,
+            'nickname'      => $nickname,
+            'birthday'      => $birthday,
+            'description'   => $description,
+            'motto'         => $motto,
+            'facebook'      => $facebook,
+            'twitter'       => $twitter,
+            'insta'         => $insta,                                                         
+        );    
+
+        $this->db->insert('profile', $datainfo);
+        $insertid = $this->db->insert_id(); 
+        return $insertid;            
+    }
+
+    function addgallery(){
         $profileimg   = $this->input->post('profileimage');
         $homeimg      = $this->input->post('homeimage');
         $otherimg     = $this->input->post('otherimage');
         $username     = $this->input->post('username');
-        $password     = $this->input->post('password');
-        $all          = $this->input->post();
-        print_r("<pre>");
-        print_r($all);
-        // die();
 
-        $config['upload_path'] = './uploads/profile';
+        $config['upload_path'] = "./uploads/$username/gallery";
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size']     = '5242880';
         $config['max_width'] = '0';
@@ -99,13 +123,17 @@ class Qry_insert extends CI_Model {
         // $config['file_name'] = $newname; *changename
         $this->upload->initialize($config); 
 
-        $path = 'uploads/profile';
+        $path = "uploads/$username/gallery";
+
+        // print_r("<pre>");
+        // print_r($path);
+        // die();
 
         if(!is_dir($path)) //create the folder if it's not exists
         {
             mkdir($path,0755,TRUE);
         } 
-        
+
         if (! $this->upload->do_upload('profileimage')) {
 
         } else {
@@ -131,9 +159,7 @@ class Qry_insert extends CI_Model {
             $otherimg = $data['file_name'];
             $file_pathotherimg = $data['file_path'];  
             print_r($data);
-        }
-        
-
+        }    
                   
         // print_r("<pre>");
         // print_r($data);
@@ -143,21 +169,16 @@ class Qry_insert extends CI_Model {
         //print_r($imgname);
         //die();
         
-        $datainfo = array(            
-            'username'      => $username,
-            'password'      => $password,
-            'fullname'      => $fullname,
-            'nickname'      => $nickname,
-            'birthday'      => $birthday,
-            'description'   => $description,
+        $datainfo = array(                                    
             'path'          => $path.'/',
             'profile_img'   => $profileimg,
             'home_img'      => $homeimg,
-            'other_img'     => $otherimg,                                                      
+            'other_img'     => $otherimg,
+            'username'      => $username,                                                      
         );    
 
-        $this->db->insert('profile', $datainfo);
+        $this->db->insert('gallery', $datainfo);
         $insertid = $this->db->insert_id(); 
-        return $insertid;            
+        return $insertid;     
     }
 }

@@ -52,7 +52,7 @@
             <a class="<?= ($module == 'calendar') ? 'nav-link active' : 'nav-link';?>" href="home/calendar">Calendar</a>
           </li> 
           <li class="nav-item">
-            <a href="home/logout">Logout</a>
+            <a class="nav-link" href="home/logout">Logout</a>
           </li> 
         </ul>
       </div>

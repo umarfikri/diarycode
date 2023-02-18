@@ -73,7 +73,19 @@
                                     <div class="form-group">
                                         <label>Motto</label>
                                         <input type="text" class="form-control" name="motto">                                
-                                    </div>                 
+                                    </div>      
+                                    <div class="form-group">
+                                        <label>Facebook Link</label>
+                                        <input type="text" class="form-control" name="facebook">                                
+                                    </div>   
+                                    <div class="form-group">
+                                        <label>Twitter Link</label>
+                                        <input type="text" class="form-control" name="twitter">                                
+                                    </div>   
+                                    <div class="form-group">
+                                        <label>Instagram Link</label>
+                                        <input type="text" class="form-control" name="insta">                                
+                                    </div>              
 
                                     <div class="form-group">
                                         <label>Profile Image</label>

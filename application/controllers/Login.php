@@ -41,18 +41,19 @@ class Login extends CI_Controller {
     function register (){
         $data['pagetitle'] = 'Register';
         $data['module'] = 'register';
-        $data['submodule'] = '';   
+        $data['submodule'] = '';    
         
         if($this->input->post('submit')){
 
-            $insertid = $this->qry_insert->addprofile();
-            if ($insertid) {
+            $insertid      = $this->qry_insert->addprofile();
+            $insertgallery = $this->qry_insert->addgallery();
+            if ($insertid && $insertgallery) {            
                 $this->session->set_flashdata('success', $this->input->post('nickname'));
-				redirect('home');
+				redirect('login/index');
 			}
 			else {
                 $this->session->set_flashdata('fail', $this->input->post('nickname'));
-				redirect('home');
+				redirect('login/index');
 			}
                         
         }
