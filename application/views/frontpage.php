@@ -1,8 +1,8 @@
   <div class="page-header" data-parallax="true" style="background-image: url('assets/img/daniel-olahh.jpg');">
     <div class="container">
       <div class="motto text-center">
-        <h1>Welcome <?= $uID ?></h1>
-        <h3>Start designing your landing page here.</h3>
+        <h1>Welcome <?=$profile->nickname;?></h1>
+        <h3><?=$profile->motto;?></h3>
         <br />        
       </div>
     </div>
@@ -13,8 +13,8 @@
       <div class="container px-4">
         <h2 class="title" style="text-decoration: underline overline;">Profile</h2>
         <div class="row gx-5">
-          <div class="col-md-4 ml-auto mr-auto">
-            <img src="assets/img/faces/clem-onojeghuo-3.jpg" alt="..." width="300" height="300">
+          <div class="col-md-4 ml-auto mr-auto">                      
+            <img src="assets/img/faces/clem-onojeghuo-3.jpg" width="300" height="300">                         
           </div>
           <div class="col-md-8 ml-auto mr-auto">            
             <h5 class="description" style="text-align: left; text-justify: inter-word;"><?=$profile->description;?></h5> 
@@ -30,36 +30,30 @@
           <div class="col-md-3">            
             <div class="info">
               <div class="icon icon-danger">
-                <i class="fa-brands fa-facebook"></i>
+                <a href=<?=$profile->facebook;?> class="fa-brands fa-facebook"></a>
               </div>
               <div class="description">
-                <h4 class="info-title">Facebook</h4>
-                <p class="description">Spend your time generating new ideas. You don't have to think of implementing.</p>
-                <a href="javascript:;" class="btn btn-link btn-danger">See more</a>
+                <h4 class="info-title">Facebook</h4>                
               </div>
             </div>
           </div>
           <div class="col-md-3">
             <div class="info">
               <div class="icon icon-danger">
-                <i class="fa-brands fa-twitter"></i>
+                <a href=<?=$profile->twitter;?> class="fa-brands fa-twitter"></a>
               </div>
               <div class="description">
-                <h4 class="info-title">Twitter</h4>
-                <p>Larger, yet dramatically thinner. More powerful, but remarkably power efficient.</p>
-                <a href="javascript:;" class="btn btn-link btn-danger">See more</a>
+                <h4 class="info-title">Twitter</h4>               
               </div>
             </div>
           </div>
           <div class="col-md-3">
             <div class="info">
               <div class="icon icon-danger">
-                <i class="fa-brands fa-instagram"></i>
+                <a href=<?=$profile->insta;?> class="fa-brands fa-instagram"></a>
               </div>
               <div class="description">
                 <h4 class="info-title">Instagram</h4>
-                <p>Choose from a veriety of many colors resembling sugar paper pastels.</p>
-                <a href="javascript:;" class="btn btn-link btn-danger">See more</a>
               </div>
             </div>
           </div>
