@@ -83,7 +83,23 @@ class Home extends CI_Controller {
     function profile (){
         $data['pagetitle'] = 'Profile Page';
         $data['module'] = 'Profile';
-        $data['submodule'] = 'profile';        
+        $data['submodule'] = 'profile';    
+        $data['uID'] = $this->session->userdata('uID');        
+        $data['profile'] = $this->qry_retrieve->qry_profile($data['uID']);   
+        
+        if($this->input->post('submit')){
+
+            $insertid      = $this->qry_insert->editprofile($data['uID']);
+            $insertgallery = $this->qry_insert->editgallery($data['uID']);
+            if ($insertid && $insertgallery) {            
+                $this->session->set_flashdata('success', $this->input->post('nickname'));
+				redirect('home/index');
+			}
+			else {
+                $this->session->set_flashdata('fail', $this->input->post('nickname'));
+				redirect('home/index');
+			}                        
+        }
 
         // $a = $this->input->post();
         // print_r($a);

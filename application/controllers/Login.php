@@ -44,7 +44,6 @@ class Login extends CI_Controller {
         $data['submodule'] = '';    
         
         if($this->input->post('submit')){
-
             $insertid      = $this->qry_insert->addprofile();
             $insertgallery = $this->qry_insert->addgallery();
             if ($insertid && $insertgallery) {            
@@ -54,8 +53,7 @@ class Login extends CI_Controller {
 			else {
                 $this->session->set_flashdata('fail', $this->input->post('nickname'));
 				redirect('login/index');
-			}
-                        
+			}                        
         }
 
         $this->load->view('register', $data);

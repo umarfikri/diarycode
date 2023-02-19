@@ -118,8 +118,7 @@
                 </div>
             </div>
         </div>           
-    </div>  
-    
+    </div>      
 </div>
 
   <footer class="footer   footer-white ">

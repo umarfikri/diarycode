@@ -181,4 +181,117 @@ class Qry_insert extends CI_Model {
         $insertid = $this->db->insert_id(); 
         return $insertid;     
     }
+
+    function editprofile($uID){
+        $a = $this->input->post();
+        $fullname     = $this->input->post('fullname');
+        $nickname     = $this->input->post('nickname');
+        $birthday     = $this->input->post('birthday'); 
+        $description  = $this->input->post('description');
+        $motto        = $this->input->post('motto');
+        $facebook     = $this->input->post('facebook');
+        $twitter      = $this->input->post('twitter');
+        $insta        = $this->input->post('insta');
+        $password     = $this->input->post('password');
+        $all          = $this->input->post();
+        // print_r("<pre>");
+        // print_r($all);
+        // die();
+       
+        $datainfo = array(            
+            'password'      => $password,
+            'fullname'      => $fullname,
+            'nickname'      => $nickname,
+            'birthday'      => $birthday,
+            'description'   => $description,
+            'motto'         => $motto,
+            'facebook'      => $facebook,
+            'twitter'       => $twitter,
+            'insta'         => $insta,                                                         
+        );    
+
+        $this->db->update('profile', $datainfo, array('username' => $uID));
+        $insertid = $this->db->insert_id(); 
+        return $insertid;            
+    }
+
+    function editgallery($uID){
+        // $this->load->model('qry_retrieve');
+        // $data['gallery'] = $this->qry_retrieve->qry_gallery($uID);
+        // print_r("<pre>");
+        // print_r($gallery->path);
+        // die();
+
+        $profileimg   = $this->input->post('profileimage');
+        $homeimg      = $this->input->post('homeimage');
+        $otherimg     = $this->input->post('otherimage');
+        $username     = $uID;
+
+        $config['upload_path'] = "./uploads/$username/gallery";
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size']     = '5242880';
+        $config['max_width'] = '0';
+        $config['max_height'] = '0';
+        // $config['file_name'] = $newname; *changename
+        $this->upload->initialize($config); 
+
+        $path = "uploads/$username/gallery";
+
+        // print_r("<pre>");
+        // print_r($path);
+        // die();
+
+        if(!is_dir($path)) //create the folder if it's not exists
+        {
+            mkdir($path,0755,TRUE);
+        } 
+
+        if (! $this->upload->do_upload('profileimage')) {
+
+        } else {
+            // delete_files('$gallery->path.$gallery->profile_img');
+            $data = $this->upload->data();   
+            $profileimg = $data['file_name'];
+            $file_pathprofileimg = $data['file_path'];  
+            print_r($data);
+        }
+
+        if (! $this->upload->do_upload('homeimage')) {
+         
+        } else {
+            $data = $this->upload->data();   
+            $homeimg = $data['file_name'];
+            $file_pathhomeimg = $data['file_path'];  
+            print_r($data);            
+        }
+
+        if (! $this->upload->do_upload('otherimage')) {
+      
+        } else {
+            $data = $this->upload->data();   
+            $otherimg = $data['file_name'];
+            $file_pathotherimg = $data['file_path'];  
+            print_r($data);
+        }    
+                  
+        // print_r("<pre>");
+        // print_r($data);
+        // die();
+
+        //$imgname = md5($filename.date('Y-m-d H:i:s:u'));
+        //print_r($imgname);
+        //die();
+        
+        $datainfo = array(                                    
+            'path'          => $path.'/',
+            'profile_img'   => $profileimg,
+            'home_img'      => $homeimg,
+            'other_img'     => $otherimg,
+            'username'      => $username,                                                      
+        );    
+
+        $this->db->update('gallery', $datainfo, array('username' => $uID));
+        $insertid = $this->db->insert_id(); 
+        return $insertid;     
+    }
 }
