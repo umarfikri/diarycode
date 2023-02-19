@@ -2,17 +2,18 @@
 
 class Qry_insert extends CI_Model {
 
-    function entry(){
-        $a = $this->input->post();
-        $title  = $this->input->post('title');
-        $content     = $this->input->post('content');
-        $mood     = $this->input->post('mood'); 
-        $img   = $this->input->post('imagefile'); 
-        $img_title   = $this->input->post('imagetitle');
+    function entry($uID){
+        $a          = $this->input->post();
+        $title      = $this->input->post('title');
+        $content    = $this->input->post('content');
+        $mood       = $this->input->post('mood'); 
+        $img        = $this->input->post('imagefile'); 
+        $img_title  = $this->input->post('imagetitle');
+        $username   = $uID;
 
-        // print_r($a);
+        // print_r($username);
         // die();
-        $config['upload_path'] = './uploads/img';
+        $config['upload_path'] = "./uploads/$username/img";
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size']     = '5242880';
         $config['max_width'] = '0';
@@ -20,7 +21,7 @@ class Qry_insert extends CI_Model {
         // $config['file_name'] = $newname; *changename
         $this->upload->initialize($config); 
 
-        $path = 'uploads/img';
+        $path = "uploads/$username/img";
         if(!is_dir($path)) //create the folder if it's not exists
         {
             mkdir($path,0755,TRUE);
@@ -34,7 +35,8 @@ class Qry_insert extends CI_Model {
             $datainfo = array(            
                 'title' => $title,
                 'content' => $content,
-                'mood' => $mood                                          
+                'mood' => $mood,
+                'username' => $username,                                           
             );
         }
         else{
@@ -65,7 +67,8 @@ class Qry_insert extends CI_Model {
                     'mood' => $mood,
                     'alt_img' => $img_title,
                     'img_url' => $path.'/',
-                    'image' => $filename,                                
+                    'image' => $filename,     
+                    'username' => $username,                           
                 );                
             }
         }

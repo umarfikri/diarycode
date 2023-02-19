@@ -15,8 +15,8 @@ class Qry_retrieve extends CI_Model {
         // die();
     }
 
-    public function get_record($offset, $limit) {
-        $query = $this->db->query("SELECT * FROM entry ORDER BY date DESC LIMIT $offset, $limit");
+    public function get_record($offset, $limit, $uID) {
+        $query = $this->db->query("SELECT * FROM entry WHERE username = '$uID' ORDER BY date DESC LIMIT $offset, $limit");
         // print_r($offset);
         // print_r("<br>");
         // print_r($limit);

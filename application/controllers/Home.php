@@ -16,14 +16,15 @@ class Home extends CI_Controller {
     function diarynew (){
         $data['pagetitle'] = 'New Diary';
         $data['module'] = 'diarynew';
-        $data['submodule'] = 'newdiary';        
+        $data['submodule'] = 'newdiary'; 
+        $data['uID'] = $this->session->userdata('uID');       
 
         // $a = $this->input->post();
         // print_r($a);
         // die();
         if($this->input->post('submit')){
 
-            $insertid = $this->qry_insert->entry();
+            $insertid = $this->qry_insert->entry( $data['uID']);
             if ($insertid) {
                 $this->session->set_flashdata('success', $this->input->post('title'));
 				redirect('home/diaryentry/1');
@@ -44,6 +45,7 @@ class Home extends CI_Controller {
         $data['pagetitle'] = 'Diary Entry';
         $data['module'] = 'diaryentry';
         $data['submodule'] = 'entrydiary';     
+        $data['uID'] = $this->session->userdata('uID');  
         // $data['entrylist'] = $this->qry_retrieve->qry_listentry();    
         $this->load->model('qry_retrieve');
 
@@ -58,7 +60,7 @@ class Home extends CI_Controller {
             $page_first_result = ($page - 1) * $per_page;
         }
 
-        $data['entrylist'] = $this->qry_retrieve->get_record($page_first_result, $per_page);
+        $data['entrylist'] = $this->qry_retrieve->get_record($page_first_result, $per_page, $data['uID']);
         // print_r("<pre>");
         // print_r($page_first_result);
         // print_r($data['entrylist']);
