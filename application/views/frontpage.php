@@ -14,7 +14,7 @@
         <h2 class="title" style="text-decoration: underline overline;">Profile</h2>
         <div class="row gx-5">
           <div class="col-md-4 ml-auto mr-auto">                      
-            <img src="assets/img/faces/clem-onojeghuo-3.jpg" width="300" height="300">                         
+            <img src="<?=$profile->path.$profile->profile_img;?>" width="300" height="300">                         
           </div>
           <div class="col-md-8 ml-auto mr-auto">            
             <h5 class="description" style="text-align: left; text-justify: inter-word;"><?=$profile->description;?></h5> 

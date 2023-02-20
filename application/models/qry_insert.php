@@ -220,7 +220,7 @@ class Qry_insert extends CI_Model {
 
     function editgallery($uID){
         // $this->load->model('qry_retrieve');
-        // $data['gallery'] = $this->qry_retrieve->qry_gallery($uID);
+        $gallery = $this->qry_retrieve->qry_profile($uID);
         // print_r("<pre>");
         // print_r($gallery->path);
         // die();
@@ -239,9 +239,10 @@ class Qry_insert extends CI_Model {
         $this->upload->initialize($config); 
 
         $path = "uploads/$username/gallery";
+        $pathprofileimg = $gallery->path.$gallery->profile_img;
 
         // print_r("<pre>");
-        // print_r($path);
+        // print_r($pathprofileimg);
         // die();
 
         if(!is_dir($path)) //create the folder if it's not exists
@@ -252,7 +253,7 @@ class Qry_insert extends CI_Model {
         if (! $this->upload->do_upload('profileimage')) {
 
         } else {
-            // delete_files('$gallery->path.$gallery->profile_img');
+            unlink($pathprofileimg);
             $data = $this->upload->data();   
             $profileimg = $data['file_name'];
             $file_pathprofileimg = $data['file_path'];  
