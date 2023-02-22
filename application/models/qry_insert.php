@@ -13,7 +13,7 @@ class Qry_insert extends CI_Model {
 
         // print_r($username);
         // die();
-        $config['upload_path'] = "./uploads/$username/img";
+        $config['upload_path'] = "./uploads/$username/entry";
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size']     = '5242880';
         $config['max_width'] = '0';
@@ -21,7 +21,7 @@ class Qry_insert extends CI_Model {
         // $config['file_name'] = $newname; *changename
         $this->upload->initialize($config); 
 
-        $path = "uploads/$username/img";
+        $path = "uploads/$username/entry";
         if(!is_dir($path)) //create the folder if it's not exists
         {
             mkdir($path,0755,TRUE);
@@ -219,7 +219,6 @@ class Qry_insert extends CI_Model {
     }
 
     function editgallery($uID){
-        // $this->load->model('qry_retrieve');
         $gallery = $this->qry_retrieve->qry_profile($uID);
         // print_r("<pre>");
         // print_r($gallery->path);
@@ -240,6 +239,8 @@ class Qry_insert extends CI_Model {
 
         $path = "uploads/$username/gallery";
         $pathprofileimg = $gallery->path.$gallery->profile_img;
+        $pathhomeimg = $gallery->path.$gallery->home_img;
+        $pathotherimg = $gallery->path.$gallery->other_img;
 
         // print_r("<pre>");
         // print_r($pathprofileimg);
@@ -263,6 +264,7 @@ class Qry_insert extends CI_Model {
         if (! $this->upload->do_upload('homeimage')) {
          
         } else {
+            unlink($pathhomeimg);
             $data = $this->upload->data();   
             $homeimg = $data['file_name'];
             $file_pathhomeimg = $data['file_path'];  
@@ -272,6 +274,7 @@ class Qry_insert extends CI_Model {
         if (! $this->upload->do_upload('otherimage')) {
       
         } else {
+            unlink($pathotherimg);
             $data = $this->upload->data();   
             $otherimg = $data['file_name'];
             $file_pathotherimg = $data['file_path'];  
