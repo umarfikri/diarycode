@@ -1,4 +1,4 @@
-  <div class="page-header" data-parallax="true" style="background-image: url('assets/img/daniel-olahh.jpg');">
+  <div class="page-header" data-parallax="true" style="background-image: url('<?=$profile->path.$profile->home_img;?>');">
     <div class="container">
       <div class="motto text-center">
         <h1>Welcome <?=$profile->nickname;?></h1>
