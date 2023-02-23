@@ -17,7 +17,8 @@ class Home extends CI_Controller {
         $data['pagetitle'] = 'New Diary';
         $data['module'] = 'diarynew';
         $data['submodule'] = 'newdiary'; 
-        $data['uID'] = $this->session->userdata('uID');       
+        $data['uID'] = $this->session->userdata('uID');         
+        $data['profile'] = $this->qry_retrieve->qry_profile($data['uID']);        
 
         // $a = $this->input->post();
         // print_r($a);
@@ -45,7 +46,8 @@ class Home extends CI_Controller {
         $data['pagetitle'] = 'Diary Entry';
         $data['module'] = 'diaryentry';
         $data['submodule'] = 'entrydiary';     
-        $data['uID'] = $this->session->userdata('uID');  
+        $data['uID'] = $this->session->userdata('uID');       
+        $data['profile'] = $this->qry_retrieve->qry_profile($data['uID']);  
         // $data['entrylist'] = $this->qry_retrieve->qry_listentry();    
         $this->load->model('qry_retrieve');
 
@@ -76,6 +78,8 @@ class Home extends CI_Controller {
         $data['module'] = 'calendar';
         $data['submodule'] = '';        
         $data['entrylist'] = $this->qry_retrieve->get_mood();
+        $data['uID'] = $this->session->userdata('uID');        
+        $data['profile'] = $this->qry_retrieve->qry_profile($data['uID']);  
 
         $this->load->view('header', $data);
         $this->load->view('calendar');

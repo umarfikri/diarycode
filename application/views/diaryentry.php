@@ -1,4 +1,4 @@
-<div class="section landing-section"  data-parallax="true" style="background-image: url('assets/img/login-image.jpg');">    
+<div class="section landing-section"  data-parallax="true" style="background-image: url('<?=$profile->path.$profile->other_img;?>');">    
     <div class="container" style="margin-top: 6rem!important;">    
 
         <?php if($this->session->flashdata('success')):?>

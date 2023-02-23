@@ -1,4 +1,4 @@
-<div class="section landing-section text-center" data-parallax="true" style="background-image: url('assets/img/login-image.jpg');">
+<div class="section landing-section text-center" data-parallax="true" style="background-image: url('<?=$profile->path.$profile->home_img;?>');">
   <div class="container">
     <h2 class="title text-light">Mood Calendar</h2>
       <div class="row">
