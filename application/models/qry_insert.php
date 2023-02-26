@@ -267,25 +267,37 @@ class Qry_insert extends CI_Model {
             }
         }
 
-        if (! $this->upload->do_upload('homeimage')) {
-         
+        if (empty($_FILES['homeimage']['name'])) {
+            // echo "blanks";
+            $homeimg = $gallery->home_img;
         } else {
-            unlink($pathhomeimg);
-            $data = $this->upload->data();   
-            $homeimg = $data['file_name'];
-            $file_pathhomeimg = $data['file_path'];  
-            print_r($data);            
+            // echo "ada file";
+            if (! $this->upload->do_upload('homeimage')) {
+         
+            } else {
+                unlink($pathhomeimg);
+                $data = $this->upload->data();   
+                $homeimg = $data['file_name'];
+                $file_pathhomeimg = $data['file_path'];  
+                print_r($data);            
+            }
         }
 
-        if (! $this->upload->do_upload('otherimage')) {
-      
+        if (empty($_FILES['otherimage']['name'])) {
+            // echo "blanks";
+            $otherimg = $gallery->other_img;
         } else {
-            unlink($pathotherimg);
-            $data = $this->upload->data();   
-            $otherimg = $data['file_name'];
-            $file_pathotherimg = $data['file_path'];  
-            print_r($data);
-        }    
+            // echo "ada file";
+            if (! $this->upload->do_upload('otherimage')) {
+      
+            } else {
+                unlink($pathotherimg);
+                $data = $this->upload->data();   
+                $otherimg = $data['file_name'];
+                $file_pathotherimg = $data['file_path'];  
+                print_r($data);
+            }    
+        }
                   
         // print_r("<pre>");
         // print_r($data);
