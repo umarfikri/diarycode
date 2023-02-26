@@ -220,10 +220,10 @@ class Qry_insert extends CI_Model {
 
     function editgallery($uID){
         $gallery = $this->qry_retrieve->qry_profile($uID);
-        // print_r("<pre>");
-        // print_r($gallery->path);
-        // die();
-
+        
+        $gallery->profile_img;
+        $gallery->home_img;
+        $gallery->other_img;
         $profileimg   = $this->input->post('profileimage');
         $homeimg      = $this->input->post('homeimage');
         $otherimg     = $this->input->post('otherimage');
@@ -251,14 +251,20 @@ class Qry_insert extends CI_Model {
             mkdir($path,0755,TRUE);
         } 
 
-        if (! $this->upload->do_upload('profileimage')) {
-
+        if (empty($_FILES['profileimage']['name'])) {
+            // echo "blanks";
+            $profileimg = $gallery->profile_img;
         } else {
-            unlink($pathprofileimg);
-            $data = $this->upload->data();   
-            $profileimg = $data['file_name'];
-            $file_pathprofileimg = $data['file_path'];  
-            print_r($data);
+            // echo "ada file";
+            if (! $this->upload->do_upload('profileimage')) {
+
+            } else {
+                unlink($pathprofileimg);
+                $data = $this->upload->data();   
+                $profileimg = $data['file_name'];
+                $file_pathprofileimg = $data['file_path'];  
+                print_r($data);
+            }
         }
 
         if (! $this->upload->do_upload('homeimage')) {
