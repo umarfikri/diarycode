@@ -65,37 +65,31 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto">
-            <h2 class="title text-center">Gallery</h2>
-            
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="assets/img/login-image.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="assets/img/federico-beccari.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="assets/img/fabio-mangione.jpg" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-          <br>
-          <a href="home/homegallery" class="btn btn-danger btn-round">Edit Home Gallery</a>  
+            <h2 class="title" style="text-decoration: underline overline;">Health</h2>                     
 
+            <div class="text-center">
+              <h3>Height: <?=$profile->height;?> cm  Weight: <?=$profile->weight;?> kg</h3>
+              <h3>Body Mass Index (BMI): <?=round($profile->weight / ($profile->height/100) ** 2, 2);?> kg</h3>
+              <?php
+                $year = date('Y', strtotime($profile->birthday));
+                $currentyear = date("Y");
+                $age = $currentyear - $year;
+
+                if($profile->gender == 0){ //Male
+                  $bmr = 88.362 + (13.397 * $profile->weight) + (4.799 * $profile->height) - (5.677 * $age);
+                }
+                elseif($profile->gender == 1){
+                  $bmr = 447.593 + (9.247 * $profile->weight) + (3.098 * $profile->height) - (4.330 * $age);
+                }
+                // print_r("<pre>");
+                // print_r($bmr);
+                // die();
+              
+              ?>
+
+              <h3>Basal Metabolic Rate (BMR): <?=round($bmr, 2);?> kg</h3>
+            </div>
+            
 
           </div>
         </div>

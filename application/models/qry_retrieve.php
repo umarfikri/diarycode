@@ -40,7 +40,8 @@ class Qry_retrieve extends CI_Model {
     }
 
     function qry_profile($uID){
-        $query = $this->db->query("SELECT * FROM profile LEFT JOIN gallery on gallery.username = profile.username WHERE profile.username = '$uID'");        
+        $query = $this->db->query("SELECT * FROM profile LEFT JOIN gallery on gallery.username = profile.username 
+        LEFT JOIN health on health.username = profile.username WHERE profile.username = '$uID'");        
         // print_r("<pre>");
         // print_r($query->row());
         // die();
