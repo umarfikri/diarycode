@@ -47,10 +47,12 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="text-center">Register</h5>
+                        <h3 class="text-center">Register</h3>
+                        <br>
                         <div class="row">
                             <div class="col-md-12 ml-auto mr-auto">
                             <form method="POST" enctype="multipart/form-data">
+                                    <h5 class="text-center">Profile</h5>
                                     <div class="form-group">
                                         <label>Full Name</label>
                                         <input type="text" class="form-control" name="fullname">                                
@@ -74,6 +76,8 @@
                                         <label>Motto</label>
                                         <input type="text" class="form-control" name="motto">                                
                                     </div>      
+
+                                    <h5 class="text-center">Social Media</h5>
                                     <div class="form-group">
                                         <label>Facebook Link</label>
                                         <input type="text" class="form-control" name="facebook">                                
@@ -87,6 +91,7 @@
                                         <input type="text" class="form-control" name="insta">                                
                                     </div>              
 
+                                    <h5 class="text-center">Background Image</h5>
                                     <div class="form-group">
                                         <label>Profile Image</label>
                                         <input class="form-control" type="file" name="profileimage"> 
@@ -101,6 +106,21 @@
                                         <input class="form-control" type="file" name="otherimage">                                
                                     </div>                                             
                                     
+                                    <h5 class="text-center">Health</h5>
+                                    <div class="form-group">
+                                        <label>Height (cm)</label>
+                                        <input type="text" class="form-control" name="height">                                
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Weight (kg)</label>
+                                        <input type="text" class="form-control" name="weight">                                
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Desired Weight (kg)</label>
+                                        <input type="text" class="form-control" name="aimweight">                                
+                                    </div>
+
+                                    <h5 class="text-center">Account</h5>
                                     <div class="form-group">
                                         <label>Username</label>
                                         <input type="text" class="form-control" name="username">                                

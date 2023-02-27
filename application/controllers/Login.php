@@ -46,6 +46,7 @@ class Login extends CI_Controller {
         if($this->input->post('submit')){
             $insertid      = $this->qry_insert->addprofile();
             $insertgallery = $this->qry_insert->addgallery();
+            $inserthealth  = $this->qry_insert->addhealth();
             if ($insertid && $insertgallery) {            
                 $this->session->set_flashdata('success', $this->input->post('nickname'));
 				redirect('login/index');

@@ -185,6 +185,29 @@ class Qry_insert extends CI_Model {
         return $insertid;     
     }
 
+    function addhealth(){
+        $a = $this->input->post();
+        $height     = $this->input->post('height');
+        $weight     = $this->input->post('weight');
+        $aimweight  = $this->input->post('aimweight');         
+        $username   = $this->input->post('username');
+        $all        = $this->input->post();
+        // print_r("<pre>");
+        // print_r($all);
+        // die();
+       
+        $datainfo = array(    
+            'height'        => $height,
+            'weight'        => $weight,
+            'aimweight'     => $aimweight,
+            'username'      => $username,                                                              
+        );    
+
+        $this->db->insert('health', $datainfo);
+        $insertid = $this->db->insert_id(); 
+        return $insertid;            
+    }
+
     function editprofile($uID){
         $a = $this->input->post();
         $fullname     = $this->input->post('fullname');
