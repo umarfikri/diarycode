@@ -189,7 +189,8 @@ class Qry_insert extends CI_Model {
         $a = $this->input->post();
         $height     = $this->input->post('height');
         $weight     = $this->input->post('weight');
-        $aimweight  = $this->input->post('aimweight');         
+        $aimweight  = $this->input->post('aimweight');
+        $gender     = $this->input->post('gender');         
         $username   = $this->input->post('username');
         $all        = $this->input->post();
         // print_r("<pre>");
@@ -200,6 +201,7 @@ class Qry_insert extends CI_Model {
             'height'        => $height,
             'weight'        => $weight,
             'aimweight'     => $aimweight,
+            'gender'        => $gender,
             'username'      => $username,                                                              
         );    
 

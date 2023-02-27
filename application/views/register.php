@@ -106,7 +106,7 @@
                                         <input class="form-control" type="file" name="otherimage">                                
                                     </div>                                             
                                     
-                                    <h5 class="text-center">Health</h5>
+                                    <h5 class="text-center">Health</h5>                                                                        
                                     <div class="form-group">
                                         <label>Height (cm)</label>
                                         <input type="text" class="form-control" name="height">                                
@@ -118,6 +118,23 @@
                                     <div class="form-group">
                                         <label>Desired Weight (kg)</label>
                                         <input type="text" class="form-control" name="aimweight">                                
+                                    </div>
+                                    <div class="row justify-content-left">
+                                        <label class="ml-4">Gender: </label> 
+                                        <div class="form-check-radio ml-4">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input " type="radio" name="gender" value="0">
+                                                Male
+                                                <span class="form-check-sign"></span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check-radio ml-4">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" name="gender" value="1">
+                                                Female
+                                                <span class="form-check-sign"></span>
+                                            </label>
+                                        </div>
                                     </div>
 
                                     <h5 class="text-center">Account</h5>
