@@ -80,14 +80,24 @@
                 }
                 elseif($profile->gender == 1){
                   $bmr = 447.593 + (9.247 * $profile->weight) + (3.098 * $profile->height) - (4.330 * $age);
-                }
-                // print_r("<pre>");
-                // print_r($bmr);
-                // die();
-              
+                }                            
               ?>
-
               <h3>Basal Metabolic Rate (BMR): <?=round($bmr, 2);?> kg</h3>
+              <br>
+              <?php                
+                $response = 0;
+                if($profile->weight > $profile->aimweight){
+                  $response = "Your need to lose ".($profile->weight - $profile->aimweight)." kg more";
+                }
+                elseif($profile->weight < $profile->aimweight){
+                  $response = "Your need to gain ".($profile->aimweight - $profile->weight)." kg more";
+                }
+                else{
+                  $response = "Your had reach your aim weight";
+                }                
+              ?>
+              <h2>Aim Weight: <?=$profile->aimweight;?></h2>
+              <h2><?=$response;?></h2>
             </div>
             
 
