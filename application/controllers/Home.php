@@ -97,6 +97,7 @@ class Home extends CI_Controller {
 
             $insertid      = $this->qry_insert->editprofile($data['uID']);
             $insertgallery = $this->qry_insert->editgallery($data['uID']);
+            $insertgallery = $this->qry_insert->edithealth($data['uID']);
             if ($insertid && $insertgallery) {            
                 $this->session->set_flashdata('success', $this->input->post('nickname'));
 				redirect('home/index');

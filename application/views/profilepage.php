@@ -7,7 +7,8 @@
                         <h5 class="text-center">Register</h5>
                         <div class="row">
                             <div class="col-md-12 ml-auto mr-auto">
-                            <form method="POST" enctype="multipart/form-data">
+                                <form method="POST" enctype="multipart/form-data">
+                                    <h5 class="text-center">Profile</h5>
                                     <div class="form-group">
                                         <label>Full Name</label>
                                         <input type="text" class="form-control" name="fullname" value="<?=$profile->fullname;?>">                                
@@ -31,6 +32,8 @@
                                         <label>Motto</label>
                                         <input type="text" class="form-control" name="motto" value="<?=$profile->motto;?>">                                
                                     </div>      
+
+                                    <h5 class="text-center">Social Media</h5>
                                     <div class="form-group">
                                         <label>Facebook Link</label>
                                         <input type="text" class="form-control" name="facebook" value="<?=$profile->facebook;?>">                                
@@ -44,6 +47,7 @@
                                         <input type="text" class="form-control" name="insta" value="<?=$profile->insta;?>">                                
                                     </div>              
 
+                                    <h5 class="text-center">Background Image</h5>
                                     <div class="form-group">
                                         <label>Profile Image</label>
                                         <input class="form-control" type="file" name="profileimage"> 
@@ -57,7 +61,39 @@
                                         <label>Other Backround Image</label>
                                         <input class="form-control" type="file" name="otherimage">                                
                                     </div>                                             
-                                                                        
+                                    
+                                    <h5 class="text-center">Health</h5>                                                                        
+                                    <div class="form-group">
+                                        <label>Height (cm)</label>
+                                        <input type="text" class="form-control" name="height" value="<?=$profile->height;?>">                                
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Weight (kg)</label>
+                                        <input type="text" class="form-control" name="weight" value="<?=$profile->weight;?>">                                
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Desired Weight (kg)</label>
+                                        <input type="text" class="form-control" name="aimweight" value="<?=$profile->aimweight;?>">                                
+                                    </div>
+                                    <div class="row justify-content-left">
+                                        <label class="ml-4">Gender: </label> 
+                                        <div class="form-check-radio ml-4">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input " type="radio" name="gender" value="0" <?=($profile->gender) == '0' ? 'checked' : '' ?>>
+                                                Male
+                                                <span class="form-check-sign"></span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check-radio ml-4">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" name="gender" value="1" <?=($profile->gender) == '1' ? 'checked' : '' ?>>
+                                                Female
+                                                <span class="form-check-sign"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <h5 class="text-center">Account</h5>                                    
                                     <div class="form-group">
                                         <label>Password</label>
                                         <input type="text" class="form-control" name="password" value="<?=$profile->password;?>">                                

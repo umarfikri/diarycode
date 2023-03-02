@@ -51,7 +51,7 @@
                         <br>
                         <div class="row">
                             <div class="col-md-12 ml-auto mr-auto">
-                            <form method="POST" enctype="multipart/form-data">
+                                <form method="POST" enctype="multipart/form-data">
                                     <h5 class="text-center">Profile</h5>
                                     <div class="form-group">
                                         <label>Full Name</label>

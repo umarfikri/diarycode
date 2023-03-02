@@ -344,4 +344,29 @@ class Qry_insert extends CI_Model {
         $insertid = $this->db->insert_id(); 
         return $insertid;     
     }
+
+    function edithealth($uID){
+        $a = $this->input->post();
+        $height     = $this->input->post('height');
+        $weight     = $this->input->post('weight');
+        $aimweight  = $this->input->post('aimweight');
+        $gender     = $this->input->post('gender');         
+        $username   = $uID;
+        $all        = $this->input->post();
+        // print_r("<pre>");
+        // print_r($all);
+        // die();
+       
+        $datainfo = array(    
+            'height'        => $height,
+            'weight'        => $weight,
+            'aimweight'     => $aimweight,
+            'gender'        => $gender,
+            'username'      => $username,                                                              
+        );    
+
+        $this->db->update('health', $datainfo, array('username' => $uID));
+        $insertid = $this->db->insert_id(); 
+        return $insertid;   
+    }
 }
