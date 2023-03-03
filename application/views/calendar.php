@@ -55,9 +55,16 @@
                           <?php endforeach; ?>
                       </tr>                                                                                                                
                 <?php endfor; ?>                 
-              </tbody>
-            
+              </tbody>            
           </table>
+
+          <h3 class="title text-light">Indicator</h3>
+          <h3><span class="badge bg-warning">Happy</span></h3>
+          <h3><span class="badge bg-primary">Sad</span></h3>
+          <h3><span class="badge bg-danger">Angry</span></h3>
+          <h3><span class="badge" style="background-color: #ce72ce; !important">Nervous</span></h3>
+          <h3><span class="badge bg-success">Sick</span></h3>
+          <h3><span class="badge bg-secondary">Tired</span></h3>
         </div>
       </div>    
   </div>    

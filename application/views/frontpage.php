@@ -78,7 +78,7 @@
                 if($profile->gender == 0){ //Male
                   $bmr = 88.362 + (13.397 * $profile->weight) + (4.799 * $profile->height) - (5.677 * $age);
                 }
-                elseif($profile->gender == 1){
+                elseif($profile->gender == 1){ //Female
                   $bmr = 447.593 + (9.247 * $profile->weight) + (3.098 * $profile->height) - (4.330 * $age);
                 }                            
               ?>
