@@ -13,7 +13,7 @@
           </div>
         </div>
         <div class="table-responsive">
-          <table class="table table-striped table-dark">
+          <table class="table table-sm table-striped table-dark">
             <thead class="thead-dark">
               <tr>
                 <th class="col">Day / Month</th>
@@ -46,10 +46,23 @@
                                 // die;
                             ?>                
                             <?php for ($j=1; $j <= 12; $j++): ?>                 
-                              <?php if(($month==$j) && ($day==$i)): ?>               
-                                <td class="bg-primary">Day <?=$i?>Month <?=$j?><?=$key->date;?></td>
+                              <?php if(($month==$j) && ($day==$i)): ?>  
+                                <?php if($key->mood==1): ?>             
+                                  <td class="bg-warning">D<?=$i?>M<?=$j?><?=$key->date;?></td>
+                                <?php elseif($key->mood==2): ?>             
+                                  <td class="bg-primary">D<?=$i?>M<?=$j?><?=$key->date;?></td>
+                                <?php elseif($key->mood==3): ?>             
+                                  <td class="bg-danger">D<?=$i?>M<?=$j?><?=$key->date;?></td>
+                                <?php elseif($key->mood==4): ?>             
+                                  <td class="bg-danger" style="background-color: #ce72ce; !important">D<?=$i?>M<?=$j?><?=$key->date;?></td>
+                                <?php elseif($key->mood==5): ?>             
+                                  <td class="bg-success">D<?=$i?>M<?=$j?><?=$key->date;?></td>
+                                <?php elseif($key->mood==6): ?>             
+                                  <td class="bg-secondary">D<?=$i?>M<?=$j?><?=$key->date;?></td>
+                                <?php endif;?>
+
                               <?php else: ?>
-                                <td class="bg-secondary">Day <?=$i?>Month <?=$j?><?=$key->date;?></td>
+                                <td class="bg-light">D<?=$i?>M<?=$j?>/<?=$key->date;?></td>
                               <?php endif; ?>
                             <?php endfor; ?>
                           <?php endforeach; ?>

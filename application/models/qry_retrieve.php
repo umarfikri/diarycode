@@ -32,8 +32,10 @@ class Qry_retrieve extends CI_Model {
         return $query->result();
     }   
     
-    function get_mood(){
-        $query = $this->db->query("SELECT mood, date, MAX(time) as time FROM `entry` GROUP BY date ORDER BY date DESC");
+    function get_mood($uID){
+        //not yet based on username
+        $query = $this->db->query("SELECT mood, date, MAX(time) as time FROM `entry` 
+        WHERE username = '$uID' GROUP BY date ORDER BY date DESC ");
         // SELECT mood, date_test, MAX(time_created) FROM `entry` GROUP BY date_test ORDER BY date_test DESC
         // SELECT mood, date_created FROM `entry` WHERE date_created = (SELECT MAX(date_created)) ORDER BY date_created DESC
         return $query->result();

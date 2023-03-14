@@ -77,7 +77,7 @@ class Home extends CI_Controller {
         $data['pagetitle'] = 'Mood Calendar';
         $data['module'] = 'calendar';
         $data['submodule'] = '';        
-        $data['entrylist'] = $this->qry_retrieve->get_mood();
+        $data['entrylist'] = $this->qry_retrieve->get_mood('uID');
         $data['uID'] = $this->session->userdata('uID');        
         $data['profile'] = $this->qry_retrieve->qry_profile($data['uID']);  
 
