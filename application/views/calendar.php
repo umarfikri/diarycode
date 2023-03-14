@@ -1,4 +1,4 @@
-<div class="section landing-section text-center" data-parallax="true" style="background-image: url('<?=$profile->path.$profile->home_img;?>');">
+<div class="section landing-section text-center" data-parallax="true" style="background-image: url('<?=$profile->path.$profile->other_img;?>');">
   <div class="container">
     <h2 class="title text-light">Mood Calendar</h2>
       <div class="row">
@@ -58,13 +58,17 @@
               </tbody>            
           </table>
 
-          <h3 class="title text-light">Indicator</h3>
-          <h3><span class="badge bg-warning">Happy</span></h3>
-          <h3><span class="badge bg-primary">Sad</span></h3>
-          <h3><span class="badge bg-danger">Angry</span></h3>
-          <h3><span class="badge" style="background-color: #ce72ce; !important">Nervous</span></h3>
-          <h3><span class="badge bg-success">Sick</span></h3>
-          <h3><span class="badge bg-secondary">Tired</span></h3>
+          <div class="container">            
+            <h3 class="text-light" style="text-decoration: underline overline;">Indicator</h3>
+            <div class="row justify-content-center">
+              <h3><span class="badge bg-warning ml-4"  style="width: 150px">Happy</span></h3>
+              <h3><span class="badge bg-primary ml-4" style="width: 150px">Sad</span></h3>
+              <h3><span class="badge bg-danger ml-4" style="width: 150px">Angry</span></h3>
+              <h3><span class="badge ml-4" style="width: 150px; background-color: #ce72ce; !important">Nervous</span></h3>
+              <h3><span class="badge bg-success ml-4" style="width: 150px">Sick</span></h3>
+              <h3><span class="badge bg-secondary ml-4" style="width: 150px">Tired</span></h3>
+            </div>
+          </div>                              
         </div>
       </div>    
   </div>    

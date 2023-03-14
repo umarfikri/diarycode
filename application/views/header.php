@@ -38,10 +38,7 @@
         </button>
       </div>
       <div class="collapse navbar-collapse justify-content-end" id="navigation">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a href="index.html" class="nav-link"><i class="nc-icon nc-layout-11"></i> Components</a>
-          </li>                             
+        <ul class="navbar-nav">                                   
           <li class="nav-item">
             <a class="<?= ($module == 'diaryentry') ? 'nav-link active' : 'nav-link';?>" href="home/diaryentry">Diary Entry</a>
           </li>       
