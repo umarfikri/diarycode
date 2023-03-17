@@ -89,14 +89,14 @@ class Qry_insert extends CI_Model {
         $insta        = $this->input->post('insta');
         $username     = $this->input->post('username');
         $password     = $this->input->post('password');
-        $all          = $this->input->post();
-        // print_r("<pre>");
-        // print_r($all);
-        // die();
+        $all          = $this->input->post();        
        
+        $this->load->library('encryption');
+        $key = bin2hex($this->encryption->create_key(16));
+
         $datainfo = array(            
             'username'      => $username,
-            'password'      => $password,
+            'password'      => $this->encryption->encrypt($password),
             'fullname'      => $fullname,
             'nickname'      => $nickname,
             'birthday'      => $birthday,
@@ -106,6 +106,10 @@ class Qry_insert extends CI_Model {
             'twitter'       => $twitter,
             'insta'         => $insta,                                                         
         );    
+
+        // print_r("<pre>");
+        // print_r($datainfo);
+        // die();
 
         $this->db->insert('profile', $datainfo);
         $insertid = $this->db->insert_id(); 

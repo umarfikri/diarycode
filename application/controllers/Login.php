@@ -11,12 +11,14 @@ class Login extends CI_Controller {
             $userid = $this->input->post('username');
             $password = $this->input->post('password');
             $userinfo = $this->db->query("SELECT * FROM profile WHERE username = '$userid'")->row();
+            $this->load->library('encryption');
             // print_r("<pre>");
-            // print_r($userinfo);      
+            // print_r($password);
+            // print_r($this->encryption->decrypt($userinfo->password));      
             // die();      
 			
             if (!empty($userinfo)) {
-                if ($userinfo->password == $password) {
+                if ($this->encryption->decrypt($userinfo->password) == $password) {
                     $variable_session = array(
                         'uID'  => $userinfo->username,
                     );
@@ -41,7 +43,7 @@ class Login extends CI_Controller {
     function register (){
         $data['pagetitle'] = 'Register';
         $data['module'] = 'register';
-        $data['submodule'] = '';    
+        $data['submodule'] = '';           
         
         if($this->input->post('submit')){
             $insertid      = $this->qry_insert->addprofile();
