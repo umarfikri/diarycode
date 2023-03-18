@@ -1,6 +1,6 @@
 <div class="section landing-section text-center" data-parallax="true" style="background-image: url('<?=$profile->path.$profile->other_img;?>');">
   <div class="container">
-    <h2 class="title text-light">Mood Calendar</h2>
+    <h2 class="title text-light" style="text-shadow: 2px 2px 4px #000000;">Mood Calendar</h2>
       <div class="row">
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -72,7 +72,7 @@
           </table>
 
           <div class="container">            
-            <h3 class="text-light" style="text-decoration: underline overline;">Indicator</h3>
+            <h3 class="text-light" style="text-decoration: underline overline; text-shadow: 2px 2px 4px #000000;">Indicator</h3>
             <div class="row justify-content-center">
               <h3><span class="badge bg-warning ml-4"  style="width: 150px">Happy</span></h3>
               <h3><span class="badge bg-primary ml-4" style="width: 150px">Sad</span></h3>
