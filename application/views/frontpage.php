@@ -1,9 +1,8 @@
-  <div class="page-header" data-parallax="true" style="background-image: url('<?=$profile->path.$profile->home_img;?>');">
-    <div class="container">
+  <div class="page-header" data-parallax="true" style="background-image: url(<?=($profile->home_img == null) ? 'assets/default/img/home_bg.jpg' : $profile->path.$profile->home_img; ?>);">
       <div class="motto text-center">
         <h1 style="text-shadow: 2px 2px 4px #000000;">Welcome <?=$profile->nickname;?></h1>
         <h3 style="text-shadow: 2px 2px 4px #000000;"><?=$profile->motto;?></h3>
-        <br />        
+        <br/>        
       </div>
     </div>
   </div>

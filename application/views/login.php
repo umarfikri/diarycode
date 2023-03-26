@@ -53,8 +53,8 @@ The above copyright notice and this permission notice shall be included in all c
     </div>
   </nav>
   <!-- End Navbar -->
-
-  <div class="page-header" style="background-image: url('assets/img/login-image.jpg');">
+  
+  <div class="page-header" style="background-image: url('assets/default/home_bg.jpg');">
     <div class="filter"></div>
     <div class="container">
       <div class="row">
