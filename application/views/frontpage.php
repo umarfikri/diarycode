@@ -1,4 +1,4 @@
-  <div class="page-header" data-parallax="true" style="background-image: url(<?=($profile->home_img == null) ? 'assets/default/img/home_bg.jpg' : $profile->path.$profile->home_img; ?>);">
+  <div class="page-header" data-parallax="true" style="background-image: url(<?=($profile->home_img == null) ? 'assets/default/home_bg.jpg' : $profile->path.$profile->home_img; ?>);">
       <div class="motto text-center">
         <h1 style="text-shadow: 2px 2px 4px #000000;">Welcome <?=$profile->nickname;?></h1>
         <h3 style="text-shadow: 2px 2px 4px #000000;"><?=$profile->motto;?></h3>
@@ -12,8 +12,8 @@
       <div class="container px-4">
         <h2 class="title" style="text-decoration: underline overline;">Profile</h2>
         <div class="row gx-5">
-          <div class="col-md-4 ml-auto mr-auto">                      
-            <img src="<?=$profile->path.$profile->profile_img;?>" width="300" height="300">                         
+          <div class="col-md-4 ml-auto mr-auto">                                
+            <img src="<?=($profile->profile_img == null) ? 'assets/default/profile.jpg' : $profile->path.$profile->profile_img; ?>" width="300" height="300">                         
           </div>
           <div class="col-md-8 ml-auto mr-auto">            
             <h5 class="description" style="text-align: left; text-justify: inter-word;"><?=$profile->description;?></h5> 
