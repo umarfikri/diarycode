@@ -23,41 +23,48 @@
         </div>
         <br/>
         <br/>
-        <h2 class="title" style="text-decoration: underline overline;">Social Media</h2>
-        <br>
-        <div class="row justify-content-md-center">
-          <div class="col-md-3">            
-            <div class="info">
-              <div class="icon icon-danger">
-                <a href=<?=$profile->facebook;?> class="fa-brands fa-facebook"></a>
+        <?php if(($profile->facebook != null) || ($profile->twitter != null) || ($profile->insta != null)): ?>
+          <h2 class="title" style="text-decoration: underline overline;">Social Media</h2>
+          <br>
+          <div class="row justify-content-md-center">
+            <?php if($profile->facebook != null): ?>
+              <div class="col-md-3">            
+                <div class="info">
+                  <div class="icon icon-danger">
+                    <a href=<?=$profile->facebook;?> class="fa-brands fa-facebook"></a>
+                  </div>
+                  <div class="description">
+                    <h4 class="info-title">Facebook</h4>                
+                  </div>
+                </div>
               </div>
-              <div class="description">
-                <h4 class="info-title">Facebook</h4>                
+            <?php endif; ?> 
+            <?php if($profile->twitter != null): ?>
+              <div class="col-md-3">
+                <div class="info">
+                  <div class="icon icon-danger">
+                    <a href=<?=$profile->twitter;?> class="fa-brands fa-twitter"></a>
+                  </div>
+                  <div class="description">
+                    <h4 class="info-title">Twitter</h4>               
+                  </div>
+                </div>
               </div>
-            </div>
+            <?php endif; ?> 
+            <?php if($profile->insta != null): ?>
+              <div class="col-md-3">
+                <div class="info">
+                  <div class="icon icon-danger">
+                    <a href=<?=$profile->insta;?> class="fa-brands fa-instagram"></a>
+                  </div>
+                  <div class="description">
+                    <h4 class="info-title">Instagram</h4>
+                  </div>
+                </div>
+              </div>    
+            <?php endif; ?>        
           </div>
-          <div class="col-md-3">
-            <div class="info">
-              <div class="icon icon-danger">
-                <a href=<?=$profile->twitter;?> class="fa-brands fa-twitter"></a>
-              </div>
-              <div class="description">
-                <h4 class="info-title">Twitter</h4>               
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="info">
-              <div class="icon icon-danger">
-                <a href=<?=$profile->insta;?> class="fa-brands fa-instagram"></a>
-              </div>
-              <div class="description">
-                <h4 class="info-title">Instagram</h4>
-              </div>
-            </div>
-          </div>
-          
-        </div>
+        <?php endif; ?>
       </div>
     </div>    
     <div class="section section-dark text-center">
