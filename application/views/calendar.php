@@ -81,8 +81,35 @@
               <h3><span class="badge bg-success ml-4" style="width: 150px">Sick</span></h3>
               <h3><span class="badge bg-secondary ml-4" style="width: 150px">Tired</span></h3>
             </div>
-          </div>                              
+          </div>  
+          <br>                            
         </div>
-      </div>    
+      </div>   
+      <div class="section text-center">
+        <canvas id="myChart"></canvas>
+      </div> 
   </div>    
 </div>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>

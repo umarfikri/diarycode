@@ -21,6 +21,7 @@
   <!--Custom-->
   <script src="assets/ckeditor/ckeditor.js"></script>
   <script src="https://kit.fontawesome.com/f0dc1777fc.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body class="landing-page sidebar-collapse">
