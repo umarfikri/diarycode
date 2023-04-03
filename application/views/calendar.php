@@ -49,16 +49,22 @@
                               <?php if(($month==$j) && ($day==$i)): ?>  
                                 <?php if($key->mood==1): ?>             
                                   <td class="bg-warning">D<?=$i?>M<?=$j?><?=$key->date;?></td>
+                                  <?php $moodhappy =$moodhappy + 1;?>
                                 <?php elseif($key->mood==2): ?>             
                                   <td class="bg-primary">D<?=$i?>M<?=$j?><?=$key->date;?></td>
+                                  <?php $moodsad =$moodsad + 1;?>
                                 <?php elseif($key->mood==3): ?>             
                                   <td class="bg-danger">D<?=$i?>M<?=$j?><?=$key->date;?></td>
+                                  <?php $moodangry =$moodangry + 1;?>
                                 <?php elseif($key->mood==4): ?>             
                                   <td class="bg-danger" style="background-color: #ce72ce; !important">D<?=$i?>M<?=$j?><?=$key->date;?></td>
+                                  <?php $moodnerv =$moodnerv + 1;?>
                                 <?php elseif($key->mood==5): ?>             
                                   <td class="bg-success">D<?=$i?>M<?=$j?><?=$key->date;?></td>
+                                  <?php $moodsick =$moodsick + 1;?>
                                 <?php elseif($key->mood==6): ?>             
                                   <td class="bg-secondary">D<?=$i?>M<?=$j?><?=$key->date;?></td>
+                                  <?php $moodtired =$moodtired + 1;?>
                                 <?php endif;?>
 
                               <?php else: ?>
@@ -95,17 +101,24 @@
   const ctx = document.getElementById('myChart');
 
   new Chart(ctx, {
-    type: 'bar',
+    type: 'pie',
     data: {
       labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
       datasets: [{
-        label: '# of Votes',
+        label: 'Percentage of Mood',
         data: [12, 19, 3, 5, 2, 3],
         borderWidth: 1
       }]
     },
     options: {
       scales: {
+        x: {
+          title: {
+            color: 'Black',
+            display: true,
+            text: 'Percentage of Mood'
+          }
+        },
         y: {
           beginAtZero: true
         }
