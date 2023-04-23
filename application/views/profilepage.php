@@ -1,4 +1,4 @@
-<div class="section landing-section"  data-parallax="true" style="background-image: url('<?=$profile->path.$profile->home_img;?>');">
+<div class="section landing-section"  data-parallax="true" style="background-image: url(<?=($profile->home_img == null) ? 'assets/default/other_bg.jpg' : $profile->path.$profile->other_img; ?>);">
     <div class="container" style="margin-top: 6rem!important;">        
         <div class="row">
             <div class="col-12">
@@ -96,7 +96,7 @@
                                     <h5 class="text-center">Account</h5>                                    
                                     <div class="form-group">
                                         <label>Password</label>
-                                        <input type="text" class="form-control" name="password" value="<?=$profile->password;?>">                                
+                                        <input type="text" class="form-control" name="password" value="<?=$this->encryption->decrypt($profile->password);?>">                                
                                     </div>
 
                                     <button name="submit" value="submit" class="btn btn-primary mt-4">Submit</button>

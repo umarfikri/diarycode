@@ -91,7 +91,8 @@ class Home extends CI_Controller {
         $data['module'] = 'Profile';
         $data['submodule'] = 'profile';    
         $data['uID'] = $this->session->userdata('uID');        
-        $data['profile'] = $this->qry_retrieve->qry_profile($data['uID']);   
+        $data['profile'] = $this->qry_retrieve->qry_profile($data['uID']);  
+        $this->load->library('encryption'); 
         
         if($this->input->post('submit')){
 
