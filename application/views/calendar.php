@@ -31,12 +31,16 @@
                 <th class="col">December</th>
               </tr>
             </thead>            
-              <tbody>            
-                <?php for ($i=1; $i <= 31; $i++): ?>                                      
-                      <tr>
-                        <th><?=$i?></th>  
-                          <?php foreach ($entrylist as $key) : ?>
-                            <?php  
+              <tbody>                            
+                <?php for ($i=1; $i <= 31; $i++): ?>                         
+                  <tr>
+                    <th><?=$i?></th>      
+                      <?php for ($j=1; $j <= 12; $j++): ?>    
+
+                         <!-- Error Probably start sini -->
+                        <?php foreach ($entrylist as $key) : ?>  
+                                                   
+                          <?php  
                                 $date = $key->date;  
                                 $month = date("n", strtotime($date));   //Tell num month
                                 $day   = date("j", strtotime($date));   //Tell num day
@@ -45,35 +49,16 @@
                                 // print_r("<br>");     
                                 // die;
                             ?>                
-                            <?php for ($j=1; $j <= 12; $j++): ?>                 
-                              <?php if(($month==$j) && ($day==$i)): ?>  
-                                <?php if($key->mood==1): ?>             
-                                  <td class="bg-warning">D<?=$i?>M<?=$j?><?=$key->date;?></td>
-                                 
-                                <?php elseif($key->mood==2): ?>             
-                                  <td class="bg-primary">D<?=$i?>M<?=$j?><?=$key->date;?></td>
-                             
-                                <?php elseif($key->mood==3): ?>             
-                                  <td class="bg-danger">D<?=$i?>M<?=$j?><?=$key->date;?></td>
-                   
-                                <?php elseif($key->mood==4): ?>             
-                                  <td class="bg-danger" style="background-color: #ce72ce; !important">D<?=$i?>M<?=$j?><?=$key->date;?></td>
-                            
-                                <?php elseif($key->mood==5): ?>             
-                                  <td class="bg-success">D<?=$i?>M<?=$j?><?=$key->date;?></td>
-                              
-                                <?php elseif($key->mood==6): ?>             
-                                  <td class="bg-secondary">D<?=$i?>M<?=$j?><?=$key->date;?></td>
-                          
-                                <?php endif;?>
+                          <?php if($day == $i && $month == $j): ?>      
+                            <th><?=$i.$j?></th>
+                          <?php endif; ?>                    
+                        <?php endforeach; ?>
 
-                              <?php else: ?>
-                                <td class="bg-light">D<?=$i?>M<?=$j?>/<?=$key->date;?></td>
-                              <?php endif; ?>
-                            <?php endfor; ?>
-                          <?php endforeach; ?>
-                      </tr>                                                                                                                
-                <?php endfor; ?>                 
+                        <!-- Error probably end sini -->
+                        
+                      <?php endfor; ?>
+                  </tr>    
+                <?php endfor; ?>
               </tbody>            
           </table>
 
