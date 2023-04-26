@@ -31,7 +31,7 @@
                 <th class="col">December</th>
               </tr>
             </thead>            
-              <tbody>                            
+              <tbody>                       
                 <?php for ($i=1; $i <= 31; $i++): ?>                         
                   <tr>
                     <th><?=$i?></th>      
@@ -47,10 +47,12 @@
                                 // print_r("<pre>");
                                 // print_r($day);   
                                 // print_r("<br>");     
-                                // die;
-                            ?>                
+                                // die;                                
+                          ?>                
                           <?php if($day == $i && $month == $j): ?>      
                             <th><?=$i.$j?></th>
+                          <?php else: ?>
+                            <th>Nope</th>
                           <?php endif; ?>                    
                         <?php endforeach; ?>
 
@@ -58,11 +60,11 @@
                         
                       <?php endfor; ?>
                   </tr>    
-                <?php endfor; ?>
-              </tbody>            
+                <?php endfor; ?>                
+              </tbody>         
           </table>
 
-          <div class="container">            
+          <div class="container">       
             <h3 class="text-light" style="text-decoration: underline overline; text-shadow: 2px 2px 4px #000000;">Indicator</h3>
             <div class="row justify-content-center">
               <h3><span class="badge bg-warning ml-4"  style="width: 150px">Happy</span></h3>
