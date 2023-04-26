@@ -27,7 +27,7 @@
                 <th class="col">August</th>
                 <th class="col">September</th>
                 <th class="col">October</th>
-                <th class="col">September</th>
+                <th class="col">November</th>
                 <th class="col">December</th>
               </tr>
             </thead>            
@@ -50,9 +50,31 @@
                                 // die;                                
                           ?>                
                           <?php if($day == $i && $month == $j): ?>      
-                            <th><?=$i.$j?></th>
+                            <?php if($key->mood==1): ?>             
+                              <td class="bg-warning">D<?=$i?>M<?=$j?><?=$key->date;?></td>
+                              
+                            <?php elseif($key->mood==2): ?>             
+                              <td class="bg-primary">D<?=$i?>M<?=$j?><?=$key->date;?></td>
+                          
+                            <?php elseif($key->mood==3): ?>             
+                              <td class="bg-danger">D<?=$i?>M<?=$j?><?=$key->date;?></td>
+                
+                            <?php elseif($key->mood==4): ?>             
+                              <td class="bg-danger" style="background-color: #ce72ce; !important">D<?=$i?>M<?=$j?><?=$key->date;?></td>
+                        
+                            <?php elseif($key->mood==5): ?>             
+                              <td class="bg-success">D<?=$i?>M<?=$j?><?=$key->date;?></td>
+                          
+                            <?php elseif($key->mood==6): ?>             
+                              <td class="bg-secondary">D<?=$i?>M<?=$j?><?=$key->date;?></td>                                                                                   
+
+                            <?php else: ?>
+                              <td class="bg-light">D<?=$i?>M<?=$j?>/<?=$key->date;?></td>
+                            
+                            <?php endif; ?> 
+
                           <?php else: ?>
-                            <th>Nope</th>
+                            <td class="bg-secondary">D<?=$i?>M<?=$j?>/<?=$key->date;?></td> <!--temp-->
                           <?php endif; ?>                    
                         <?php endforeach; ?>
 
