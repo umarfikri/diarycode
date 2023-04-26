@@ -45,7 +45,7 @@
                                 $month = date("n", strtotime($date));   //Tell num month
                                 $day   = date("j", strtotime($date));   //Tell num day
                                 // print_r("<pre>");
-                                // print_r($day);   
+                                // print_r($date);   
                                 // print_r("<br>");     
                                 // die;                                
                           ?>                
