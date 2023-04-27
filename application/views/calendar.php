@@ -12,10 +12,10 @@
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </div>
-        <div class="table-responsive">
-          <table class="table table-sm table-striped table-dark">
+        <div class="table-responsive-lg">
+          <table class="table table-dark table-bordered table-hover">
             <thead class="thead-dark">
-              <tr>
+              <tr class="d-flex"> <!--Not sure dflex ok ke x-->
                 <th class="col">Day / Month</th>
                 <th class="col">January</th>
                 <th class="col">February</th>
@@ -31,15 +31,16 @@
                 <th class="col">December</th>
               </tr>
             </thead>            
-              <tbody>                       
-                <?php for ($i=1; $i <= 31; $i++): ?>                         
-                  <tr>
-                    <th><?=$i?></th>      
-                      <?php for ($j=1; $j <= 12; $j++): ?>    
-
-                         <!-- Error Probably start sini -->
-                        <?php foreach ($entrylist as $key) : ?>  
-                                                   
+              <tbody>     
+                <!-- Table config start -->
+                                  
+                <?php for ($i=1; $i <= 31; $i++): ?>   
+                  <?php foreach ($entrylist as $key) : ?>                      
+                    <tr class="d-flex">
+                      <th><?=$i?></th>      
+                      
+                        <?php for ($j=1; $j <= 12; $j++): ?>                              
+                                                  
                           <?php  
                                 $date = $key->date;  
                                 $month = date("n", strtotime($date));   //Tell num month
@@ -51,59 +52,63 @@
                           ?>                
                           <?php if($day == $i && $month == $j): ?>      
                             <?php if($key->mood==1): ?>             
-                              <td class="bg-warning">D<?=$i?>M<?=$j?><?=$key->date;?></td>
+                              <td class="bg-warning">Happy </td>
                               
                             <?php elseif($key->mood==2): ?>             
-                              <td class="bg-primary">D<?=$i?>M<?=$j?><?=$key->date;?></td>
+                              <td class="bg-primary">Sad </td>
                           
                             <?php elseif($key->mood==3): ?>             
-                              <td class="bg-danger">D<?=$i?>M<?=$j?><?=$key->date;?></td>
+                              <td class="bg-danger">Angry </td>
                 
                             <?php elseif($key->mood==4): ?>             
-                              <td class="bg-danger" style="background-color: #ce72ce; !important">D<?=$i?>M<?=$j?><?=$key->date;?></td>
+                              <td class="bg-danger" style="background-color: #ce72ce; !important">Nervous </td>
                         
                             <?php elseif($key->mood==5): ?>             
-                              <td class="bg-success">D<?=$i?>M<?=$j?><?=$key->date;?></td>
+                              <td class="bg-success">Sick </td>
                           
                             <?php elseif($key->mood==6): ?>             
-                              <td class="bg-secondary">D<?=$i?>M<?=$j?><?=$key->date;?></td>                                                                                   
+                              <td class="bg-secondary">Tired </td>                                                                                   
 
                             <?php else: ?>
-                              <td class="bg-light">D<?=$i?>M<?=$j?>/<?=$key->date;?></td>
+                              <td class="bg-light">Null </td>
+
                             
                             <?php endif; ?> 
 
                           <?php else: ?>
-                            <td class="bg-secondary">D<?=$i?>M<?=$j?>/<?=$key->date;?></td> <!--temp-->
-                          <?php endif; ?>                    
-                        <?php endforeach; ?>
-
-                        <!-- Error probably end sini -->
+                            <td class="bg-secondary">No Entry </td> <!--temp-->                           
+                          <?php endif; ?>                                            
                         
-                      <?php endfor; ?>
-                  </tr>    
-                <?php endfor; ?>                
+                        <?php endfor; ?>                      
+
+                    </tr>  
+                  <?php endforeach; ?>  
+                <?php endfor; ?>    
+                
+                <!-- Table config end here -->            
               </tbody>         
           </table>
-
-          <div class="container">       
-            <h3 class="text-light" style="text-decoration: underline overline; text-shadow: 2px 2px 4px #000000;">Indicator</h3>
-            <div class="row justify-content-center">
-              <h3><span class="badge bg-warning ml-4"  style="width: 150px">Happy</span></h3>
-              <h3><span class="badge bg-primary ml-4" style="width: 150px">Sad</span></h3>
-              <h3><span class="badge bg-danger ml-4" style="width: 150px">Angry</span></h3>
-              <h3><span class="badge ml-4" style="width: 150px; background-color: #ce72ce; !important">Nervous</span></h3>
-              <h3><span class="badge bg-success ml-4" style="width: 150px">Sick</span></h3>
-              <h3><span class="badge bg-secondary ml-4" style="width: 150px">Tired</span></h3>
-            </div>
-          </div>  
-          <br>                            
-        </div>
-      </div>   
-      <div class="section text-center">
-        <canvas id="myChart"></canvas>
-      </div> 
-  </div>    
+        </div>                                                   
+      </div>         
+  </div> 
+  <div class="container">       
+    <h3 class="text-light" style="text-decoration: underline overline; text-shadow: 2px 2px 4px #000000;">Indicator</h3>
+    <div class="row justify-content-center">
+      <h3><span class="badge bg-warning ml-4"  style="width: 150px">Happy</span></h3>
+      <h3><span class="badge bg-primary ml-4" style="width: 150px">Sad</span></h3>
+      <h3><span class="badge bg-danger ml-4" style="width: 150px">Angry</span></h3>
+      <h3><span class="badge ml-4" style="width: 150px; background-color: #ce72ce; !important">Nervous</span></h3>
+      <h3><span class="badge bg-success ml-4" style="width: 150px">Sick</span></h3>
+      <h3><span class="badge bg-secondary ml-4" style="width: 150px">Tired</span></h3>
+    </div>
+  </div>  
+  <br> 
+  
+  <div class="container">
+    <div class="section text-center">
+      <canvas id="myChart"></canvas>
+    </div> 
+  </div>     
 </div>
 
 <script>
