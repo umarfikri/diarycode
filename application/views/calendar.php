@@ -50,31 +50,31 @@
                                 // print_r("<br>");     
                                 // die;                                
                           ?>                
-                          <?php if($day == $i && $month == $j): ?>      
-                            <?php if($key->mood==1): ?>             
-                              <td class="bg-warning">Happy </td>
-                              
-                            <?php elseif($key->mood==2): ?>             
-                              <td class="bg-primary">Sad </td>
-                          
-                            <?php elseif($key->mood==3): ?>             
-                              <td class="bg-danger">Angry </td>
-                
-                            <?php elseif($key->mood==4): ?>             
-                              <td class="bg-danger" style="background-color: #ce72ce; !important">Nervous </td>
-                        
-                            <?php elseif($key->mood==5): ?>             
-                              <td class="bg-success">Sick </td>
-                          
-                            <?php elseif($key->mood==6): ?>             
-                              <td class="bg-secondary">Tired </td>                                                                                   
+                          <?php if($day == $i && $month == $j): ?>  
 
-                            <?php else: ?>
-                              <td class="bg-light">Null </td>
-
-                            
-                            <?php endif; ?> 
-
+                            <?php switch($key->mood): 
+                              case 1: ?>
+                                <td class="bg-warning">Happy </td>
+                                <?php break;?>
+                              <?php case 2: ?>
+                                <td class="bg-primary">Sad </td>
+                                <?php break;?>
+                              <?php case 3: ?>
+                                <td class="bg-danger">Angry </td>
+                                <?php break;?>
+                              <?php case 4: ?>
+                                <td class="bg-danger" style="background-color: #ce72ce; !important">Nervous </td>
+                                <?php break;?>
+                              <?php case 5: ?>
+                                <td class="bg-success">Sick </td>
+                                <?php break;?>
+                              <?php case 6: ?>
+                                <td class="bg-secondary">Tired </td>
+                                <?php break;?>
+                              <?php default: ?>
+                                <td class="bg-light">Null </td>
+                            <?php endswitch;?>
+ 
                           <?php else: ?>
                             <td class="bg-secondary">No Entry </td> <!--temp-->                           
                           <?php endif; ?>                                            
