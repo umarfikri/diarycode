@@ -15,7 +15,7 @@
         <div class="table-responsive-lg">
           <table class="table table-dark table-bordered table-hover">
             <thead class="thead-dark">
-              <tr class="d-flex"> <!--Not sure dflex ok ke x-->
+              <tr> 
                 <th class="col">Day / Month</th>
                 <th class="col">January</th>
                 <th class="col">February</th>
@@ -36,7 +36,7 @@
                                   
                 <?php for ($i=1; $i <= 31; $i++): ?>   
                   <?php foreach ($entrylist as $key) : ?>                      
-                    <tr class="d-flex">
+                    <tr>
                       <th><?=$i?></th>      
                       
                         <?php for ($j=1; $j <= 12; $j++): ?>                              
