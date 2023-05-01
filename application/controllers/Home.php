@@ -142,7 +142,40 @@ class Home extends CI_Controller {
 		redirect('login/index');
     }
 
-    function laporan_kehadiran() {
+    function date_data(){
+        //Declare
+        $dateid = $this->input->post('id');
+        $tahun = date("Y");
+        $bulan = date("F");
+        
+        $nmonth = date("m", strtotime($bulan."-".$tahun)); //Get month as 01 format           
+        print_r("Month:".$nmonth);
+        echo '<br/>';
+        $d=cal_days_in_month(CAL_GREGORIAN,$nmonth,$tahun); //Calculate how many days in month
+        for ($i=1; $i <= $d; $i++) { 
+            $days = str_pad($i, 2, 0, STR_PAD_LEFT); //Put "0" infront of num so that 1 become 01        
+            $arrdate[] = array(
+                "daymonthyear" => "$tahun-$nmonth-$days"
+            );
+        }
+        //check if there is date in the database
+        //num_rows() Give num of data in table
+        $chkdate = $this->db->query("SELECT * FROM date_data WHERE YEAR(daymonthyear)='$tahun' AND MONTH(daymonthyear)='$nmonth'")->num_rows();
+        
+        if ($chkdate==0) {
+            $this->db->insert_batch('date_data',$arrdate);
+            
+        }  
+
+        echo "There was $d days in $bulan $tahun";
+			echo "<pre>";
+			// print_r($kehadiran);
+			print_r($arrdate);
+			print_r($this->input->post());
+			die();
+    }
+
+    function laporan_kehadiran() { //Coding En Zach
 		// $this->d['module'] 		= 'modul_laporan';
 		// $this->d['sub_module'] = 'laporan_perpustakaan';
 		// $this->d['sub2_module'] = 'laporan_kehadiran';
