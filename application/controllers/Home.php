@@ -78,6 +78,7 @@ class Home extends CI_Controller {
         $data['module'] = 'calendar';
         $data['submodule'] = '';    
         $data['uID'] = $this->session->userdata('uID');     
+        $data['date_system'] = $this->qry_retrieve->get_date();
         $data['entrylist'] = $this->qry_retrieve->get_mood($data['uID']);
                
         $data['profile'] = $this->qry_retrieve->qry_profile($data['uID']);  

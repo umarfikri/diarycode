@@ -43,6 +43,11 @@ class Qry_retrieve extends CI_Model {
         return $query->result();
     }
 
+    function get_date(){
+        $query = $this->db->query("SELECT * FROM `date_data`;");
+        return $query->result();
+    }
+
     function qry_profile($uID){
         $query = $this->db->query("SELECT * FROM profile LEFT JOIN gallery on gallery.username = profile.username 
         LEFT JOIN health on health.username = profile.username WHERE profile.username = '$uID'");        

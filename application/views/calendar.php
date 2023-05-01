@@ -32,8 +32,7 @@
               </tr>
             </thead>            
               <tbody>     
-                <!-- Table config start -->
-                                  
+                <!-- Table config start -->                               
                 <?php for ($i=1; $i <= 31; $i++): ?>   
                   <?php foreach ($entrylist as $key) : ?>                      
                     <tr>
