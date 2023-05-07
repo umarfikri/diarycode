@@ -44,39 +44,47 @@
                                 $date = $key->date;  
                                 $month = date("n", strtotime($date));   //Tell num month
                                 $day   = date("j", strtotime($date));   //Tell num day
+                                $dateij = "2023-".$j."-".$i;
                                 // print_r("<pre>");
-                                // print_r($date);   
+                                // print_r($date);
+                                // print_r($dateij);   
                                 // print_r("<br>");     
                                 // die;                                
-                          ?>                
-                          <?php if($day == $i && $month == $j): ?>  
+                          ?>  
+                          
+                          <?php if($date = $dateij): ?>
+                            <?php if($day == $i && $month == $j): ?>  
 
-                            <?php switch($key->mood): 
-                              case 1: ?>
-                                <td class="bg-warning">Happy </td>
-                                <?php break;?>
-                              <?php case 2: ?>
-                                <td class="bg-primary">Sad </td>
-                                <?php break;?>
-                              <?php case 3: ?>
-                                <td class="bg-danger">Angry </td>
-                                <?php break;?>
-                              <?php case 4: ?>
-                                <td class="bg-danger" style="background-color: #ce72ce; !important">Nervous </td>
-                                <?php break;?>
-                              <?php case 5: ?>
-                                <td class="bg-success">Sick </td>
-                                <?php break;?>
-                              <?php case 6: ?>
-                                <td class="bg-secondary">Tired </td>
-                                <?php break;?>
-                              <?php default: ?>
-                                <td class="bg-light">Null </td>
-                            <?php endswitch;?>
- 
-                          <?php else: ?>
-                            <td class="bg-secondary">No Entry </td> <!--temp-->                           
-                          <?php endif; ?>                                            
+                              <?php switch($key->mood): 
+                                case 1: ?>
+                                  <td class="bg-warning">Happy </td>
+                                  <?php break;?>
+                                <?php case 2: ?>
+                                  <td class="bg-primary">Sad </td>
+                                  <?php break;?>
+                                <?php case 3: ?>
+                                  <td class="bg-danger">Angry </td>
+                                  <?php break;?>
+                                <?php case 4: ?>
+                                  <td class="bg-danger" style="background-color: #ce72ce; !important">Nervous </td>
+                                  <?php break;?>
+                                <?php case 5: ?>
+                                  <td class="bg-success">Sick </td>
+                                  <?php break;?>
+                                <?php case 6: ?>
+                                  <td class="bg-secondary">Tired </td>
+                                  <?php break;?>
+                                <?php default: ?>
+                                  <td class="bg-light">Null </td>
+                              <?php endswitch;?>
+
+                            <?php else: ?>
+                              <td class="bg-secondary">No Entry </td> <!--temp-->                           
+                            <?php endif; ?>     
+                          <?php else: 
+                            continue;?>
+                          <?php endif; ?>
+                                                              
                         
                         <?php endfor; ?>                      
 
