@@ -147,11 +147,14 @@ class Home extends CI_Controller {
         //Declare
         $dateid = $this->input->post('id');
         $tahun = date("Y");
-        $bulan = date("F");
-        
+        $bulan = date("F");        
+
         $nmonth = date("m", strtotime($bulan."-".$tahun)); //Get month as 01 format           
         print_r("Month:".$nmonth);
+        echo '<br/>';                
+        print_r("Year:".$tahun);
         echo '<br/>';
+
         $d=cal_days_in_month(CAL_GREGORIAN,$nmonth,$tahun); //Calculate how many days in month
         for ($i=1; $i <= $d; $i++) { 
             $days = str_pad($i, 2, 0, STR_PAD_LEFT); //Put "0" infront of num so that 1 become 01        

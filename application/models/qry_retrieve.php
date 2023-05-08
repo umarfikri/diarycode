@@ -45,7 +45,7 @@ class Qry_retrieve extends CI_Model {
 
     function get_date(){
         $query = $this->db->query("SELECT * FROM `date_data`;");
-        // SELECT mood, date, MAX(time) AS time FROM `entry` LEFT JOIN date_data ON entry.date = date_data.daymonthyear WHERE username = 'ensi' GROUP BY date ORDER BY `entry`.`date` DESC;
+        // SELECT date_data.daymonthyear, entry.time, entry.mood FROM date_data LEFT JOIN entry ON date_data.daymonthyear = entry.date AND username = 'hide123' GROUP BY date_data.daymonthyear ORDER BY date_data.daymonthyear ASC;
         return $query->result();
     }
 
