@@ -34,12 +34,11 @@
               <tbody>     
                 <!-- Table config start -->                               
                 <?php for ($i=1; $i <= 31; $i++): ?>   
-                  <?php foreach ($entrylist as $key) : ?>                      
-                    <tr>
-                      <th><?=$i?></th>      
-                      
-                        <?php for ($j=1; $j <= 12; $j++): ?>                              
-                                                  
+                  <tr>
+                    <th><?=$i?></th> 
+                                                                                            
+                      <?php for ($j=1; $j <= 12; $j++): ?>                              
+                        <?php foreach ($entrylist as $key) : ?>                        
                           <?php  
                                 $date = $key->date;  
                                 $month = date("n", strtotime($date));   //Tell num month
@@ -51,8 +50,7 @@
                                 // print_r("<br>");     
                                 // die;                                
                           ?>  
-                          
-                          <?php if($date = $dateij): ?>
+                      
                             <?php if($day == $i && $month == $j): ?>  
 
                               <?php switch($key->mood): 
@@ -81,15 +79,12 @@
                             <?php else: ?>
                               <td class="bg-secondary">No Entry </td> <!--temp-->                           
                             <?php endif; ?>     
-                          <?php else: 
-                            continue;?>
-                          <?php endif; ?>
-                                                              
-                        
-                        <?php endfor; ?>                      
-
-                    </tr>  
-                  <?php endforeach; ?>  
+                                                                                      
+                        <?php endforeach; ?>  
+                      <?php endfor; ?>                      
+                      
+                    
+                  </tr> 
                 <?php endfor; ?>    
                 
                 <!-- Table config end here -->            
