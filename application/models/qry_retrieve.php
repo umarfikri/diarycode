@@ -16,7 +16,7 @@ class Qry_retrieve extends CI_Model {
     }
 
     public function get_record($offset, $limit, $uID) {
-        $query = $this->db->query("SELECT * FROM entry WHERE username = '$uID' ORDER BY date DESC LIMIT $offset, $limit");
+        $query = $this->db->query("SELECT * FROM entry WHERE username = '$uID' ORDER BY date DESC, time DESC LIMIT $offset, $limit");
         // print_r($offset);
         // print_r("<br>");
         // print_r($limit);
@@ -27,25 +27,18 @@ class Qry_retrieve extends CI_Model {
         return $query->result();  
     }
     
-    function qry_listentry(){
+    function qry_listentry(){//Tak Guna function ni dlm controller
         $query = $this->db->query("SELECT * FROM entry ORDER BY entry.date desc");
         return $query->result();
     }   
     
-    function get_mood($uID){
-        $query = $this->db->query("SELECT mood, date, MAX(time) AS time FROM `entry` WHERE username = '$uID' GROUP BY date ORDER BY date DESC;");
-        // SELECT mood, date_test, MAX(time_created) FROM `entry` GROUP BY date_test ORDER BY date_test DESC
-        // SELECT mood, date_created FROM `entry` WHERE date_created = (SELECT MAX(date_created)) ORDER BY date_created DESC
+    function get_mood($uID){ //get all data in 365 day in a year where mood equal to null or not
+        $query = $this->db->query("SELECT date_data.daymonthyear AS date, entry.time, entry.mood FROM date_data LEFT JOIN entry ON date_data.daymonthyear = entry.date AND username = '$uID' GROUP BY date_data.daymonthyear ORDER BY date_data.daymonthyear ASC;");
+        // SELECT mood, date, MAX(time) AS time FROM `entry` WHERE username = '$uID' GROUP BY date ORDER BY date DESC;      
         // print_r("<pre>");
-        // print_r($uID);   
+        // print_r($query->result());   
         // print_r("<br>");     
         // die;
-        return $query->result();
-    }
-
-    function get_date(){
-        $query = $this->db->query("SELECT * FROM `date_data`;");
-        // SELECT date_data.daymonthyear, entry.time, entry.mood FROM date_data LEFT JOIN entry ON date_data.daymonthyear = entry.date AND username = 'hide123' GROUP BY date_data.daymonthyear ORDER BY date_data.daymonthyear ASC;
         return $query->result();
     }
 

@@ -38,7 +38,7 @@
                     <th><?=$i?></th> 
                                                                                             
                       <?php for ($j=1; $j <= 12; $j++): ?>                              
-                        <?php foreach ($entrylist as $key) : ?>                        
+                        <?php foreach ($moodlist as $key) : ?>                        
                           <?php  
                                 $date = $key->date;  
                                 $month = date("n", strtotime($date));   //Tell num month
