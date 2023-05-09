@@ -147,6 +147,37 @@ class Home extends CI_Controller {
         //Declare
         $dateid = $this->input->post('id');
         $tahun = date("Y");
+
+        for ($i=1; $i <= 12; $i++){//Calculate month
+            $bulan = str_pad($i, 2, 0, STR_PAD_LEFT); //Put "0" infront of num so that 1 become 01
+
+            $d=cal_days_in_month(CAL_GREGORIAN,$bulan,$tahun); //Calculate how many days in month           
+            for ($j=1; $j <= $d; $j++) { 
+                $days = str_pad($j, 2, 0, STR_PAD_LEFT); //Put "0" infront of num so that 1 become 01        
+                $arrdate[] = array(
+                    "daymonthyear" => "$tahun-$bulan-$days"
+                );
+            }
+        }
+        $chkdate = $this->db->query("SELECT * FROM date_data WHERE YEAR(daymonthyear)='$tahun'")->num_rows();
+
+        print_r($chkdate);
+        die();
+        if ($chkdate==0) {
+            $this->db->insert_batch('date_data',$arrdate);            
+        }  
+        echo "<pre>";	
+        print_r($arrdate);
+        print_r($this->input->post());
+        die();
+
+        
+    }
+
+    function month_date() {
+        //Original
+        $dateid = $this->input->post('id');
+        $tahun = date("Y");
         $bulan = date("F");        
 
         $nmonth = date("m", strtotime($bulan."-".$tahun)); //Get month as 01 format           
@@ -167,16 +198,14 @@ class Home extends CI_Controller {
         $chkdate = $this->db->query("SELECT * FROM date_data WHERE YEAR(daymonthyear)='$tahun' AND MONTH(daymonthyear)='$nmonth'")->num_rows();
         
         if ($chkdate==0) {
-            $this->db->insert_batch('date_data',$arrdate);
-            
+            $this->db->insert_batch('date_data',$arrdate);            
         }  
 
         echo "There was $d days in $bulan $tahun";
-			echo "<pre>";
-			// print_r($kehadiran);
-			print_r($arrdate);
-			print_r($this->input->post());
-			die();
+        echo "<pre>";	
+        print_r($arrdate);
+        print_r($this->input->post());
+        die();
     }
 
     function laporan_kehadiran() { //Coding En Zach
