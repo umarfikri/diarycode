@@ -7,7 +7,8 @@ class Home extends CI_Controller {
         $data['submodule'] = ''; 
         $id = $this->session->userdata('uID');        
         $data['profile'] = $this->qry_retrieve->qry_profile($id);
-       
+        $this->date_data(); //Check if year date data is on database
+
         $this->load->view('header', $data);
         $this->load->view('frontpage');
         $this->load->view('footer');
@@ -159,17 +160,15 @@ class Home extends CI_Controller {
             }
         }
         $chkdate = $this->db->query("SELECT * FROM date_data WHERE YEAR(daymonthyear)='$tahun'")->num_rows();
-
-        print_r($chkdate);
-        die();
+        // print_r($chkdate);
+        // die();
         if ($chkdate==0) {
             $this->db->insert_batch('date_data',$arrdate);            
         }  
-        echo "<pre>";	
-        print_r($arrdate);
-        print_r($this->input->post());
-        die();
-        
+        // echo "<pre>";	
+        // print_r($arrdate);
+        // print_r($this->input->post());
+        // die();        
     }
 
     function month_date() {
