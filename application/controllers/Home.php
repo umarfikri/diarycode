@@ -83,10 +83,10 @@ class Home extends CI_Controller {
                
         $data['profile'] = $this->qry_retrieve->qry_profile($data['uID']);  
 
-        // print_r("<pre>");
-        // print_r($data['entrylist']);   
-        // print_r("<br>");     
-        // die;
+        print_r("<pre>");
+        print_r($data['moodlist']);   
+        print_r("<br>");     
+        die;
 
         $this->load->view('header', $data);
         $this->load->view('calendar');
@@ -159,11 +159,25 @@ class Home extends CI_Controller {
                 );
             }
         }
+
+      
+        for ($j=1; $j <= 31; $j++) { 
+            $days = str_pad($j, 2, 0, STR_PAD_LEFT); //Put "0" infront of num so that 1 become 01        
+            $arrdate2[] = array(
+                "daymonthyear" => "$days"
+            );
+        }
+        // echo "<pre>";	
+        // print_r($arrdate2);
+        // die();   
+        
+
+
         $chkdate = $this->db->query("SELECT * FROM date_data WHERE YEAR(daymonthyear)='$tahun'")->num_rows();
         // print_r($chkdate);
         // die();
         if ($chkdate==0) {
-            $this->db->insert_batch('date_data',$arrdate);            
+            $this->db->insert_batch('date_data',$arrdate2);            
         }  
         // echo "<pre>";	
         // print_r($arrdate);
