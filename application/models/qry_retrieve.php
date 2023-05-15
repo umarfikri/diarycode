@@ -33,7 +33,7 @@ class Qry_retrieve extends CI_Model {
     }   
     
     function get_mood($uID){ //get all data in 365 day in a year where mood equal to null or not
-        $query = $this->db->query("SELECT date_data.daymonthyear AS date, entry.time, entry.mood FROM date_data LEFT JOIN entry ON date_data.daymonthyear = entry.date AND username = '$uID' GROUP BY date_data.daymonthyear ORDER BY date_data.daymonthyear ASC;");
+        $query = $this->db->query("SELECT date_data.daymonthyear AS date, MAX(entry.time) AS time, entry.mood FROM date_data LEFT JOIN entry ON date_data.daymonthyear = entry.date AND username = '$uID' GROUP BY date_data.daymonthyear ORDER BY date_data.daymonthyear ASC;");
         // SELECT mood, date, MAX(time) AS time FROM `entry` WHERE username = '$uID' GROUP BY date ORDER BY date DESC;      
         // print_r("<pre>");
         // print_r($query->result());   
