@@ -36,7 +36,7 @@ The above copyright notice and this permission notice shall be included in all c
   <link href="assets/demo/demo.css" rel="stylesheet" />
 </head>
 
-<body class="register-page sidebar-collapse">
+<body class="register-page sidebar-collapse">  
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="300">
     <div class="container">
@@ -52,8 +52,8 @@ The above copyright notice and this permission notice shall be included in all c
       </div>     
     </div>
   </nav>
-  <!-- End Navbar -->
-  
+  <!-- End Navbar -->  
+
   <div class="page-header" style="background-image: url('assets/default/home_bg.jpg');">
     <div class="filter"></div>
     <div class="container">
@@ -67,7 +67,7 @@ The above copyright notice and this permission notice shall be included in all c
               <label>Password</label>
               <input type="password" name="password" class="form-control" placeholder="Password">
               <button name="submit" value="submit" class="btn btn-danger btn-block btn-round">Login</button>
-              <a href="login/register" class="btn btn-danger btn-block btn-round">Register</a>               
+              <a href="login/register" class="btn btn-danger btn-block btn-round">Register</a>                            
             </form>
             <div class="forgot">
               <a href="#" class="btn btn-link btn-danger">Forgot password?</a>
@@ -76,6 +76,33 @@ The above copyright notice and this permission notice shall be included in all c
         </div>
       </div>
     </div>
+  </div>
+
+  <div id="music">
+    
+    <script>    
+        
+        var x = document.getElementById("myAudio").loop; 
+        x.play();    
+        
+    </script> 
+    <audio id="myAudio" controls loop>
+
+    <source src="assets/Karakuri_Pierrot.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+    </audio>   
+    <!-- Try 3
+    <audio src="assets/Karakuri_Pierrot.mp3" autoplay loop controls> -->
+      <!-- Try 1 -->
+    <!-- <iframe src="Silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe> -->
+    <!-- <audio id="player" autoplay loop>
+      <source src="assets/Karakuri_Pierrot.mp3" type="audio/mp3">
+    </audio> -->
+    <!-- Try 2 -->
+      <!-- <iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+      <audio loop autoplay>
+          <source src="assets/Karakuri_Pierrot.mp3" type="audio/mp3">
+      </audio>   -->
   </div>
         
   <!--   Core JS Files   -->

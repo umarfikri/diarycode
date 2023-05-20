@@ -21,13 +21,13 @@
   <!--Custom-->
   <script src="assets/ckeditor/ckeditor.js"></script>
   <script src="https://kit.fontawesome.com/f0dc1777fc.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  
 </head>
 
 <body class="landing-page sidebar-collapse">
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="300">
-    <div class="container">
+    <div class="container">      
       <div class="navbar-translate">
         <a class="navbar-brand" <?= ($module == 'index') ? 'nav-link active' : 'nav-link';?> href="home">
           Home
