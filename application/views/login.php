@@ -48,8 +48,43 @@ The above copyright notice and this permission notice shall be included in all c
           <span class="navbar-toggler-bar bar1"></span>
           <span class="navbar-toggler-bar bar2"></span>
           <span class="navbar-toggler-bar bar3"></span>
-        </button>
-      </div>     
+        </button>        
+      </div>   
+
+      <div id="music">
+        <!-- Microphone Rec Permission -->
+        <script>
+          navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+            
+          var x = document.getElementById("BgMsc"); 
+          x.play();
+
+          // stop microphone stream acquired by getUserMedia
+          stream.getTracks().forEach(function (track) { track.stop(); });
+          });
+        </script>
+        <audio id="BgMsc" controls loop>
+          <source src="assets/Karakuri_Pierrot.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+
+        <!-- Can loop -->
+        <!-- <script>                
+            var x = document.getElementById("myAudio").loop; 
+            x.play();                
+        </script> 
+        <audio id="myAudio" controls loop>
+          <source src="assets/Karakuri_Pierrot.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>    -->
+
+        <!-- Can Loop -->    
+        <!-- <audio controls autoplay loop>
+          <source src="assets/Karakuri_Pierrot.ogg" type="audio/ogg">
+          <source src="assets/Karakuri_Pierrot.mp3" type="audio/mpeg">
+        </audio> -->
+          
+      </div>  
     </div>
   </nav>
   <!-- End Navbar -->  
@@ -76,34 +111,7 @@ The above copyright notice and this permission notice shall be included in all c
         </div>
       </div>
     </div>
-  </div>
-
-  <div id="music">
-    
-    <script>    
-        
-        var x = document.getElementById("myAudio").loop; 
-        x.play();    
-        
-    </script> 
-    <audio id="myAudio" controls loop>
-
-    <source src="assets/Karakuri_Pierrot.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-    </audio>   
-    <!-- Try 3
-    <audio src="assets/Karakuri_Pierrot.mp3" autoplay loop controls> -->
-      <!-- Try 1 -->
-    <!-- <iframe src="Silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe> -->
-    <!-- <audio id="player" autoplay loop>
-      <source src="assets/Karakuri_Pierrot.mp3" type="audio/mp3">
-    </audio> -->
-    <!-- Try 2 -->
-      <!-- <iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
-      <audio loop autoplay>
-          <source src="assets/Karakuri_Pierrot.mp3" type="audio/mp3">
-      </audio>   -->
-  </div>
+  </div>  
         
   <!--   Core JS Files   -->
   <script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
