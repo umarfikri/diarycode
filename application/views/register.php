@@ -47,12 +47,12 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="text-center">Register</h3>
+                        <h3 class="text-center" style="text-decoration: underline overline;">Register</h3>
                         <br>
                         <div class="row">
                             <div class="col-md-12 ml-auto mr-auto">
                                 <form method="POST" enctype="multipart/form-data">
-                                    <h5 class="text-center">Profile</h5>
+                                    <h3 class="text-center">Profile</h3>
                                     <div class="form-group">
                                         <label>Full Name</label>
                                         <input type="text" class="form-control" name="fullname">                                
@@ -77,7 +77,7 @@
                                         <input type="text" class="form-control" name="motto">                                
                                     </div>      
 
-                                    <h5 class="text-center">Social Media</h5>
+                                    <h3 class="text-center">Social Media</h3>
                                     <div class="form-group">
                                         <label>Facebook Link</label>
                                         <input type="text" class="form-control" name="facebook">                                
@@ -91,7 +91,8 @@
                                         <input type="text" class="form-control" name="insta">                                
                                     </div>              
 
-                                    <h5 class="text-center">Background Image</h5>
+                                    <h3 class="text-center">Customization</h3>
+                                    <h5 class="text-center">You may leave this field blank.. Maximum 5MB in size.</h5>
                                     <div class="form-group">
                                         <label>Profile Image</label>
                                         <input class="form-control" type="file" name="profileimage"> 
@@ -104,9 +105,13 @@
                                     <div class="form-group">
                                         <label>Other Backround Image</label>
                                         <input class="form-control" type="file" name="otherimage">                                
-                                    </div>                                             
+                                    </div>    
+                                    <div class="form-group">
+                                        <label>Background Music</label>
+                                        <input class="form-control" type="file" name="bgmsc">                                
+                                    </div>                                            
                                     
-                                    <h5 class="text-center">Health</h5>                                                                        
+                                    <h3 class="text-center">Health</h3>
                                     <div class="form-group">
                                         <label>Height (cm)</label>
                                         <input type="text" class="form-control" name="height">                                
@@ -137,7 +142,7 @@
                                         </div>
                                     </div>
 
-                                    <h5 class="text-center">Account</h5>
+                                    <h3 class="text-center">Account</h3>
                                     <div class="form-group">
                                         <label>Username</label>
                                         <input type="text" class="form-control" name="username">                                

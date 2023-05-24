@@ -120,10 +120,11 @@ class Qry_insert extends CI_Model {
         $profileimg   = $this->input->post('profileimage');
         $homeimg      = $this->input->post('homeimage');
         $otherimg     = $this->input->post('otherimage');
+        $bgmsc        = $this->input->post('bgmsc');
         $username     = $this->input->post('username');
 
         $config['upload_path'] = "./uploads/$username/gallery";
-        $config['allowed_types'] = 'gif|jpg|png';
+        $config['allowed_types'] = 'gif|jpg|png|mp3';
         $config['max_size']     = '5242880';
         $config['max_width'] = '0';
         $config['max_height'] = '0';
@@ -167,6 +168,15 @@ class Qry_insert extends CI_Model {
             $file_pathotherimg = $data['file_path'];  
             print_r($data);
         }    
+
+        if (! $this->upload->do_upload('bgmsc')) {
+      
+        } else {
+            $data = $this->upload->data();   
+            $bgmsc = $data['file_name'];
+            $file_pathbgmsc = $data['file_path'];  
+            print_r($data);
+        }    
                   
         // print_r("<pre>");
         // print_r($data);
@@ -181,6 +191,7 @@ class Qry_insert extends CI_Model {
             'profile_img'   => $profileimg,
             'home_img'      => $homeimg,
             'other_img'     => $otherimg,
+            'bgmsc'         => $bgmsc,
             'username'      => $username,                                                      
         );    
 
@@ -256,10 +267,11 @@ class Qry_insert extends CI_Model {
         $profileimg   = $this->input->post('profileimage');
         $homeimg      = $this->input->post('homeimage');
         $otherimg     = $this->input->post('otherimage');
+        $bgmsc     = $this->input->post('bgmsc');
         $username     = $uID;
 
         $config['upload_path'] = "./uploads/$username/gallery";
-        $config['allowed_types'] = 'gif|jpg|png';
+        $config['allowed_types'] = 'gif|jpg|png|mp3';
         $config['max_size']     = '5242880';
         $config['max_width'] = '0';
         $config['max_height'] = '0';
@@ -270,6 +282,7 @@ class Qry_insert extends CI_Model {
         $pathprofileimg = $gallery->path.$gallery->profile_img;
         $pathhomeimg = $gallery->path.$gallery->home_img;
         $pathotherimg = $gallery->path.$gallery->other_img;
+        $pathbgmsc= $gallery->path.$gallery->bgmsc;
 
         // print_r("<pre>");
         // print_r($pathprofileimg);
@@ -327,6 +340,22 @@ class Qry_insert extends CI_Model {
                 print_r($data);
             }    
         }
+
+        if (empty($_FILES['bgmsc']['name'])) {
+            // echo "blanks";
+            $bgmsc = $gallery->bgmsc;
+        } else {
+            // echo "ada file";
+            if (! $this->upload->do_upload('bgmsc')) {
+      
+            } else {
+                unlink($pathbgmsc);
+                $data = $this->upload->data();   
+                $bgmsc = $data['file_name'];
+                $file_pathbgmsc = $data['file_path'];  
+                print_r($data);
+            }    
+        }
                   
         // print_r("<pre>");
         // print_r($data);
@@ -341,6 +370,7 @@ class Qry_insert extends CI_Model {
             'profile_img'   => $profileimg,
             'home_img'      => $homeimg,
             'other_img'     => $otherimg,
+            'bgmsc'     => $bgmsc,
             'username'      => $username,                                                      
         );    
 

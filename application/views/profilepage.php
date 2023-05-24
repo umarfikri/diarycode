@@ -4,11 +4,11 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="text-center">Register</h5>
+                        <h3 class="text-center" style="text-decoration: underline overline;">Register</h3>
                         <div class="row">
                             <div class="col-md-12 ml-auto mr-auto">
                                 <form method="POST" enctype="multipart/form-data">
-                                    <h5 class="text-center">Profile</h5>
+                                    <h3 class="text-center">Profile</h3>
                                     <div class="form-group">
                                         <label>Full Name</label>
                                         <input type="text" class="form-control" name="fullname" value="<?=$profile->fullname;?>">                                
@@ -33,7 +33,7 @@
                                         <input type="text" class="form-control" name="motto" value="<?=$profile->motto;?>">                                
                                     </div>      
 
-                                    <h5 class="text-center">Social Media</h5>
+                                    <h3 class="text-center">Social Media</h3>
                                     <div class="form-group">
                                         <label>Facebook Link</label>
                                         <input type="text" class="form-control" name="facebook" value="<?=$profile->facebook;?>">                                
@@ -47,7 +47,7 @@
                                         <input type="text" class="form-control" name="insta" value="<?=$profile->insta;?>">                                
                                     </div>              
 
-                                    <h5 class="text-center">Background Image</h5>
+                                    <h3 class="text-center">Background Image</h3>
                                     <div class="form-group">
                                         <label>Profile Image</label>
                                         <input class="form-control" type="file" name="profileimage"> 
@@ -60,9 +60,13 @@
                                     <div class="form-group">
                                         <label>Other Backround Image</label>
                                         <input class="form-control" type="file" name="otherimage">                                
-                                    </div>                                             
+                                    </div>           
+                                    <div class="form-group">
+                                        <label>Background Music</label>
+                                        <input class="form-control" type="file" name="bgmsc">                                
+                                    </div>                                      
                                     
-                                    <h5 class="text-center">Health</h5>                                                                        
+                                    <h3 class="text-center">Health</h3>
                                     <div class="form-group">
                                         <label>Height (cm)</label>
                                         <input type="text" class="form-control" name="height" value="<?=$profile->height;?>">                                
@@ -93,7 +97,7 @@
                                         </div>
                                     </div>
 
-                                    <h5 class="text-center">Account</h5>                                    
+                                    <h3 class="text-center">Account</h3>
                                     <div class="form-group">
                                         <label>Password</label>
                                         <input type="text" class="form-control" name="password" value="<?=$this->encryption->decrypt($profile->password);?>">                                

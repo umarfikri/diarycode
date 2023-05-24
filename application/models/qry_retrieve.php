@@ -51,6 +51,12 @@ class Qry_retrieve extends CI_Model {
         return $query->row();
     }   
 
+    function qry_music($uID){//Get Music 
+        $query = $this->db->query("SELECT galleryid, path, bgmsc, mscsts, username 
+        FROM gallery WHERE username = '$uID'");
+        return $query->row();
+    }
+
     // SELECT date_data.daymonthyear AS 'HARI', CASE WHEN MONTH(entry.date) = 01 THEN entry.mood END AS 'January', CASE WHEN MONTH(entry.date) = 02 THEN entry.mood END AS 'February', CASE WHEN MONTH(entry.date) = 03 THEN entry.mood END AS 'Mac', CASE WHEN MONTH(entry.date) = 04 THEN entry.mood END AS 'April', CASE WHEN MONTH(entry.date) = 05 THEN entry.mood END AS 'May', CASE WHEN MONTH(entry.date) = 06 THEN entry.mood END AS 'Jun', CASE WHEN MONTH(entry.date) = 07 THEN entry.mood END AS 'Julai', CASE WHEN MONTH(entry.date) = 08 THEN entry.mood END AS 'August', CASE WHEN MONTH(entry.date) = 09 THEN entry.mood END AS 'September' FROM date_data LEFT JOIN entry ON DATE_FORMAT(entry.date, '%d') = date_data.daymonthyear AND entry.username = 'hide123' GROUP BY date_data.daymonthyear ORDER BY date_data.daymonthyear ASC
     // SELECT date_data.daymonthyear AS 'HARI', CASE WHEN MONTH(entry.date) = 01 THEN entry.mood END AS 'January', CASE WHEN MONTH(entry.date) = 02 THEN entry.mood END AS 'February', CASE WHEN MONTH(entry.date) = 03 THEN entry.mood END AS 'Mac', CASE WHEN MONTH(entry.date) = 04 THEN entry.mood END AS 'April', CASE WHEN MONTH(entry.date) = 05 THEN entry.mood END AS 'May', CASE WHEN MONTH(entry.date) = 06 THEN entry.mood END AS 'Jun', CASE WHEN MONTH(entry.date) = 07 THEN entry.mood END AS 'Julai', CASE WHEN MONTH(entry.date) = 08 THEN entry.mood END AS 'August', CASE WHEN MONTH(entry.date) = 09 THEN entry.mood END AS 'September', entry.time FROM date_data LEFT JOIN entry ON DATE_FORMAT(entry.date, '%d') = date_data.daymonthyear AND entry.username = 'hide123' GROUP BY date_data.daymonthyear , MONTH(entry.date) ORDER BY date_data.daymonthyear ASC
 }

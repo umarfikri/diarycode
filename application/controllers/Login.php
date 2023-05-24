@@ -23,17 +23,17 @@ class Login extends CI_Controller {
                         'uID'  => $userinfo->username,
                     );
                     $this->session->set_userdata($variable_session);
-                    redirect('home/index');
+                    redirect('home');
                 } else {
                     $this->session->set_flashdata('fail', 'Kata Laluan Tidak Sama');
-                    redirect('login/index');
+                    redirect('login');
                 }
                 
 				
 			}
 			else {
                 $this->session->set_flashdata('fail', 'Username Tidak Wujud');
-                redirect('login/index');
+                redirect('login');
 			}
 		}
 
@@ -51,11 +51,11 @@ class Login extends CI_Controller {
             $inserthealth  = $this->qry_insert->addhealth();
             if ($insertid && $insertgallery) {            
                 $this->session->set_flashdata('success', $this->input->post('nickname'));
-				redirect('login/index');
+				redirect('login');
 			}
 			else {
                 $this->session->set_flashdata('fail', $this->input->post('nickname'));
-				redirect('login/index');
+				redirect('login');
 			}                        
         }
 

@@ -49,43 +49,7 @@ The above copyright notice and this permission notice shall be included in all c
           <span class="navbar-toggler-bar bar2"></span>
           <span class="navbar-toggler-bar bar3"></span>
         </button>        
-      </div>   
-
-      <div id="music">
-        <!-- Microphone Rec Permission -->
-        <script>
-          navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
-            
-          var x = document.getElementById("BgMsc"); 
-          x.play();
-
-          // stop microphone stream acquired by getUserMedia
-          stream.getTracks().forEach(function (track) { track.stop(); });
-          });
-        </script>
-        <audio id="BgMsc" controls loop>
-          <source src="assets/Karakuri_Pierrot.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
-
-        <!-- Can loop -->
-        <!-- <script>                
-            var x = document.getElementById("myAudio").loop; 
-            x.play();                
-        </script> 
-        <audio id="myAudio" controls loop>
-          <source src="assets/Karakuri_Pierrot.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>    -->
-
-        <!-- Can Loop -->    
-        <!-- <audio controls autoplay loop>
-          <source src="assets/Karakuri_Pierrot.ogg" type="audio/ogg">
-          <source src="assets/Karakuri_Pierrot.mp3" type="audio/mpeg">
-        </audio> -->
-          
-      </div>  
-      
+      </div>                
     </div>
   </nav>
   <!-- End Navbar -->  

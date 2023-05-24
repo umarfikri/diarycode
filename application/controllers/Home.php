@@ -5,7 +5,8 @@ class Home extends CI_Controller {
         $data['pagetitle'] = 'Home page';
         $data['module'] = 'frontpage';
         $data['submodule'] = ''; 
-        $id = $this->session->userdata('uID');        
+        $id = $this->session->userdata('uID');      
+        $data['music'] = $this->qry_retrieve->qry_music($id);  
         $data['profile'] = $this->qry_retrieve->qry_profile($id);
         $this->date_data(); //Check if year date data is on database
 
@@ -19,6 +20,7 @@ class Home extends CI_Controller {
         $data['module'] = 'diarynew';
         $data['submodule'] = 'newdiary'; 
         $data['uID'] = $this->session->userdata('uID');         
+        $data['music'] = $this->qry_retrieve->qry_music($data['uID']); 
         $data['profile'] = $this->qry_retrieve->qry_profile($data['uID']);        
 
         // $a = $this->input->post();
@@ -48,6 +50,7 @@ class Home extends CI_Controller {
         $data['module'] = 'diaryentry';
         $data['submodule'] = 'entrydiary';     
         $data['uID'] = $this->session->userdata('uID');       
+        $data['music'] = $this->qry_retrieve->qry_music($data['uID']); 
         $data['profile'] = $this->qry_retrieve->qry_profile($data['uID']);  
         // $data['entrylist'] = $this->qry_retrieve->qry_listentry();    
         $this->load->model('qry_retrieve');
@@ -78,15 +81,16 @@ class Home extends CI_Controller {
         $data['pagetitle'] = 'Mood Calendar';
         $data['module'] = 'calendar';
         $data['submodule'] = '';    
-        $data['uID'] = $this->session->userdata('uID');     
+        $data['uID'] = $this->session->userdata('uID');
+        $data['music'] = $this->qry_retrieve->qry_music($data['uID']);      
         $data['moodlist'] = $this->qry_retrieve->get_mood($data['uID']);
                
         $data['profile'] = $this->qry_retrieve->qry_profile($data['uID']);  
 
-        print_r("<pre>");
-        print_r($data['moodlist']);   
-        print_r("<br>");     
-        die;
+        // print_r("<pre>");
+        // print_r($data['moodlist']);   
+        // print_r("<br>");     
+        // die;
 
         $this->load->view('header', $data);
         $this->load->view('calendar');
@@ -97,7 +101,8 @@ class Home extends CI_Controller {
         $data['pagetitle'] = 'Profile Page';
         $data['module'] = 'Profile';
         $data['submodule'] = 'profile';    
-        $data['uID'] = $this->session->userdata('uID');        
+        $data['uID'] = $this->session->userdata('uID');  
+        $data['music'] = $this->qry_retrieve->qry_music($data['uID']);       
         $data['profile'] = $this->qry_retrieve->qry_profile($data['uID']);  
         $this->load->library('encryption'); 
         
