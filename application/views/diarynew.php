@@ -5,7 +5,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="text-center">New Post</h5>
+                        <h3 class="text-center">New Post</h3>
                         <div class="row">
                             <div class="col-md-12 ml-auto mr-auto">
                                 <form method="POST" enctype="multipart/form-data">
