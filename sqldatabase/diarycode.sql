@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2023 at 01:42 AM
+-- Generation Time: May 25, 2023 at 09:22 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.0
 
@@ -557,6 +557,8 @@ CREATE TABLE `gallery` (
   `profile_img` longtext DEFAULT NULL,
   `home_img` longtext DEFAULT NULL,
   `other_img` longtext DEFAULT NULL,
+  `bgmsc` longtext DEFAULT NULL,
+  `mscsts` int(10) NOT NULL,
   `username` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -564,9 +566,12 @@ CREATE TABLE `gallery` (
 -- Dumping data for table `gallery`
 --
 
-INSERT INTO `gallery` (`galleryid`, `path`, `profile_img`, `home_img`, `other_img`, `username`) VALUES
-(15, 'uploads/umar123/gallery/', 'drawing_colorful_circles_bright_259_1440x900.jpg', 'close-up-concrete-green-212937.jpg', 'Amazing-Star-Wallpaper-HD.jpg', 'umar123'),
-(16, 'uploads/hide123/gallery/', NULL, NULL, NULL, 'hide123');
+INSERT INTO `gallery` (`galleryid`, `path`, `profile_img`, `home_img`, `other_img`, `bgmsc`, `mscsts`, `username`) VALUES
+(15, 'uploads/umar123/gallery/', 'drawing_colorful_circles_bright_259_1440x900.jpg', 'close-up-concrete-green-212937.jpg', 'Amazing-Star-Wallpaper-HD.jpg', '', 0, 'umar123'),
+(16, 'uploads/hide123/gallery/', NULL, NULL, NULL, 'Karakuri_Pierrot.mp3', 0, 'hide123'),
+(19, 'uploads/animal/gallery/', NULL, NULL, NULL, 'Suzume.mp3', 0, 'animal'),
+(20, 'uploads/suzume/gallery/', NULL, NULL, NULL, 'Suzume.mp3', 0, 'suzume'),
+(21, 'uploads//gallery/', NULL, NULL, NULL, NULL, 0, '');
 
 -- --------------------------------------------------------
 
@@ -589,7 +594,11 @@ CREATE TABLE `health` (
 
 INSERT INTO `health` (`healthid`, `gender`, `height`, `weight`, `aimweight`, `username`) VALUES
 (4, 0, 125, 45, 55, 'umar123'),
-(5, 0, 175, 49, 56, 'hide123');
+(5, 0, 175, 49, 56, 'hide123'),
+(6, 1, 152, 63, 56, 'animal'),
+(7, 1, 152, 63, 56, 'animal'),
+(8, 1, 152, 63, 56, 'animal'),
+(9, 1, 154, 54, 55, 'suzume');
 
 -- --------------------------------------------------------
 
@@ -615,8 +624,10 @@ CREATE TABLE `profile` (
 --
 
 INSERT INTO `profile` (`username`, `password`, `fullname`, `nickname`, `birthday`, `description`, `motto`, `facebook`, `twitter`, `insta`) VALUES
-('hide123', 'd77e9e4c14da6475f29df6db78fb7b2adc6844b5ebbb6a9f87557cd57775a64385627abae52cee90b7e769d2d9bac2f8fce72d9205c156c9761ad7c20aac6455CYI+Pw2MljkWfX3Iwf3lMACfsPW0ysG+92wMcwL0wyI=', 'gfssdfdf', 'afdfasd', '2023-03-09', 'dgsfgdsfasdfd', 'Live a new Life', 'Facebook link.com', 'Twitter link.com', 'Insta link.com'),
-('umar123', '8a32a3b77a67451587edd6fc21bde387a17def4640a42b1ad5f312838403d3caefc23426a4e795d4892551ed1683c1becdbf0dff36fa74e094eba3ade449652bqAsXZ4CLMRqqK0hgA6NqYwZl6sg7ZkEJjwFwoGw1+i4=', 'asdsada', 'sadasda', '2023-03-13', 'adsdad', 'sdasdsada', 'gfsfdda', 'adasda', 'adfads');
+('animal', '123456', 'Animal', 'Crossing', '2023-05-19', 'Test music animal', 'New Horizon', '', '', ''),
+('hide123', '44ff77987e71d0ce316e3f8e677fda13ed161972e4116fe72582b2e113efd9704717933f481924159438275c3a4a3731b9c8bf92946a2582caebe18fafbc39540P0Y5wLOO7hIF6MkNUcXUbmGjnvluq/6u5lFB3ovDdQ=', 'gfssdfdf', 'afdfasd', '2023-03-09', 'dgsfgdsfasdfd', 'Live a new Life', 'Facebook link.com', 'Twitter link.com', 'Insta link.com'),
+('suzume', '123456', 'Suzume', 'Suzume', '2023-05-11', 'SUZUME', 'Why', '', '', ''),
+('umar123', '6be7d0151d1ac746cdaab354db398adf4c223a175dfcee03ce3e9997793f9e2436c317cb8de4f7dfb0ee5dc795572635a1996a45fd0494728225dee7edb5044bDiqS2XuTaR3NZog8xbW6lhhcV/oD9BcT91BaYgrMnf0=', 'asdsada', 'sadasda', '2023-03-13', 'adsdad', 'sdasdsada', 'gfsfdda', 'adasda', 'adfads');
 
 --
 -- Indexes for dumped tables
@@ -684,13 +695,13 @@ ALTER TABLE `entry`
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `galleryid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `galleryid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `health`
 --
 ALTER TABLE `health`
-  MODIFY `healthid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `healthid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
