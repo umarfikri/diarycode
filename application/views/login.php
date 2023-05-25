@@ -60,17 +60,17 @@ The above copyright notice and this permission notice shall be included in all c
       <div class="row">
         <div class="col-lg-4 ml-auto mr-auto">
           <div class="card card-register">
-            <h3 class="title mx-auto">Welcome</h3>            
+            <h1 class="title mx-auto" style="font-family: 'Copperplate', cursive;">Emori Diary</h1>                        
             <form class="register-form" method="POST">
               <label>Username</label>
               <input type="text" name="username" class="form-control" placeholder="Username">
               <label>Password</label>
               <input type="password" name="password" class="form-control" placeholder="Password">
-              <button name="submit" value="submit" class="btn btn-danger btn-block btn-round">Login</button>
-              <a href="login/register" class="btn btn-danger btn-block btn-round">Register</a>                            
+              <button name="submit" value="submit" class="btn btn-block btn-round">Login</button>
+              <a href="login/register" class="btn btn-block btn-round">Register</a>                            
             </form>
             <div class="forgot">
-              <a href="#" class="btn btn-link btn-danger">Forgot password?</a>
+              <a href="#" class="btn btn-link">Forgot password?</a>
             </div>
           </div>
         </div>

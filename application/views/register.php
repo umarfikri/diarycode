@@ -152,7 +152,7 @@
                                         <input type="text" class="form-control" name="password">                                
                                     </div>
 
-                                    <button name="submit" value="submit" class="btn btn-primary mt-4">Submit</button>
+                                    <button name="submit" value="submit" class="btn mt-4">Submit</button>
                                 </form>
                             </div>
                         </div>

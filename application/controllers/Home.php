@@ -171,12 +171,7 @@ class Home extends CI_Controller {
             $arrdate2[] = array(
                 "daymonthyear" => "$days"
             );
-        }
-        // echo "<pre>";	
-        // print_r($arrdate2);
-        // die();   
-        
-
+        }                  
 
         $chkdate = $this->db->query("SELECT * FROM date_data WHERE YEAR(daymonthyear)='$tahun'")->num_rows();
         // print_r($chkdate);

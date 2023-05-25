@@ -18,7 +18,7 @@
           <div class="col-md-8 ml-auto mr-auto">            
             <h5 class="description" style="text-align: left; text-justify: inter-word;"><?=$profile->description;?></h5> 
             <br>
-            <a href="home/profile" class="btn btn-danger btn-round">Edit Profile</a>                    
+            <a href="home/profile" class="btn btn-round">Edit Profile</a>                    
           </div>
         </div>
         <br/>
@@ -30,8 +30,8 @@
             <?php if($profile->facebook != null): ?>
               <div class="col-md-3">            
                 <div class="info">
-                  <div class="icon icon-danger">
-                    <a href=<?=$profile->facebook;?> class="fa-brands fa-facebook"></a>
+                  <div class="icon">
+                    <a href=<?=$profile->facebook;?> class="fa-brands fa-facebook" style="color: #5B8E7D;"></a>
                   </div>
                   <div class="description">
                     <h4 class="info-title">Facebook</h4>                
@@ -42,8 +42,8 @@
             <?php if($profile->twitter != null): ?>
               <div class="col-md-3">
                 <div class="info">
-                  <div class="icon icon-danger">
-                    <a href=<?=$profile->twitter;?> class="fa-brands fa-twitter"></a>
+                  <div class="icon">
+                    <a href=<?=$profile->twitter;?> class="fa-brands fa-twitter" style="color: #5B8E7D;"></a>
                   </div>
                   <div class="description">
                     <h4 class="info-title">Twitter</h4>               
@@ -54,8 +54,8 @@
             <?php if($profile->insta != null): ?>
               <div class="col-md-3">
                 <div class="info">
-                  <div class="icon icon-danger">
-                    <a href=<?=$profile->insta;?> class="fa-brands fa-instagram"></a>
+                  <div class="icon">
+                    <a href=<?=$profile->insta;?> class="fa-brands fa-instagram" style="color: #5B8E7D;"></a>
                   </div>
                   <div class="description">
                     <h4 class="info-title">Instagram</h4>
