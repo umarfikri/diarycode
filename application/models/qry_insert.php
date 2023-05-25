@@ -240,9 +240,17 @@ class Qry_insert extends CI_Model {
         // print_r("<pre>");
         // print_r($all);
         // die();
+
+        $this->load->library('encryption');
+        $key = bin2hex($this->encryption->create_key(16)); 
        
-        $datainfo = array(            
-            'password'      => $password,
+        // $epassword = $this->encryption->encrypt($password);
+        // print_r("<pre>");
+        // print_r($epassword);
+        // die();
+
+        $datainfo = array(          
+            'password'      => $this->encryption->encrypt($password),  
             'fullname'      => $fullname,
             'nickname'      => $nickname,
             'birthday'      => $birthday,
@@ -267,8 +275,8 @@ class Qry_insert extends CI_Model {
         $profileimg   = $this->input->post('profileimage');
         $homeimg      = $this->input->post('homeimage');
         $otherimg     = $this->input->post('otherimage');
-        $bgmsc     = $this->input->post('bgmsc');
-        $username     = $uID;
+        $bgmsc        = $this->input->post('bgmsc');       
+        $username     = $uID;                           
 
         $config['upload_path'] = "./uploads/$username/gallery";
         $config['allowed_types'] = 'gif|jpg|png|mp3';
@@ -363,14 +371,14 @@ class Qry_insert extends CI_Model {
 
         //$imgname = md5($filename.date('Y-m-d H:i:s:u'));
         //print_r($imgname);
-        //die();
-        
+        //die();                       
+
         $datainfo = array(                                    
             'path'          => $path.'/',
             'profile_img'   => $profileimg,
             'home_img'      => $homeimg,
             'other_img'     => $otherimg,
-            'bgmsc'     => $bgmsc,
+            'bgmsc'         => $bgmsc,            
             'username'      => $username,                                                      
         );    
 
