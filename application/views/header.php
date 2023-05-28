@@ -50,6 +50,14 @@
             <a class="<?= ($module == 'calendar') ? 'nav-link active' : 'nav-link';?>" href="home/calendar">Calendar</a>
           </li> 
           <li class="nav-item">
+            <button type="button" class="btn btn-secondary"><i onclick="muteFunction(this)" class="fa fa-volume-xmark"></i></button>            
+            <script>
+              function muteFunction(x) {
+                x.classList.toggle("fa fa-volume-up");
+              }
+            </script>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="home/logout">Logout</a>
           </li> 
         </ul> 
@@ -89,6 +97,6 @@
         </div> 
 
       </div>
-    </div>
+    </div>    
   </nav>
   <!-- End Navbar -->
