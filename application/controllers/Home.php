@@ -160,24 +160,17 @@ class Home extends CI_Controller {
             for ($j=1; $j <= $d; $j++) { 
                 $days = str_pad($j, 2, 0, STR_PAD_LEFT); //Put "0" infront of num so that 1 become 01        
                 $arrdate[] = array(
-                    "daymonthyear" => "$tahun-$bulan-$days"
+                    "daymonthyear" => "$tahun-$bulan-$days",
+                    "day"          => "$days"
                 );
             }
-        }
-
-      
-        for ($j=1; $j <= 31; $j++) { 
-            $days = str_pad($j, 2, 0, STR_PAD_LEFT); //Put "0" infront of num so that 1 become 01        
-            $arrdate2[] = array(
-                "daymonthyear" => "$days"
-            );
-        }                  
+        }                             
 
         $chkdate = $this->db->query("SELECT * FROM date_data WHERE YEAR(daymonthyear)='$tahun'")->num_rows();
         // print_r($chkdate);
         // die();
         if ($chkdate==0) {
-            $this->db->insert_batch('date_data',$arrdate2);            
+            $this->db->insert_batch('date_data',$arrdate);            
         }  
         // echo "<pre>";	
         // print_r($arrdate);
