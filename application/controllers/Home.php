@@ -271,4 +271,52 @@ class Home extends CI_Controller {
 		
 
 	}
+
+   
+    function mutemusic(){
+        $uid = $this->session->userdata('uID');  
+        $result = [];
+
+        $query = $this->db->query("SELECT * FROM gallery WHERE username = '$uid'")->row();
+        // print_r($query);
+        // die();
+
+		if ($query->mscsts == 0) {
+			$data = array(
+                'mscsts' => 1
+            );
+				
+		}else {
+            $data = array(
+                'mscsts' => 0
+            );
+        }
+
+        $this->db->update('gallery', $data, array('username' => $uid));
+        $affected = $this->db->affected_rows();
+        if ($affected > 0) {
+            
+            if ($query->mscsts == 0) {
+
+            
+                $result['statusmusic'] = "1";
+           
+                    
+            }else {
+
+            
+                $result['statusmusic'] = "0";
+            
+            }
+        } else {
+
+          
+        }
+        
+    
+        echo json_encode($result);
+        
+
+		// echo json_encode($this->d);
+	}
 }

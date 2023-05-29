@@ -72,7 +72,7 @@ class Qry_retrieve extends CI_Model {
     // CASE WHEN MONTH(entry.date) = 09 THEN entry.mood END AS 'September', 
     // entry.time FROM date_data 
     // LEFT JOIN entry ON DATE_FORMAT(entry.date, '%Y-%m-%d') = date_data.daymonthyear 
-    // AND entry.username = 'hide123' 
+    // AND entry.username = 'hide123' WHERE date_data.day BETWEEN 01 AND 31
     // GROUP BY date_data.day, MONTH(entry.date) 
     // ORDER BY date_data.daymonthyear ASC;
 }

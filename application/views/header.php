@@ -50,12 +50,8 @@
             <a class="<?= ($module == 'calendar') ? 'nav-link active' : 'nav-link';?>" href="home/calendar">Calendar</a>
           </li> 
           <li class="nav-item">
-            <button type="button" class="btn btn-secondary"><i onclick="muteFunction(this)" class="fa fa-volume-xmark"></i></button>            
-            <script>
-              function muteFunction(x) {
-                x.classList.toggle("fa fa-volume-up");
-              }
-            </script>
+            <button type="button" class="btn btn-secondary" id="totalamount" onclick="muteFunction(this)"><i  class="<?=($music->mscsts == 1) ? 'fa fa-volume-xmark' : 'fa fa-volume-up';?>"></i></button>            
+            
           </li>
           <li class="nav-item">
             <a class="nav-link" href="home/logout">Logout</a>
@@ -64,16 +60,7 @@
 
         <div id="music">
           <!-- Microphone Rec Permission -->
-          <script>
-            navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
-              
-            var x = document.getElementById("BgMsc"); 
-            x.play();
-
-            // stop microphone stream acquired by getUserMedia
-            stream.getTracks().forEach(function (track) { track.stop(); });
-            });
-          </script>
+          
           <audio id="BgMsc" loop <?=($music->mscsts == 1) ? 'muted' : '';?>>
             <source src=<?=$music->path.$music->bgmsc;?> type="audio/mpeg">
             Your browser does not support the audio element.
@@ -100,3 +87,58 @@
     </div>    
   </nav>
   <!-- End Navbar -->
+  <script>
+    function muteFunction(x) {
+      $.ajax({
+            type: "POST",
+            url: 'home/mutemusic',
+            dataType: 'json',
+            success: function(res) {
+                
+                console.log(res);
+                // $("#cartdetails").html(res);
+                if (res.statusmusic === "1") {
+                  console.log("status1");
+                  location.reload();
+                  // totalamount ='<i class="fa fa-volume-xmark"></i>';
+
+                  // navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+              
+                  //   var x = document.getElementById("BgMsc"); 
+                  //   x.pause();
+        
+                  //   // stop microphone stream acquired by getUserMedia
+                  //   stream.getTracks().forEach(function (track) { track.stop(); });
+                  // });
+                } else {
+                  console.log("status0");
+                  location.reload();
+                  // totalamount ='<i class="fa fa-volume-up"></i>';
+                  
+                  // navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+              
+                  //   var x = document.getElementById("BgMsc"); 
+                  //   x.play();
+        
+                  //   // stop microphone stream acquired by getUserMedia
+                  //   stream.getTracks().forEach(function (track) { track.stop(); });
+                  // });
+                }
+                
+                // $('#totalamount').html(totalamount);                      
+                
+
+            }
+    })
+  }
+  </script>
+  <script>
+            navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+              
+            var x = document.getElementById("BgMsc"); 
+            x.play();
+
+            // stop microphone stream acquired by getUserMedia
+            stream.getTracks().forEach(function (track) { track.stop(); });
+            });
+          </script>
