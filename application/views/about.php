@@ -17,6 +17,7 @@
                         <h3  class="mx-4 text-justify">
                             Emori is derived from the words emotion and memory, and it represents in a way the purpose of this system. Emori also mean kind, loving and caring.
                             I hope to make a diary website system so that users can be true to themselves and record their experiences in it.
+                            It is being developed using Codeigniter 3 and the Bootstrap framework with MySQL phpMyAdmin database.
                             You can access this system by registering your details in the respective fields. For now, any dummy details can be inserted as the system is still in development. 
                             If you don't want to register, you can use this dummy username and password.
                         </h3>
