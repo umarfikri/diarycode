@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2023 at 02:34 AM
+-- Generation Time: May 30, 2023 at 04:28 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.0
 
@@ -544,7 +544,9 @@ INSERT INTO `entry` (`entryid`, `title`, `content`, `mood`, `alt_img`, `img_url`
 (18, 'dasdasdsa', '<p>sadasdasdwad</p>\r\n', 4, NULL, NULL, NULL, '2023-05-07', '21:11:31', 'hide123'),
 (19, 'dasdasd', '<p>sadsadfdrdsrgds</p>\r\n', 2, NULL, NULL, NULL, '2023-05-16', '07:40:03', 'umar123'),
 (20, 'fgsaffgd', '<p>fsgadfa</p>\r\n', 4, NULL, NULL, NULL, '2023-05-16', '21:40:22', 'umar123'),
-(21, 'gsafdswaf', '<p>gdhdsgfds</p>\r\n', 3, NULL, NULL, NULL, '2023-05-18', '07:40:31', 'umar123');
+(21, 'gsafdswaf', '<p>gdhdsgfds</p>\r\n', 3, NULL, NULL, NULL, '2023-05-18', '07:40:31', 'umar123'),
+(22, 'Test Post', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', 2, NULL, NULL, NULL, '2023-05-30', '20:13:09', 'test123'),
+(23, 'Test New', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', 4, 'New Background', 'uploads/test123/entry/', 'close-up-concrete-green-212937.jpg', '2023-05-30', '20:14:08', 'test123');
 
 -- --------------------------------------------------------
 
@@ -572,7 +574,8 @@ INSERT INTO `gallery` (`galleryid`, `path`, `profile_img`, `home_img`, `other_im
 (16, 'uploads/hide123/gallery/', NULL, NULL, NULL, 'Karakuri_Pierrot.mp3', 0, 'hide123'),
 (19, 'uploads/animal/gallery/', NULL, NULL, NULL, 'Suzume.mp3', 0, 'animal'),
 (20, 'uploads/suzume/gallery/', NULL, NULL, NULL, 'Suzume.mp3', 0, 'suzume'),
-(21, 'uploads//gallery/', NULL, NULL, NULL, NULL, 0, '');
+(21, 'uploads//gallery/', NULL, NULL, NULL, NULL, 0, ''),
+(22, 'uploads/test123/gallery/', NULL, NULL, NULL, 'Suzume.mp3', 0, 'test123');
 
 -- --------------------------------------------------------
 
@@ -599,7 +602,8 @@ INSERT INTO `health` (`healthid`, `gender`, `height`, `weight`, `aimweight`, `us
 (6, 1, 152, 63, 56, 'animal'),
 (7, 1, 152, 63, 56, 'animal'),
 (8, 1, 152, 63, 56, 'animal'),
-(9, 1, 154, 54, 55, 'suzume');
+(9, 1, 154, 54, 55, 'suzume'),
+(10, 0, 170, 50, 55, 'test123');
 
 -- --------------------------------------------------------
 
@@ -628,6 +632,7 @@ INSERT INTO `profile` (`username`, `password`, `fullname`, `nickname`, `birthday
 ('animal', '123456', 'Animal', 'Crossing', '2023-05-19', 'Test music animal', 'New Horizon', '', '', ''),
 ('hide123', '44ff77987e71d0ce316e3f8e677fda13ed161972e4116fe72582b2e113efd9704717933f481924159438275c3a4a3731b9c8bf92946a2582caebe18fafbc39540P0Y5wLOO7hIF6MkNUcXUbmGjnvluq/6u5lFB3ovDdQ=', 'gfssdfdf', 'afdfasd', '2023-03-09', 'dgsfgdsfasdfd', 'Live a new Life', 'Facebook link.com', 'Twitter link.com', 'Insta link.com'),
 ('suzume', '123456', 'Suzume', 'Suzume', '2023-05-11', 'SUZUME', 'Why', '', '', ''),
+('test123', '420dc8bfae903f993f1fb9274659c7ff0c795df4bd77d710e7586da553dbf60af24c5f62b6029c55e7ed54a5b3f403e07b565048e864c382c1d2dab59d4091b7DWGCyP6ga7S6jStsqOQCyhDG1bp0Z6nM5kq6Wizdy6A=', 'Test Name', 'Test', '2023-05-01', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'New Motto New Life', 'Facebook link.com', 'Twitter link.com', 'Insta link.com'),
 ('umar123', '6be7d0151d1ac746cdaab354db398adf4c223a175dfcee03ce3e9997793f9e2436c317cb8de4f7dfb0ee5dc795572635a1996a45fd0494728225dee7edb5044bDiqS2XuTaR3NZog8xbW6lhhcV/oD9BcT91BaYgrMnf0=', 'asdsada', 'sadasda', '2023-03-13', 'adsdad', 'sdasdsada', 'gfsfdda', 'adasda', 'adfads');
 
 --
@@ -690,19 +695,19 @@ ALTER TABLE `date_data`
 -- AUTO_INCREMENT for table `entry`
 --
 ALTER TABLE `entry`
-  MODIFY `entryid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `entryid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `galleryid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `galleryid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `health`
 --
 ALTER TABLE `health`
-  MODIFY `healthid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `healthid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

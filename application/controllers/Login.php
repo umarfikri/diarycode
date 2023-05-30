@@ -37,7 +37,8 @@ class Login extends CI_Controller {
 			}
 		}
 
-        $this->load->view('login', $data);
+        $this->load->view('headerlogin', $data);
+        $this->load->view('login');
     }
 
     function register (){
@@ -59,6 +60,16 @@ class Login extends CI_Controller {
 			}                        
         }
 
-        $this->load->view('register', $data);
+        $this->load->view('headerlogin', $data);
+        $this->load->view('register');
+    }
+
+    function about (){
+        $data['pagetitle'] = 'About';
+        $data['module'] = 'about';
+        $data['submodule'] = '';                            
+
+        $this->load->view('headerlogin', $data);
+        $this->load->view('about');
     }
 }
