@@ -75,4 +75,20 @@ class Qry_retrieve extends CI_Model {
     // AND entry.username = 'hide123' WHERE date_data.day BETWEEN 01 AND 31
     // GROUP BY date_data.day, MONTH(entry.date) 
     // ORDER BY date_data.daymonthyear ASC;
+
+    // SELECT date_data.day AS 'Day',
+    // CASE WHEN MONTH(entry.date) = 01 THEN entry.mood END AS 'January', 
+    // CASE WHEN MONTH(entry.date) = 02 THEN entry.mood END AS 'February', 
+    // CASE WHEN MONTH(entry.date) = 03 THEN entry.mood END AS 'Mac', 
+    // CASE WHEN MONTH(entry.date) = 04 THEN entry.mood END AS 'April', 
+    // CASE WHEN MONTH(entry.date) = 05 THEN entry.mood END AS 'May', 
+    // CASE WHEN MONTH(entry.date) = 06 THEN entry.mood END AS 'Jun', 
+    // CASE WHEN MONTH(entry.date) = 07 THEN entry.mood END AS 'Julai', 
+    // CASE WHEN MONTH(entry.date) = 08 THEN entry.mood END AS 'August', 
+    // CASE WHEN MONTH(entry.date) = 09 THEN entry.mood END AS 'September'
+    // FROM date_data 
+    // LEFT JOIN entry ON DATE_FORMAT(entry.date, '%Y-%m-%d') = date_data.daymonthyear 
+    // AND entry.username = 'hide123' 
+    // GROUP BY date_data.day, MONTH(entry.date) 
+    // ORDER BY date_data.day ASC;
 }
