@@ -34,11 +34,7 @@ class Qry_retrieve extends CI_Model {
     
     function get_mood($uID){ //get all data in 365 day in a year where mood equal to null or not
         $query = $this->db->query("SELECT date_data.daymonthyear AS date, MAX(entry.time) AS time, entry.mood FROM date_data LEFT JOIN entry ON date_data.daymonthyear = entry.date AND username = '$uID' GROUP BY date_data.daymonthyear ORDER BY date_data.daymonthyear ASC;");
-        // SELECT mood, date, MAX(time) AS time FROM `entry` WHERE username = '$uID' GROUP BY date ORDER BY date DESC;      
-        // print_r("<pre>");
-        // print_r($query->result());   
-        // print_r("<br>");     
-        // die;
+        // SELECT date_data.daymonthyear AS date, MAX(entry.time) AS time, entry.mood FROM date_data LEFT JOIN entry ON date_data.daymonthyear = entry.date AND username = '$uID' GROUP BY date_data.daymonthyear ORDER BY date_data.daymonthyear ASC;
         return $query->result();
     }
 
@@ -58,37 +54,17 @@ class Qry_retrieve extends CI_Model {
     }
 
     // SELECT date_data.daymonthyear AS 'HARI', CASE WHEN MONTH(entry.date) = 01 THEN entry.mood END AS 'January', CASE WHEN MONTH(entry.date) = 02 THEN entry.mood END AS 'February', CASE WHEN MONTH(entry.date) = 03 THEN entry.mood END AS 'Mac', CASE WHEN MONTH(entry.date) = 04 THEN entry.mood END AS 'April', CASE WHEN MONTH(entry.date) = 05 THEN entry.mood END AS 'May', CASE WHEN MONTH(entry.date) = 06 THEN entry.mood END AS 'Jun', CASE WHEN MONTH(entry.date) = 07 THEN entry.mood END AS 'Julai', CASE WHEN MONTH(entry.date) = 08 THEN entry.mood END AS 'August', CASE WHEN MONTH(entry.date) = 09 THEN entry.mood END AS 'September' FROM date_data LEFT JOIN entry ON DATE_FORMAT(entry.date, '%d') = date_data.daymonthyear AND entry.username = 'hide123' GROUP BY date_data.daymonthyear ORDER BY date_data.daymonthyear ASC
-    // SELECT date_data.daymonthyear AS 'HARI', CASE WHEN MONTH(entry.date) = 01 THEN entry.mood END AS 'January', CASE WHEN MONTH(entry.date) = 02 THEN entry.mood END AS 'February', CASE WHEN MONTH(entry.date) = 03 THEN entry.mood END AS 'Mac', CASE WHEN MONTH(entry.date) = 04 THEN entry.mood END AS 'April', CASE WHEN MONTH(entry.date) = 05 THEN entry.mood END AS 'May', CASE WHEN MONTH(entry.date) = 06 THEN entry.mood END AS 'Jun', CASE WHEN MONTH(entry.date) = 07 THEN entry.mood END AS 'Julai', CASE WHEN MONTH(entry.date) = 08 THEN entry.mood END AS 'August', CASE WHEN MONTH(entry.date) = 09 THEN entry.mood END AS 'September', entry.time FROM date_data LEFT JOIN entry ON DATE_FORMAT(entry.date, '%d') = date_data.daymonthyear AND entry.username = 'hide123' GROUP BY date_data.daymonthyear , MONTH(entry.date) ORDER BY date_data.daymonthyear ASC
-    
-    // SELECT date_data.daymonthyear AS 'Date', date_data.day AS 'Day',
-    // CASE WHEN MONTH(entry.date) = 01 THEN entry.mood END AS 'January', 
-    // CASE WHEN MONTH(entry.date) = 02 THEN entry.mood END AS 'February', 
-    // CASE WHEN MONTH(entry.date) = 03 THEN entry.mood END AS 'Mac', 
-    // CASE WHEN MONTH(entry.date) = 04 THEN entry.mood END AS 'April', 
-    // CASE WHEN MONTH(entry.date) = 05 THEN entry.mood END AS 'May', 
-    // CASE WHEN MONTH(entry.date) = 06 THEN entry.mood END AS 'Jun', 
-    // CASE WHEN MONTH(entry.date) = 07 THEN entry.mood END AS 'Julai', 
-    // CASE WHEN MONTH(entry.date) = 08 THEN entry.mood END AS 'August', 
-    // CASE WHEN MONTH(entry.date) = 09 THEN entry.mood END AS 'September', 
-    // entry.time FROM date_data 
-    // LEFT JOIN entry ON DATE_FORMAT(entry.date, '%Y-%m-%d') = date_data.daymonthyear 
-    // AND entry.username = 'hide123' WHERE date_data.day BETWEEN 01 AND 31
-    // GROUP BY date_data.day, MONTH(entry.date) 
-    // ORDER BY date_data.daymonthyear ASC;
+    // SELECT date_data.daymonthyear AS 'HARI', CASE WHEN MONTH(entry.date) = 01 THEN entry.mood END AS 'January', CASE WHEN MONTH(entry.date) = 02 THEN entry.mood END AS 'February', CASE WHEN MONTH(entry.date) = 03 THEN entry.mood END AS 'Mac', CASE WHEN MONTH(entry.date) = 04 THEN entry.mood END AS 'April', CASE WHEN MONTH(entry.date) = 05 THEN entry.mood END AS 'May', CASE WHEN MONTH(entry.date) = 06 THEN entry.mood END AS 'Jun', CASE WHEN MONTH(entry.date) = 07 THEN entry.mood END AS 'Julai', CASE WHEN MONTH(entry.date) = 08 THEN entry.mood END AS 'August', CASE WHEN MONTH(entry.date) = 09 THEN entry.mood END AS 'September', entry.time FROM date_data LEFT JOIN entry ON DATE_FORMAT(entry.date, '%d') = date_data.daymonthyear AND entry.username = 'hide123' GROUP BY date_data.daymonthyear , MONTH(entry.date) ORDER BY date_data.daymonthyear ASC        
 
     // SELECT date_data.day AS 'Day',
-    // CASE WHEN MONTH(entry.date) = 01 THEN entry.mood END AS 'January', 
-    // CASE WHEN MONTH(entry.date) = 02 THEN entry.mood END AS 'February', 
-    // CASE WHEN MONTH(entry.date) = 03 THEN entry.mood END AS 'Mac', 
-    // CASE WHEN MONTH(entry.date) = 04 THEN entry.mood END AS 'April', 
-    // CASE WHEN MONTH(entry.date) = 05 THEN entry.mood END AS 'May', 
-    // CASE WHEN MONTH(entry.date) = 06 THEN entry.mood END AS 'Jun', 
-    // CASE WHEN MONTH(entry.date) = 07 THEN entry.mood END AS 'Julai', 
-    // CASE WHEN MONTH(entry.date) = 08 THEN entry.mood END AS 'August', 
-    // CASE WHEN MONTH(entry.date) = 09 THEN entry.mood END AS 'September'
+    // MAX(CASE WHEN entry.mood IS NOT NULL AND MONTH(entry.date) = 01 THEN entry.mood END) AS 'January', 
+    // MAX(CASE WHEN entry.mood IS NOT NULL AND MONTH(entry.date) = 02 THEN entry.mood END) AS 'February', 
+    // MAX(CASE WHEN entry.mood IS NOT NULL AND MONTH(entry.date) = 03 THEN entry.mood END) AS 'Mac', 
+    // MAX(CASE WHEN entry.mood IS NOT NULL AND MONTH(entry.date) = 04 THEN entry.mood END) AS 'April', 
+    // MAX(CASE WHEN entry.mood IS NOT NULL AND MONTH(entry.date) = 05 THEN entry.mood END) AS 'May'
     // FROM date_data 
     // LEFT JOIN entry ON DATE_FORMAT(entry.date, '%Y-%m-%d') = date_data.daymonthyear 
-    // AND entry.username = 'hide123' 
+    // AND entry.username = 'hide123'
     // GROUP BY date_data.day, MONTH(entry.date) 
     // ORDER BY date_data.day ASC;
 }
