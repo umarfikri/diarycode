@@ -99,6 +99,10 @@
 
                                     <h3 class="text-center">Account</h3>
                                     <div class="form-group">
+                                        <label>Email</label>
+                                        <input type="text" class="form-control" name="email" value="<?=$profile->email;?>">                                
+                                    </div>
+                                    <div class="form-group">
                                         <label>Password</label>
                                         <input type="text" class="form-control" name="password" value="<?=$this->encryption->decrypt($profile->password);?>">                                
                                     </div>

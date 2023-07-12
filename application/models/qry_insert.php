@@ -88,6 +88,7 @@ class Qry_insert extends CI_Model {
         $twitter      = $this->input->post('twitter');
         $insta        = $this->input->post('insta');
         $username     = $this->input->post('username');
+        $email        = $this->input->post('email');
         $password     = $this->input->post('password');
         $all          = $this->input->post();        
        
@@ -96,6 +97,7 @@ class Qry_insert extends CI_Model {
 
         $datainfo = array(            
             'username'      => $username,
+            'email'         => $email,
             'password'      => $this->encryption->encrypt($password),
             'fullname'      => $fullname,
             'nickname'      => $nickname,
@@ -235,6 +237,7 @@ class Qry_insert extends CI_Model {
         $facebook     = $this->input->post('facebook');
         $twitter      = $this->input->post('twitter');
         $insta        = $this->input->post('insta');
+        $email        = $this->input->post('email');
         $password     = $this->input->post('password');
         $all          = $this->input->post();
         // print_r("<pre>");
@@ -258,7 +261,8 @@ class Qry_insert extends CI_Model {
             'motto'         => $motto,
             'facebook'      => $facebook,
             'twitter'       => $twitter,
-            'insta'         => $insta,                                                         
+            'insta'         => $insta,
+            'email'         => $email,                                                
         );    
 
         $this->db->update('profile', $datainfo, array('username' => $uID));
