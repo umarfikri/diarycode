@@ -64,6 +64,20 @@ class Login extends CI_Controller {
         $this->load->view('register');
     }
 
+    function forgotpass (){
+        $data['pagetitle'] = 'Forgot Password';
+        $data['module'] = 'forgot';
+        $data['submodule'] = '';           
+        
+        if($this->input->post('submit')){
+            // $insertid      = $this->qry_insert->addprofile(); //Change this for send email
+                                            
+        }
+
+        $this->load->view('headerlogin', $data);
+        $this->load->view('forgotpass');
+    }
+
     function about (){
         $data['pagetitle'] = 'About';
         $data['module'] = 'about';

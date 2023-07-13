@@ -15,7 +15,7 @@
               <a href="login/register" class="btn btn-block btn-round">Register</a>                            
             </form>
             <div class="forgot">
-              <a href="#" class="btn btn-link">Forgot password?</a>
+              <a href="login/forgotpass" class="btn btn-link">Forgot password?</a>
             </div>
           </div>
         </div>
