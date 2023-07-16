@@ -70,6 +70,36 @@ class Login extends CI_Controller {
         $data['submodule'] = '';           
         
         if($this->input->post('submit')){
+
+            $config['protocol']  = 'smtp';
+            $config['smtp_host'] = 'ssl://smtp.googlemail.com';
+            $config['smtp_user'] = 'umarfikri1712@gmail.com';
+            $config['smtp_pass'] = '';
+            $config['smtp_port'] = 465;
+            $config['charset']   = 'utf-8';
+            $config['mailtype']  = 'html';
+            $config['newline']   = "\r\n"; 
+
+            $this->load->library('email');
+            
+            $this->email->initialize($config);
+
+            $this->email->from("umarfikri1712@gmail.com");
+            $this->email->to("ahmadumar1700@gmail.com");
+            $this->email->message("Hello");
+            $this->email->subject("Test");
+
+            if ($this->email->send()) {
+                echo 'Your Email has successfully been sent.';
+            } else {
+                show_error($this->email->print_debugger());
+            }
+
+            die();
+
+
+            $email = $this->input->post('email');
+            mail($email, "subject", "This is test message", "header");
             // $insertid      = $this->qry_insert->addprofile(); //Change this for send email
                                             
         }
