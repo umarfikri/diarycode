@@ -93,7 +93,7 @@
                                 ?>
                                 <!-- Previous page -->
                                 <?php if ($this->uri->segment(3) >= 2) :?>
-                                    <li class="page-item"><a class="page-link" href="<?= base_url().'home/diaryentry/'.$this->uri->segment(3)-1 ?>">Previous</a></li>
+                                    <li class="page-item"><a class="page-link" href="<?= base_url().'home/diaryentry/'.($this->uri->segment(3)-1) ?>">Previous</a></li>
                                 <?php  endif; ?>
                                 <!-- Num Page -->
                                 <?php for ($i=1; $i <= $totalpage; $i++) :?>          
@@ -108,7 +108,7 @@
                                     <?php if ($this->uri->segment(3) == 0) :?>
                                         <li class="page-item"><a class="page-link" href="<?= base_url().'home/diaryentry/2' ?>">Next</a></li>                                
                                     <?php else :?>
-                                        <li class="page-item"><a class="page-link" href="<?= base_url().'home/diaryentry/'.$this->uri->segment(3)+1 ?>">Next</a></li>
+                                        <li class="page-item"><a class="page-link" href="<?= base_url().'home/diaryentry/'.($this->uri->segment(3)+1) ?>">Next</a></li>
                                     <?php  endif; ?>
                                 <?php  endif; ?>
                             </ul>
